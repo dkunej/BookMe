@@ -57,13 +57,12 @@
 			<version>5.2.10.Final</version>
 		</dependency>
 
-
-		<!-- Hibernate library dependecy start -->
 		<dependency>
-			<groupId>dom4j</groupId>
-			<artifactId>dom4j</artifactId>
-			<version>1.6.1</version>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>5.0.2.Final</version>
 		</dependency>
+
 
 	</dependencies>
 
