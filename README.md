@@ -9,6 +9,6 @@
 
 ### Setup first time
 
-* Clone repository: https://yourUserName@bitbucket.org/yourUsername/bookme.git ( link in the overview tab)
+* Clone repository: https://yourUserName@bitbucket.org/belms/bookme.git
 * Go to IntelliJ terminal to build the app run: mvn install 
 
