@@ -1,0 +1,58 @@
+.navbar.navbar-default {
+  border-bottom-color:#fee00c;
+  border-bottom-width:10px;
+}
+
+a .navbar-brand .navbar-link{
+background-image:url(assets/img/logo.png);
+background-size:contain;
+background-repeat:no-repeat;
+width:133px;
+background-position:center;
+padding:15px;
+margin:-4px;
+}
+
+form{background-color:rgba(7,84,103,0.28);
+width:60%;
+hight:auto;
+position:absolute;
+left: 250px;
+right: auto;
+top:100px;
+border-radius: 20px;
+padding:0px 30px 30px 30px;
+}
+
+header{background-size:cover;
+background-repeat:no-repeat;
+height:550px;
+margin:0px;
+padding:0px;
+background-position:center;
+margin-top:-22px;
+}
+
+.form_title{
+color:#fff;
+text-align:center;
+}
+
+.control-label{color:#fff;
+font-size:18px;}
+
+
+.form-control{width:120px;height:30px;}
+.form-group{height:25px;}
+
+
+.check_in{float:left;display:table-row;}
+.check_out{float:clear;}
+
+.form-group1{float:left; width:300px;margin-top:30px;}
+.float-group2{float:right;width:200px;}
+
+.button-sub{margin:auto;
+text-align:center;
+}
+
