@@ -24,16 +24,22 @@ window.writeValues = function(form) {
    document.getElementById("bookingForm").reset();
 
 
-   if (destination == 'Los Angeles') {
+   if (destination == 'Los Angeles' && stars ==3) {
        document.getElementById("image").innerHTML = "<img src='assets/img/LosAngeles.jpg'>";
-       document.getElementById("info").innerHTML = "Los Angeles...";
+       document.getElementById("info").innerHTML = "<a href='hotels.html/#LosAngeles'>Los Angeles...</a>";
    }
+   if (destination == 'Los Angeles' && stars ==2) {
+          document.getElementById("image").innerHTML = "<img src='assets/img/losAngeles2.jpg'>";
+          document.getElementById("info").innerHTML = "<a href='hotels.html/#LosAngeles'>Los Angeles...</a>";
+          document.getElementById("image").innerHTML = "<img src='assets/img/losAngeles3.jpg'>";
+          document.getElementById("info").innerHTML = "<a href='hotels.html/#LosAngeles'>Los Angeles...</a>";
+      }
    if (destination == 'New York') {
           document.getElementById("image").innerHTML = "<img src='assets/img/NewYork.jpg'>";
-          document.getElementById("info").innerHTML = "NewYork...";
+          document.getElementById("info").innerHTML = "<a href='hotels.html/#NewYork'>NewYork...</a>";
       }
    if (destination == 'Paris') {
              document.getElementById("image").innerHTML = "<img src='assets/img/Paris.jpg'>";
-             document.getElementById("info").innerHTML = "Paris...";
+             document.getElementById("info").innerHTML = "<a href='hotels.html/#Paris'>Paris...</a>";
          }
 }

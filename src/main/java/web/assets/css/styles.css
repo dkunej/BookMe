@@ -56,7 +56,7 @@ font-size:18px;}
 text-align:center;
 }
 
-body{background:rgba(197,244,255,0.30)}
+body{background:rgba(197,244,255,0.45)}
 
 #content{margin-left:100px;
     margin-right:100px;
@@ -72,4 +72,5 @@ img{padding-left:20px;
 padding-top:20px}
 
 #image{float:left;}
-#info{float:clear;}
+#info{float:clear;
+margin-right:300px}
