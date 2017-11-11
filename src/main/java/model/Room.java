@@ -26,7 +26,7 @@ public class Room {
     private Room hotelId_fk;
 
     @Column(name = "price")
-    private int price;
+    private double price;
 
     @Column(name = "availability")
     private boolean availability;
@@ -96,11 +96,11 @@ public class Room {
         this.hotelId_fk = hotelId_fk;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
