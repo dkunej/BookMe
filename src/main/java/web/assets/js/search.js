@@ -32,4 +32,8 @@ window.writeValues = function(form) {
           document.getElementById("image").innerHTML = "<img src='assets/img/NewYork.jpg'>";
           document.getElementById("info").innerHTML = "NewYork...";
       }
+   if (destination == 'Paris') {
+             document.getElementById("image").innerHTML = "<img src='assets/img/Paris.jpg'>";
+             document.getElementById("info").innerHTML = "Paris...";
+         }
 }
