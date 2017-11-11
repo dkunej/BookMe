@@ -49,7 +49,16 @@ public class Room {
     @OneToOne(mappedBy = "roomId_fk")
     private Set<RoomAmenities> roomAmenitiesSet;
 
-    public Room(int roomId, String roomName, int persons, Room hotelId_fk, int price, boolean availability, String pansion, int king_beds, int queen_beds, int small_beds, int extra_beds, Set<RoomAmenities> roomAmenitiesSet) {
+    @OneToMany(mappedBy = "unavailability_ID")
+    private Set<RoomUnavailability> unavailabilities;
+
+    @ManyToMany
+    @JoinTable(name = "room_photos_has_room", joinColumns = {
+            @JoinColumn(name = "room_ID", nullable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "photo_ID", nullable = false)})
+    private Set<RoomPhotos> photos;
+
+    public Room(int roomId, String roomName, int persons, Room hotelId_fk, double price, boolean availability, String pansion, int king_beds, int queen_beds, int small_beds, int extra_beds, Set<RoomAmenities> roomAmenitiesSet, Set<RoomUnavailability> unavailabilities, Set<RoomPhotos> photos) {
         this.roomId = roomId;
         this.roomName = roomName;
         this.persons = persons;
@@ -62,6 +71,8 @@ public class Room {
         this.small_beds = small_beds;
         this.extra_beds = extra_beds;
         this.roomAmenitiesSet = roomAmenitiesSet;
+        this.unavailabilities = unavailabilities;
+        this.photos = photos;
     }
 
     public int getRoomId() {
@@ -158,5 +169,21 @@ public class Room {
 
     public void setRoomAmenitiesSet(Set<RoomAmenities> roomAmenitiesSet) {
         this.roomAmenitiesSet = roomAmenitiesSet;
+    }
+
+    public Set<RoomUnavailability> getUnavailabilities() {
+        return unavailabilities;
+    }
+
+    public void setUnavailabilities(Set<RoomUnavailability> unavailabilities) {
+        this.unavailabilities = unavailabilities;
+    }
+
+    public Set<RoomPhotos> getPhotos() {
+        return photos;
+    }
+
+    public void setPhotos(Set<RoomPhotos> photos) {
+        this.photos = photos;
     }
 }
