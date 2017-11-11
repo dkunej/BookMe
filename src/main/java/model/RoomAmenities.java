@@ -35,6 +35,7 @@ public class RoomAmenities {
     @Column(name = "cable")
     private int cable;
 
+
     public RoomAmenities(Room roomId_fk, int crib, int hairdryer, int kettle, int washingMachine, int microwave, int refrigerator, int tv, int cable) {
         this.roomId_fk = roomId_fk;
         this.crib = crib;
