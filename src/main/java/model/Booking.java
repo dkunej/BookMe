@@ -37,5 +37,59 @@ public class Booking {
 
     private char payment;
 
+    public int getBookingId() {
+        return bookingId;
+    }
 
+    public void setBookingId(int bookingId) {
+        this.bookingId = bookingId;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public int getHotelId() {
+        return hotelId;
+    }
+
+    public void setHotelId(int hotelId) {
+        this.hotelId = hotelId;
+    }
+
+    public int getBookingDateId() {
+        return bookingDateId;
+    }
+
+    public void setBookingDateId(int bookingDateId) {
+        this.bookingDateId = bookingDateId;
+    }
+
+    public int getCheckinDateId() {
+        return checkinDateId;
+    }
+
+    public void setCheckinDateId(int checkinDateId) {
+        this.checkinDateId = checkinDateId;
+    }
+
+    public int getCheckoutDateId() {
+        return checkoutDateId;
+    }
+
+    public void setCheckoutDateId(int checkoutDateId) {
+        this.checkoutDateId = checkoutDateId;
+    }
+
+    public char getPayment() {
+        return payment;
+    }
+
+    public void setPayment(char payment) {
+        this.payment = payment;
+    }
 }
