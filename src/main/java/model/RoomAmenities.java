@@ -1,17 +1,15 @@
 package model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "ROOM_AMENITIES")
 public class RoomAmenities {
 
     @Id
-    @Column(name = "room_room_id", nullable = false)
-    private int roomID;
+    @OneToOne
+    @JoinColumn(name = "room", nullable = false)
+    private Room roomId_fk;
 
     @Column(name = "crib")
     private int crib;
@@ -25,6 +23,9 @@ public class RoomAmenities {
     @Column(name = "washing_machine")
     private int washingMachine;
 
+    @Column(name = "microwave")
+    private int microwave;
+
     @Column(name = "refrigerator")
     private int refrigerator;
 
@@ -34,23 +35,24 @@ public class RoomAmenities {
     @Column(name = "cable")
     private int cable;
 
-    public RoomAmenities(int roomID, int crib, int hairdryer, int kettle, int washingMachine, int refrigerator, int tv, int cable) {
-        this.roomID = roomID;
+    public RoomAmenities(Room roomId_fk, int crib, int hairdryer, int kettle, int washingMachine, int microwave, int refrigerator, int tv, int cable) {
+        this.roomId_fk = roomId_fk;
         this.crib = crib;
         this.hairdryer = hairdryer;
         this.kettle = kettle;
         this.washingMachine = washingMachine;
+        this.microwave = microwave;
         this.refrigerator = refrigerator;
         this.tv = tv;
         this.cable = cable;
     }
 
-    public int getRoomID() {
-        return roomID;
+    public Room getRoomId_fk() {
+        return roomId_fk;
     }
 
-    public void setRoomID(int roomID) {
-        this.roomID = roomID;
+    public void setRoomId_fk(Room roomId_fk) {
+        this.roomId_fk = roomId_fk;
     }
 
     public int getCrib() {
@@ -83,6 +85,14 @@ public class RoomAmenities {
 
     public void setWashingMachine(int washingMachine) {
         this.washingMachine = washingMachine;
+    }
+
+    public int getMicrowave() {
+        return microwave;
+    }
+
+    public void setMicrowave(int microwave) {
+        this.microwave = microwave;
     }
 
     public int getRefrigerator() {
