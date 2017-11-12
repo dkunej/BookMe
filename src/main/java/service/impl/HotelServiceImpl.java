@@ -2,11 +2,13 @@ package service.impl;
 
 import model.Hotel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import repository.HotelRepository;
 import service.HotelService;
 
 import java.util.List;
 
+@Service
 public class HotelServiceImpl implements HotelService {
 
     @Autowired
