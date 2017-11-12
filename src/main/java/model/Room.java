@@ -46,8 +46,9 @@ public class Room {
     @Column(name = "extra_beds")
     private int extra_beds;
 
-    @OneToOne(mappedBy = "roomId_fk")
-    private Set<RoomAmenities> roomAmenitiesSet;
+    @ManyToOne
+    @JoinColumn(name = "room_amenities_amenities_ID")
+    private int room_amenities_amenities_ID;
 
     @OneToMany(mappedBy = "unavailability_ID")
     private Set<RoomUnavailability> unavailabilities;
@@ -58,7 +59,7 @@ public class Room {
             inverseJoinColumns = {@JoinColumn(name = "photo_ID", nullable = false)})
     private Set<RoomPhotos> photos;
 
-    public Room(int roomId, String roomName, int persons, Room hotelId_fk, double price, boolean availability, String pansion, int king_beds, int queen_beds, int small_beds, int extra_beds, Set<RoomAmenities> roomAmenitiesSet, Set<RoomUnavailability> unavailabilities, Set<RoomPhotos> photos) {
+    public Room(int roomId, String roomName, int persons, Room hotelId_fk, double price, boolean availability, String pansion, int king_beds, int queen_beds, int small_beds, int extra_beds, int room_amenities_amenities_ID, Set<RoomUnavailability> unavailabilities, Set<RoomPhotos> photos) {
         this.roomId = roomId;
         this.roomName = roomName;
         this.persons = persons;
@@ -70,7 +71,7 @@ public class Room {
         this.queen_beds = queen_beds;
         this.small_beds = small_beds;
         this.extra_beds = extra_beds;
-        this.roomAmenitiesSet = roomAmenitiesSet;
+        this.room_amenities_amenities_ID = room_amenities_amenities_ID;
         this.unavailabilities = unavailabilities;
         this.photos = photos;
     }
@@ -163,12 +164,12 @@ public class Room {
         this.extra_beds = extra_beds;
     }
 
-    public Set<RoomAmenities> getRoomAmenitiesSet() {
-        return roomAmenitiesSet;
+    public int getRoom_amenities_amenities_ID() {
+        return room_amenities_amenities_ID;
     }
 
-    public void setRoomAmenitiesSet(Set<RoomAmenities> roomAmenitiesSet) {
-        this.roomAmenitiesSet = roomAmenitiesSet;
+    public void setRoom_amenities_amenities_ID(int room_amenities_amenities_ID) {
+        this.room_amenities_amenities_ID = room_amenities_amenities_ID;
     }
 
     public Set<RoomUnavailability> getUnavailabilities() {
