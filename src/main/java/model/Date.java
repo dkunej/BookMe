@@ -1,9 +1,7 @@
 package model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Daniela on 11-Nov-17.
@@ -33,6 +31,17 @@ public class Date {
 
     @Column(name = "seconds")
     private int seconds;
+
+    @OneToMany(mappedBy = "checkoutDateId")
+    private List<Booking> bookingsbyCheckOut;
+
+    @OneToMany(mappedBy = "checkinDateId")
+    private List<Booking> bookingsbyCheckIn;
+
+    @OneToMany(mappedBy = "bookingDateId")
+    private List<Booking> bookingsbyBookingDate;
+
+
 
     public int getDateId() {
         return dateId;

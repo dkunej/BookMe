@@ -17,6 +17,9 @@ public class Country {
     @OneToMany(mappedBy = "countryAbbr")
     private Set<User> users;
 
+    @OneToMany(mappedBy = "countryAbbr")
+    private Set<Address> addresses;
+
     public Country(String countryAbbr, String countryName, Set<User> users) {
         this.countryAbbr = countryAbbr;
         this.countryName = countryName;
@@ -24,6 +27,15 @@ public class Country {
     }
 
     //--------- Getters and setter--------------------
+
+    public Set<Address> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(Set<Address> addresses) {
+        this.addresses = addresses;
+    }
+
     public String getCountryAbbr() {
         return countryAbbr;
     }

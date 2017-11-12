@@ -1,6 +1,7 @@
 package model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "USER")
@@ -34,6 +35,9 @@ public class User {
     @ManyToOne
     @JoinColumn(name = "PAYMENT_ID", nullable = false)
     private String paymentMethod;
+
+    @OneToMany(mappedBy = "userId")
+    private List<Booking> bookings;
 
     public User(int userID, String firstName, String lastName, String country, String email, Country countryAbbr, int passportNum, int IDNum, String paymentMethod) {
         this.userID = userID;
