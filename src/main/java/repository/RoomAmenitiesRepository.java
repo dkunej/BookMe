@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface RoomAmenitiesRepository extends JpaRepository<RoomAmenities, Long> {
 
-    RoomAmenities getByRoomId_fk(int roomId_fk);
+    RoomAmenities getByAmenities_ID(int amenities_ID);
 
     List<RoomAmenities> getByCrib(int crib);
 }

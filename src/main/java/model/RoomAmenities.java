@@ -1,15 +1,15 @@
 package model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "ROOM_AMENITIES")
 public class RoomAmenities {
 
     @Id
-    @OneToOne
-    @JoinColumn(name = "room", nullable = false)
-    private Room roomId_fk;
+    @Column(name = "amenities_ID", nullable = false)
+    private int amenities_ID;
 
     @Column(name = "crib")
     private int crib;
@@ -35,9 +35,11 @@ public class RoomAmenities {
     @Column(name = "cable")
     private int cable;
 
+    @OneToMany(mappedBy = "room_ID")
+    private Set<Room> rooms;
 
-    public RoomAmenities(Room roomId_fk, int crib, int hairdryer, int kettle, int washingMachine, int microwave, int refrigerator, int tv, int cable) {
-        this.roomId_fk = roomId_fk;
+    public RoomAmenities(int amenities_ID, int crib, int hairdryer, int kettle, int washingMachine, int microwave, int refrigerator, int tv, int cable, Set<Room> rooms) {
+        this.amenities_ID = amenities_ID;
         this.crib = crib;
         this.hairdryer = hairdryer;
         this.kettle = kettle;
@@ -46,14 +48,15 @@ public class RoomAmenities {
         this.refrigerator = refrigerator;
         this.tv = tv;
         this.cable = cable;
+        this.rooms = rooms;
     }
 
-    public Room getRoomId_fk() {
-        return roomId_fk;
+    public int getAmenities_ID() {
+        return amenities_ID;
     }
 
-    public void setRoomId_fk(Room roomId_fk) {
-        this.roomId_fk = roomId_fk;
+    public void setAmenities_ID(int amenities_ID) {
+        this.amenities_ID = amenities_ID;
     }
 
     public int getCrib() {
@@ -118,5 +121,13 @@ public class RoomAmenities {
 
     public void setCable(int cable) {
         this.cable = cable;
+    }
+
+    public Set<Room> getRooms() {
+        return rooms;
+    }
+
+    public void setRooms(Set<Room> rooms) {
+        this.rooms = rooms;
     }
 }
