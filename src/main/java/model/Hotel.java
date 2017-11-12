@@ -1,9 +1,6 @@
 package model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by Daniela on 09-Nov-17.
@@ -17,16 +14,20 @@ public class Hotel {
     @Column(name = "hotel_ID")
     private int hotelId;
 
-    @Column(name = "checkin_start_date_ID")
+    @ManyToOne
+    @JoinColumn(name = "checkin_start_date_ID", referencedColumnName = "date_ID")
     private int checkinStartDateId_fk;
 
-    @Column(name = "checkin_end_date_ID")
+    @ManyToOne
+    @JoinColumn(name = "checkin_end_date_ID", referencedColumnName = "date_ID")
     private int checkinEndDateId_fk;
 
-    @Column(name = "checkout_start_date_ID_fk")
+    @ManyToOne
+    @JoinColumn(name = "checkout_start_date_ID_fk", referencedColumnName = "date_ID")
     private int checkoutStartDateId_fk;
 
-    @Column(name = "checkout_end_date_ID_fk")
+    @ManyToOne
+    @JoinColumn(name = "checkout_end_date_ID_fk", referencedColumnName = "date_ID")
     private int checkoutEndDateId_fk;
 
     @Column(name = "name")
