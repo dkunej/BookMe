@@ -61,7 +61,7 @@ body{background:rgba(197,244,255,0.45)}
 #content{margin-left:100px;
     margin-right:100px;
     background:white;
-    height:auto;
+    height:500px;
     border-radius: 25px;
     padding-left:45px;
 }
@@ -74,3 +74,37 @@ padding-top:20px}
 #image{float:left;}
 #info{float:clear;
 margin-right:300px}
+
+
+/*
+Hotels
+*/
+
+
+#hotels{
+    width:1000px;
+    height:1350px;
+    background:white;
+    border-radius: 25px;
+    padding:25px 45px;
+    margin:auto;
+    }
+
+.image{
+    width:300px;
+    height:200px;
+    padding-right:20px;
+     float:left;}
+
+.text{
+    width:800px;
+    height:200px;
+   float:clear;}
+
+h2{padding-top:20px;}
+
+a{text-decoration:none;}
+
+
+
+

@@ -24,11 +24,12 @@ window.writeValues = function(form) {
    document.getElementById("bookingForm").reset();
 
 
-   if (destination == 'Los Angeles' && stars ==3) {
+   if (destination == 'Los Angeles' && stars ==4) {
        document.getElementById("image").innerHTML = "<img src='assets/img/LosAngeles.jpg'>";
-       document.getElementById("info").innerHTML = "<a href='hotels.html/#LosAngeles'>Los Angeles...</a>";
+       document.getElementById("info").innerHTML = "<h4><a href='hotels.html/#LosAngeles'>Los Angeles Hotel &starf;&starf;&starf;&starf;</a></h4>" +
+       "<p>Hotel Cecil is a budget hotel in Downtown Los Angeles, located at 640 S. Main Street, opened in 1927[1].It has 600 guest rooms. The hotel has a checkered history, but is currently being renovated and redeveloped into a mix of hotel rooms and residential units </p>";
    }
-   if (destination == 'Los Angeles' && stars ==2) {
+   if (destination == 'Los Angeles' && stars ==3) {
           document.getElementById("image").innerHTML = "<img src='assets/img/losAngeles2.jpg'>";
           document.getElementById("info").innerHTML = "<a href='hotels.html/#LosAngeles'>Los Angeles...</a>";
           document.getElementById("image").innerHTML = "<img src='assets/img/losAngeles3.jpg'>";
