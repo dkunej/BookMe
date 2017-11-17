@@ -1,0 +1,32 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "model.User" table = "USER">
+
+        <meta attribute = "class-description">
+            This class contains the user detail.
+        </meta>
+
+        <id name = "userID" type = "int" column = "USER_ID">
+            <generator class="native"/>
+        </id>
+
+        <property name = "firstName" column = "FIRSTNAME" type = "string"/>
+        <property name = "lastName" column = "LASTNAME" type = "string"/>
+        <property name = "email" column = "EMAIL" type = "string"/>
+        <many-to-one name="countryAbbr" class= "model.Country" column="COUNTRY_ABBR" unique="true" not-null="true"
+                     cascade="all"/>
+        <property name="passportNum" column="PASSPORT_NUM" type="int"/>
+        <property name="IDNum" column="ID_NUM" type="int"/>
+        <many-to-one name="paymentMethod" class= "model.Payment" column="PAYMENT_ID" unique="true" not-null="true"
+                     cascade="all"/>
+    <set name="bookings">
+        <key column="USER_ID" not-null="true"/>
+        <one-to-many class="model.Booking"/>
+    </set>
+
+    </class>
+</hibernate-mapping>
