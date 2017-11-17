@@ -1,7 +1,6 @@
 package model;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "USER")
@@ -37,7 +36,15 @@ public class User {
     private String paymentMethod;
 
     @OneToMany(mappedBy = "userId")
-    private List<Booking> bookings;
+    private Booking bookings;
+
+    public Booking getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(Booking bookings) {
+        this.bookings = bookings;
+    }
 
     public User(int userID, String firstName, String lastName, String country, String email, Country countryAbbr, int passportNum, int IDNum, String paymentMethod) {
         this.userID = userID;
