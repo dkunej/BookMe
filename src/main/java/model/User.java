@@ -9,7 +9,7 @@ public class User {
     @Column(name = "USER_ID", nullable = false)
     private int userID;
 
-    @Column(name = "FIRSTNAME")
+    @Column(name = "firstname")
     private String firstName;
 
     @Column(name = "LASTNAME")
@@ -22,7 +22,7 @@ public class User {
     private String email;
 
     @ManyToOne
-    @JoinColumn(name = "COUNTRY_ABBR", nullable = false)
+    @JoinColumn(name = "COUNTRY", nullable = false)
     private Country countryAbbr;
 
     @Column(name = "PASSPORT_NUM")
@@ -46,16 +46,7 @@ public class User {
         this.bookings = bookings;
     }
 
-    public User(int userID, String firstName, String lastName, String country, String email, Country countryAbbr, int passportNum, int IDNum, String paymentMethod) {
-        this.userID = userID;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.country = country;
-        this.email = email;
-        this.countryAbbr = countryAbbr;
-        this.passportNum = passportNum;
-        this.IDNum = IDNum;
-        this.paymentMethod = paymentMethod;
+    public User() {
     }
 
 

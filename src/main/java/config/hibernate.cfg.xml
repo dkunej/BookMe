@@ -26,8 +26,5 @@
          student
       </property>
       
-      <!-- List of XML mapping files -->
-      <mapping resource="config/mapper/User.hbm.xml"/>
-      
    </session-factory>
 </hibernate-configuration>
