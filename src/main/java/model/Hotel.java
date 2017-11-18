@@ -40,6 +40,12 @@ public class Hotel {
     @Column(name = "description")
     private String hotelDescription;
 
+    @Column(name = "stars")
+    private int stars;
+
+    @Column(name = "image")
+    private byte[] image;
+
     public int getHotelId() {
         return hotelId;
     }
@@ -94,5 +100,21 @@ public class Hotel {
 
     public void setHotelDescription(String hotelDescription) {
         this.hotelDescription = hotelDescription;
+    }
+
+    public int getStars() {
+        return stars;
+    }
+
+    public void setStars(int stars) {
+        this.stars = stars;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 }
