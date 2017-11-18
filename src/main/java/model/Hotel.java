@@ -40,6 +40,25 @@ public class Hotel {
     @Column(name = "description")
     private String hotelDescription;
 
+    @OneToOne(mappedBy = "hotelId")
+    private Address address;
+
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
     public int getHotelId() {
         return hotelId;
     }
