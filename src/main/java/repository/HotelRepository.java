@@ -13,5 +13,7 @@ public interface HotelRepository extends JpaRepository<Hotel, Long> {
 
     List<Hotel> getAllByCheckinStartDateId_fkAndCheckinEndDateId_fk(int startDate, int endDate);
 
+    List<Hotel> getAllByAddress_City(String city);
+
 
 }

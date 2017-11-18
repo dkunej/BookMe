@@ -1,6 +1,7 @@
 package model;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Daniela on 09-Nov-17.
@@ -30,11 +31,39 @@ public class Hotel {
     @JoinColumn(name = "checkout_end_date_ID_fk", referencedColumnName = "date_ID")
     private int checkoutEndDateId_fk;
 
+    @OneToMany(mappedBy = "hotelId")
+    private List<Booking> bookings;
+
     @Column(name = "name")
     private String hotelName;
 
     @Column(name = "description")
     private String hotelDescription;
+
+    @Column(name = "stars")
+    private int stars;
+
+    @Column(name = "image")
+    private byte[] image;
+
+    @OneToOne(mappedBy = "hotelId")
+    private Address address;
+
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 
     public int getHotelId() {
         return hotelId;

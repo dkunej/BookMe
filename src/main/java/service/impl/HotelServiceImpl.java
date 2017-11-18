@@ -23,4 +23,10 @@ public class HotelServiceImpl implements HotelService {
     public List<Hotel> getAllByCheckinStartDateId_fkAndCheckinEndDateId_fk(int startDate, int endDate) {
         return hotelRepository.getAllByCheckinStartDateId_fkAndCheckinEndDateId_fk(startDate, endDate);
     }
+
+    @Override
+    public List<Hotel> getAllByAddress_City(String city) {
+        return hotelRepository.getAllByAddress_City(city);
+    }
+
 }
