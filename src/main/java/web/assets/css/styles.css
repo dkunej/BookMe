@@ -41,12 +41,11 @@ text-align:center;
 .control-label{color:#fff;
 font-size:18px;}
 
-
-.form-control{width:120px;height:35px;}
+.form-control{width:120px;height:40px;}
 .form-group{height:25px;}
 
 
-.check_in{float:left;display:table-row;}
+.check_in{float:left;}
 .check_out{float:clear;}
 
 .form-group1{float:left; width:300px;margin-top:30px;}

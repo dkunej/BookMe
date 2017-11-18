@@ -77,8 +77,8 @@ function checkOut()
 
 function numberAdults()
 {
-	var x = document.forms["booking_form"]["phoneNum"].value;
-	if(x == null || x == "" || !phoneNum(x)) 
+	var x = document.forms["booking_form"]["Anumber"].value;
+	if(x == null || x == "" || !listNumber(x))
 	{
 		document.getElementById("error_Adults").style.display = "inline";
 		document.forms["booking_form"]["Anumber"].style.border = "3px solid red";
@@ -91,7 +91,7 @@ function numberAdults()
 function numberChildren()
 {
 	var x = document.forms["booking_form"]["Cnumber"].value;
-	if(x == null || x == "" || !alphabetic(x)) 
+	if(x == null || x == "" || !listNumber(x))
 	{
 		document.getElementById("error_children").style.display = "inline";
 		document.forms["booking_form"]["Cnumber"].style.border = "3px solid red";
@@ -129,4 +129,12 @@ function date(dateString)
     return day > 0 && day <= monthLength[month - 1];
 }
 
+
+function listNumber(value) {
+   if (input.value == 0) {
+     input.setCustomValidity('The number must not be zero.');
+   } else {
+     input.setCustomValidity('');
+   }
+ }
 
