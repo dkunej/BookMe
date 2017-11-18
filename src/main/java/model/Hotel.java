@@ -40,6 +40,12 @@ public class Hotel {
     @Column(name = "description")
     private String hotelDescription;
 
+    @Column(name = "stars")
+    private int stars;
+
+    @Column(name = "image")
+    private byte[] image;
+
     @OneToOne(mappedBy = "hotelId")
     private Address address;
 
