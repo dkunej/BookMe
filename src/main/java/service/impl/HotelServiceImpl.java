@@ -29,4 +29,10 @@ public class HotelServiceImpl implements HotelService {
         return hotelRepository.getAllByAddress_City(city);
     }
 
+    @Override
+    public List<Hotel> getAllByCheckinStartDateId_fkAndCheckinEndDateId_fkAAndAddress_City(int startDate, int endDate, String city)
+    {
+        return hotelRepository.getAllByCheckinStartDateId_fkAndCheckinEndDateId_fkAAndAddress_City(startDate,endDate,city);
+    }
+
 }
