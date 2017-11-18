@@ -28,5 +28,4 @@ public class HotelController {
         model.addAttribute("hotelList", hotels);
         return HOTEL_LIST;
     }
-
 }
