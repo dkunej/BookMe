@@ -75,10 +75,6 @@ padding-top:20px}
 margin-right:300px}
 
 
-/*
-Hotels
-*/
-
 
 #hotels{
     width:1000px;
@@ -105,5 +101,17 @@ h2{padding-top:20px;}
 a{text-decoration:none;}
 
 
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
 
