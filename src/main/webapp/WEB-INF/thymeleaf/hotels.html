@@ -1,0 +1,270 @@
+<head xmlns:th="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.thymeleaf.org"
+      layout:decorator="/layout" th:with="currentPage='hotel_list'">
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bookM3</title>
+    <link rel="stylesheet" href="../../../java/web/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../java/web/assets/css/styles.css">
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand navbar-link" href="../../../java/web/index.html"
+               style="background-image:url(&quot;assets/img/logo.png&quot;)"> </a>
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span
+                    class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span
+                    class="icon-bar"></span></button>
+        </div>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">About us</a></li>
+                <li><a href="hotels.html">Best Hotels</a></li>
+                <li><a href="#">Review's </a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div th:each="hotels : ${hotelList}" id="hotels">
+    <h2 id="LosAngeles">Beverly Hills</h2>
+    <div>
+        <span><h4 th:text="${hotels.hotelName}">Beverly Wilshire</h4></span>
+        <span><p th:text="${hotels.description}">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p></span>
+    </div>
+    <!--
+        <img src='assets/img/LosAngeles2.jpg' class="image">
+        <div class="text">
+            <h4>Hotel Cecil &starf;&starf;&starf;</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.
+            </p>
+        </div>
+        <img src='assets/img/LosAngeles3.jpg' class="image">
+        <div class="text">
+            <h4>Hotel Solaire &starf;&starf;</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.
+            </p>
+        </div>
+        <h2 id="NewYork">New York</h2>
+        <img src='assets/img/NewYork.jpg' class="image">
+        <div class="text">
+            <h4>Row NYC Hotel &starf;&starf;&starf;</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.
+            </p>
+        </div>
+        <h2 id="Paris">Paris</h2>
+        <img src='assets/img/Paris.jpg' class="image">
+        <div class="text">
+            <h4>Paris Hotel &starf;&starf;&starf;&starf;&starf;</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.
+            </p>
+        </div>-->
+
+
+    <script type="text/javascript" src="../../../java/web/assets/js/default.js"></script>
+    <script type="text/javascript" src="../../../java/web/assets/js/gallery.js"></script>
+    <script type="text/javascript" src="../../../java/web/assets/js/gallery.min.js"></script>
+
+
+    <div id="gallerSlider"
+         style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:480px;overflow:hidden;visibility:hidden;">
+        <!-- Loading Screen -->
+        <div data-u="loading" class="spinImg"
+             style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;"
+                 src="../../../java/web/assets/img/spin.svg"/>
+        </div>
+        <div data-u="slides"
+             style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
+
+            <div>
+                <img data-u="image" src="../../../java/web/assets/img/bHotel/door.jpg"/>
+                <div data-u="thumb">
+                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/door200x100.jpg"/>
+                    <div class="ti">Slide Description</div>
+                </div>
+            </div>
+            <div>
+                <img data-u="image" src="../../../java/web/assets/img/bHotel/enterenc.jpg"/>
+                <div data-u="thumb">
+                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/enterenc200x100.jpg"/>
+                    <div class="ti">Entrance</div>
+                </div>
+            </div>
+            <div>
+                <img data-u="image" src="../../../java/web/assets/img/bHotel/lobby.jpg"/>
+                <div data-u="thumb">
+                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/lobby200x100.jpg"/>
+                    <div class="ti">Lobby</div>
+                </div>
+            </div>
+            <div>
+                <img data-u="image" src="../../../java/web/assets/img/bHotel/view.jpg"/>
+                <div data-u="thumb">
+                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/view200x100.jpg"/>
+                    <div class="ti">View</div>
+                </div>
+            </div>
+            <div>
+                <img data-u="image" src="../../../java/web/assets/img/bHotel/restoraunt.jpg"/>
+                <div data-u="thumb">
+                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/restoraunt200x100.jpg"/>
+                    <div class="ti">Restaurant</div>
+                </div>
+            </div>
+            <div>
+                <img data-u="image" src="../../../java/web/assets/img/bHotel/room.jpg"/>
+                <div data-u="thumb">
+                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/room200x100.jpg"/>
+                    <div class="ti">Room 1</div>
+                </div>
+            </div>
+            <div>
+                <img data-u="image" src="../../../java/web/assets/img/bHotel/room2.jpg"/>
+                <div data-u="thumb">
+                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/room2200x100.jpg"/>
+                    <div class="ti">Room 2</div>
+                </div>
+            </div>
+            <div>
+                <img data-u="image" src="../../../java/web/assets/img/bHotel/room3.jpg"/>
+                <div data-u="thumb">
+                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/room3200x100.jpg"/>
+                    <div class="ti">Room 3</div>
+                </div>
+            </div>
+            <div>
+                <img data-u="image" src="../../../java/web/assets/img/bHotel/room4.jpg"/>
+                <div data-u="thumb">
+                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/room4200x100.jpg"/>
+                    <div class="ti">Room 4</div>
+                </div>
+            </div>
+            <div>
+                <img data-u="image" src="../../../java/web/assets/img/bHotel/room5.jpg"/>
+                <div data-u="thumb">
+                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/room5200x100.jpg"/>
+                    <div class="ti">Room 5</div>
+                </div>
+            </div>
+            <div>
+                <img data-u="image" src="../../../java/web/assets/img/bHotel/bedroom.jpg"/>
+                <div data-u="thumb">
+                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/bedroom200x100.jpg"/>
+                    <div class="ti">Bedroom</div>
+                </div>
+            </div>
+            <div>
+                <img data-u="image" src="../../../java/web/assets/img/bHotel/bedroom2.jpg"/>
+                <div data-u="thumb">
+                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/bedroom2200x100.jpg"/>
+                    <div class="ti">Bedroom</div>
+                </div>
+            </div>
+            <div>
+                <img data-u="image" src="../../../java/web/assets/img/bHotel/bathroom.jpg"/>
+                <div data-u="thumb">
+                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/bedroom200x100.jpg"/>
+                    <div class="ti">Bathroom</div>
+                </div>
+            </div>
+            <div>
+                <img data-u="image" src="../../../java/web/assets/img/bHotel/outside.jpg"/>
+                <div data-u="thumb">
+                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/outside200x100.jpg"/>
+                    <div class="ti">Outside pool</div>
+                </div>
+            </div>
+            <div>
+                <img data-u="image" src="../../../java/web/assets/img/bHotel/inside.jpg"/>
+                <div data-u="thumb">
+                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/inside200x100.jpg"/>
+                    <div class="ti">Inside pool</div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Thumbnail Navigator -->
+        <div data-u="thumbnavigator" class="navtumb"
+             style="position:absolute;left:0px;bottom:0px;width:980px;height:100px;cursor:default;" data-autocenter="1"
+             data-scale-bottom="0.75">
+            <div data-u="slides">
+                <div data-u="prototype" class="p">
+                    <div data-u="thumbnailtemplate" class="t"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Arrow Navigator -->
+        <div data-u="arrowleft" class="arrow" style="width:55px;height:55px;top:162px;left:25px;" data-scale="0.75">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+            </svg>
+        </div>
+        <div data-u="arrowright" class="arrow" style="width:55px;height:55px;top:162px;right:25px;" data-scale="0.75">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+            </svg>
+        </div>
+</div>
+    <script type="text/javascript">gallery();</script>
+
+    <div class="row">
+        <div class="column" style="float: left;width: 33.33%;padding: 10px;">
+            <h4>Luxurious Guest Rooms</h4>
+            <li>classic views</li>
+            <li>furnished balconies</li>
+            <li>Italian marble bathrooms</li>
+            <li>standard Internet</li>
+
+        </div>
+        <div class="column" style="float: left;width: 33.33%;padding: 10px;">
+            <h4>Signature Suites</h4>
+            <li>one-bedroom layouts</li>
+            <li>furnished balconies</li>
+            <li>premium Internet</li>
+            <li>added privacy</li>
+
+        </div>
+        <div class="column" style="float: left;width: 33.33%;padding: 10px;">
+            <h4>Specialty Suites</h4>
+            <li>presidential accommodations</li>
+            <li>Residential-style</li>
+            <li>up to three bedrooms</li>
+            <li>furnished terraces</li>
+            <li>private-floor access</li>
+            <li>premium Internet</li>
+
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
