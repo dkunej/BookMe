@@ -20,8 +20,8 @@ public class HotelServiceImpl implements HotelService {
     }
 
     @Override
-    public List<Hotel> getAllByCheckinStartDateId_fkAndCheckinEndDateId_fk(int startDate, int endDate) {
-        return hotelRepository.getAllByCheckinStartDateId_fkAndCheckinEndDateId_fk(startDate, endDate);
+    public List<Hotel> getAllByCheckinStartDateIdAndCheckinEndDateId(int startDate, int endDate) {
+        return hotelRepository.getAllByCheckinStartDateIdAndCheckinEndDateId(startDate, endDate);
     }
 
     @Override
@@ -30,9 +30,9 @@ public class HotelServiceImpl implements HotelService {
     }
 
     @Override
-    public List<Hotel> getAllByCheckinStartDateId_fkAndCheckinEndDateId_fkAAndAddress_City(int startDate, int endDate, String city)
+    public List<Hotel> getAllByCheckinStartDateIdAndCheckinEndDateIdAndAddress_City(int startDate, int endDate, String city)
     {
-        return hotelRepository.getAllByCheckinStartDateId_fkAndCheckinEndDateId_fkAAndAddress_City(startDate,endDate,city);
+        return hotelRepository.getAllByCheckinStartDateIdAndCheckinEndDateIdAndAddress_City(startDate,endDate,city);
     }
 
 }

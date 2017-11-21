@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface RoomPhotosRepository extends JpaRepository<RoomPhotos, Long> {
 
-    RoomPhotos getByPhoto_ID(int photo_ID);
+    RoomPhotos getByPhotoID(int photo_ID);
 
     List<RoomPhotos> getByPhoto(byte photo[]);
 }

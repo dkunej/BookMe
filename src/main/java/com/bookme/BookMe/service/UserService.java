@@ -7,7 +7,7 @@ import java.util.List;
 public interface UserService {
     User getByFirstNameAndLastName(String fName, String lname);
 
-    List<User> getAllByCountry(String country);
+    List<User> getAllByCountryAbbr(String country);
 
     User getByPassportNum(int num);
 }

@@ -8,7 +8,7 @@ import java.util.Set;
 public class Country {
 
     @Id
-    @Column(name = "COLUMN_ABBR", nullable = false)
+    @Column(name = "COUNTRY_ABBR", nullable = false)
     private String countryAbbr;
 
     @Column(name = "NAME")

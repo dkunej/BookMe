@@ -16,14 +16,11 @@ public class User {
     @Column(name = "LASTNAME")
     private String lastName;
 
-    @Column(name = "COUNTRY")
-    private String country;
-
     @Column(name = "EMAIL")
     private String email;
 
     @ManyToOne
-    @JoinColumn(name = "COUNTRY", nullable = false)
+    @JoinColumn(name = "COUNTRY_ABBR", nullable = false)
     private Country countryAbbr;
 
     @Column(name = "PASSPORT_NUM")
@@ -69,14 +66,6 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
     }
 
     public String getEmail() {

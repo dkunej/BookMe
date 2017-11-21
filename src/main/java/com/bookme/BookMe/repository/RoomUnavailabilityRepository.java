@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface RoomUnavailabilityRepository extends JpaRepository<RoomUnavailability, Long> {
 
-    RoomUnavailability getByRoom_room_ID(int room_room_ID);
+    RoomUnavailability getByRoomID(int room_room_ID);
 
-    List<RoomUnavailability> getByStart_date_IDAndEnd_date_ID(int start_date_ID, int end_date_ID);
+    List<RoomUnavailability> getByStartDateIDAndEndDateID(int start_date_ID, int end_date_ID);
 }

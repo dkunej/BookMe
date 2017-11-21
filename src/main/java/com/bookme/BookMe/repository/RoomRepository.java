@@ -11,7 +11,7 @@ public interface RoomRepository extends JpaRepository<Room, Long> {
 
     List<Room> getAllByAvailability(boolean isAvailable);
 
-    List<Room> getAllByHotelId_fk(int hotelID);
+    List<Room> getAllByHotelId(int hotelID);
 
     List<Room> getAllByPrice(double price);
 

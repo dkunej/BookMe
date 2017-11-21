@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface RoomAmenitiesService {
 
-    RoomAmenities getByAmenities_ID(int amenities_ID);
+    RoomAmenities getByAmenitiesID(int amenities_ID);
 
     List<RoomAmenities> getByCrib(int crib);
 }

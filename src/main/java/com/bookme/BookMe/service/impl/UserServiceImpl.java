@@ -20,8 +20,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> getAllByCountry(String country) {
-        return userRepository.getAllByCountry(country);
+    public List<User> getAllByCountryAbbr(String country) {
+        return userRepository.getAllByCountryAbbr(country);
     }
 
     @Override

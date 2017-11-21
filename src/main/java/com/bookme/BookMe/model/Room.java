@@ -23,7 +23,7 @@ public class Room {
 
     @ManyToOne
     @JoinColumn(name = "hotel_hotel_ID", nullable = false)
-    private Room hotelId_fk;
+    private Room hotelId;
 
     @Column(name = "price")
     private double price;
@@ -50,7 +50,7 @@ public class Room {
     @JoinColumn(name = "room_amenities_amenities_ID")
     private RoomAmenities room_amenities_amenities_ID;
 
-    @OneToMany(mappedBy = "unavailability_ID")
+    @OneToMany(mappedBy = "unavailabilityID")
     private Set<RoomUnavailability> unavailabilities;
 
     @ManyToMany
@@ -63,7 +63,7 @@ public class Room {
         this.roomId = roomId;
         this.roomName = roomName;
         this.persons = persons;
-        this.hotelId_fk = hotelId_fk;
+        this.hotelId = hotelId_fk;
         this.price = price;
         this.availability = availability;
         this.pansion = pansion;
@@ -100,12 +100,12 @@ public class Room {
         this.persons = persons;
     }
 
-    public Room getHotelId_fk() {
-        return hotelId_fk;
+    public Room getHotelId() {
+        return hotelId;
     }
 
-    public void setHotelId_fk(Room hotelId_fk) {
-        this.hotelId_fk = hotelId_fk;
+    public void setHotelId(Room hotelId_fk) {
+        this.hotelId = hotelId_fk;
     }
 
     public double getPrice() {

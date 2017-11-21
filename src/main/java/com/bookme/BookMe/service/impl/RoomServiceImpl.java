@@ -21,8 +21,8 @@ public class RoomServiceImpl implements RoomService {
     }
 
     @Override
-    public List<Room> getAllByHotelId_fk(int hotelID) {
-        return roomRepository.getAllByHotelId_fk(hotelID);
+    public List<Room> getAllByHotelId(int hotelID) {
+        return roomRepository.getAllByHotelId(hotelID);
     }
 
     @Override

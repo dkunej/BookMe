@@ -11,22 +11,22 @@ public class RoomPhotos {
 
     @Id
     @Column(name = "photo_ID", nullable = false)
-    private int photo_ID;
+    private int photoID;
 
     @Column(name = "photo", nullable = false)
     private byte[] photo;
 
     public RoomPhotos(int photo_ID, byte[] photo) {
-        this.photo_ID = photo_ID;
+        this.photoID = photo_ID;
         this.photo = photo;
     }
 
-    public int getPhoto_ID() {
-        return photo_ID;
+    public int getPhotoID() {
+        return photoID;
     }
 
-    public void setPhoto_ID(int photo_ID) {
-        this.photo_ID = photo_ID;
+    public void setPhotoID(int photoID) {
+        this.photoID = photoID;
     }
 
     public byte[] getPhoto() {

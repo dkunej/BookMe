@@ -9,7 +9,7 @@ public class RoomAmenities {
 
     @Id
     @Column(name = "amenities_ID", nullable = false)
-    private int amenities_ID;
+    private int amenitiesID;
 
     @Column(name = "crib")
     private int crib;
@@ -39,7 +39,7 @@ public class RoomAmenities {
     private Set<Room> rooms;
 
     public RoomAmenities(int amenities_ID, int crib, int hairdryer, int kettle, int washingMachine, int microwave, int refrigerator, int tv, int cable, Set<Room> rooms) {
-        this.amenities_ID = amenities_ID;
+        this.amenitiesID = amenities_ID;
         this.crib = crib;
         this.hairdryer = hairdryer;
         this.kettle = kettle;
@@ -51,12 +51,12 @@ public class RoomAmenities {
         this.rooms = rooms;
     }
 
-    public int getAmenities_ID() {
-        return amenities_ID;
+    public int getAmenitiesID() {
+        return amenitiesID;
     }
 
-    public void setAmenities_ID(int amenities_ID) {
-        this.amenities_ID = amenities_ID;
+    public void setAmenitiesID(int amenitiesID) {
+        this.amenitiesID = amenitiesID;
     }
 
     public int getCrib() {

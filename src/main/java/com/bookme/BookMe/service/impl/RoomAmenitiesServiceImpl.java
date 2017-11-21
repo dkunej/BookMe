@@ -15,8 +15,8 @@ public class RoomAmenitiesServiceImpl implements RoomAmenitiesService {
     private RoomAmenitiesRepository roomAmenitiesRepository;
 
     @Override
-    public RoomAmenities getByAmenities_ID(int amenities_ID) {
-        return roomAmenitiesRepository.getByAmenities_ID(amenities_ID);
+    public RoomAmenities getByAmenitiesID(int amenities_ID) {
+        return roomAmenitiesRepository.getByAmenitiesID(amenities_ID);
     }
 
     @Override

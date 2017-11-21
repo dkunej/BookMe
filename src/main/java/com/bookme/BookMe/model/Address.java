@@ -29,8 +29,16 @@ public class Address {
 
     @OneToOne
     @JoinColumn(name = "hotel_hotel_id", referencedColumnName = "hotel_ID")
-    private int hotelId;
+    private Hotel hotelId;
 
+    public Address(int addressId, String streetAddress, String city, int zip, Country countryAbbr, Hotel hotelId) {
+        this.addressId = addressId;
+        this.streetAddress = streetAddress;
+        this.city = city;
+        this.zip = zip;
+        this.countryAbbr = countryAbbr;
+        this.hotelId = hotelId;
+    }
 
     public int getAddressId() {
         return addressId;
@@ -72,11 +80,11 @@ public class Address {
         this.countryAbbr = countryAbbr;
     }
 
-    public int getHotelId() {
+    public Hotel getHotelId() {
         return hotelId;
     }
 
-    public void setHotelId(int hotelId) {
+    public void setHotelId(Hotel hotelId) {
         this.hotelId = hotelId;
     }
 }

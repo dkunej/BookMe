@@ -17,19 +17,19 @@ public class Hotel {
 
     @ManyToOne
     @JoinColumn(name = "checkin_start_date_ID", referencedColumnName = "date_ID")
-    private Date checkinStartDateId_fk;
+    private Date checkinStartDateId;
 
     @ManyToOne
     @JoinColumn(name = "checkin_end_date_ID", referencedColumnName = "date_ID")
-    private Date checkinEndDateId_fk;
+    private Date checkinEndDateId;
 
     @ManyToOne
     @JoinColumn(name = "checkout_start_date_ID_fk", referencedColumnName = "date_ID")
-    private Date checkoutStartDateId_fk;
+    private Date checkoutStartDateId;
 
     @ManyToOne
     @JoinColumn(name = "checkout_end_date_ID_fk", referencedColumnName = "date_ID")
-    private Date checkoutEndDateId_fk;
+    private Date checkoutEndDateId;
 
     @OneToMany(mappedBy = "hotelId")
     private List<Booking> bookings;
@@ -89,38 +89,6 @@ public class Hotel {
         this.hotelDescription = hotelDescription;
     }
 
-    public Date getCheckinStartDateId_fk() {
-        return checkinStartDateId_fk;
-    }
-
-    public void setCheckinStartDateId_fk(Date checkinStartDateId_fk) {
-        this.checkinStartDateId_fk = checkinStartDateId_fk;
-    }
-
-    public Date getCheckinEndDateId_fk() {
-        return checkinEndDateId_fk;
-    }
-
-    public void setCheckinEndDateId_fk(Date checkinEndDateId_fk) {
-        this.checkinEndDateId_fk = checkinEndDateId_fk;
-    }
-
-    public Date getCheckoutStartDateId_fk() {
-        return checkoutStartDateId_fk;
-    }
-
-    public void setCheckoutStartDateId_fk(Date checkoutStartDateId_fk) {
-        this.checkoutStartDateId_fk = checkoutStartDateId_fk;
-    }
-
-    public Date getCheckoutEndDateId_fk() {
-        return checkoutEndDateId_fk;
-    }
-
-    public void setCheckoutEndDateId_fk(Date checkoutEndDateId_fk) {
-        this.checkoutEndDateId_fk = checkoutEndDateId_fk;
-    }
-
     public int getStars() {
         return stars;
     }
@@ -135,5 +103,37 @@ public class Hotel {
 
     public void setImage(byte[] image) {
         this.image = image;
+    }
+
+    public Date getCheckinStartDateId() {
+        return checkinStartDateId;
+    }
+
+    public void setCheckinStartDateId(Date checkinStartDateId) {
+        this.checkinStartDateId = checkinStartDateId;
+    }
+
+    public Date getCheckinEndDateId() {
+        return checkinEndDateId;
+    }
+
+    public void setCheckinEndDateId(Date checkinEndDateId) {
+        this.checkinEndDateId = checkinEndDateId;
+    }
+
+    public Date getCheckoutStartDateId() {
+        return checkoutStartDateId;
+    }
+
+    public void setCheckoutStartDateId(Date checkoutStartDateId) {
+        this.checkoutStartDateId = checkoutStartDateId;
+    }
+
+    public Date getCheckoutEndDateId() {
+        return checkoutEndDateId;
+    }
+
+    public void setCheckoutEndDateId(Date checkoutEndDateId) {
+        this.checkoutEndDateId = checkoutEndDateId;
     }
 }

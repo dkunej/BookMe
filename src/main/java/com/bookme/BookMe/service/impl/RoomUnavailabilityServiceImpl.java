@@ -15,12 +15,12 @@ public class RoomUnavailabilityServiceImpl implements RoomUnavailabilityService 
     private RoomUnavailabilityRepository roomUnavailabilityRepository;
 
     @Override
-    public RoomUnavailability getByRoom_room_ID(int room_room_ID) {
-        return roomUnavailabilityRepository.getByRoom_room_ID(room_room_ID);
+    public RoomUnavailability getByRoomID(int room_room_ID) {
+        return roomUnavailabilityRepository.getByRoomID(room_room_ID);
     }
 
     @Override
-    public List<RoomUnavailability> getByStart_date_IDAndEnd_date_ID(int start_date_ID, int end_date_ID) {
-        return roomUnavailabilityRepository.getByStart_date_IDAndEnd_date_ID(start_date_ID, end_date_ID);
+    public List<RoomUnavailability> getByStartDateIDAndEndDateID(int start_date_ID, int end_date_ID) {
+        return roomUnavailabilityRepository.getByStartDateIDAndEndDateID(start_date_ID, end_date_ID);
     }
 }

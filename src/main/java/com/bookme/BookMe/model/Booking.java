@@ -16,26 +16,36 @@ public class Booking {
 
 
     @ManyToOne
-    @JoinColumn(name = "user_user_ID", referencedColumnName = "userId")
+    @JoinColumn(name = "user_user_ID", referencedColumnName = "user_id")
     private User userId;
 
     @ManyToOne
     @JoinColumn(name = "hotel_hotel_ID", referencedColumnName = "hotel_ID")
-    private int hotelId;
+    private Hotel hotelId;
 
     @ManyToOne
     @JoinColumn(name = "booking_date_ID", referencedColumnName = "date_ID")
-    private int bookingDateId;
+    private Date bookingDateId;
 
     @ManyToOne
-    @JoinColumn(name = "chekin_date_ID", referencedColumnName = "date_ID")
-    private int checkinDateId;
+    @JoinColumn(name = "checkin_date_ID", referencedColumnName = "date_ID")
+    private Date checkinDateId;
 
     @ManyToOne
     @JoinColumn(name = "checkout_date_ID", referencedColumnName = "date_ID")
-    private int checkoutDateId;
+    private Date checkoutDateId;
 
     private char payment;
+
+    public Booking(int bookingId, User userId, Hotel hotelId, Date bookingDateId, Date checkinDateId, Date checkoutDateId, char payment) {
+        this.bookingId = bookingId;
+        this.userId = userId;
+        this.hotelId = hotelId;
+        this.bookingDateId = bookingDateId;
+        this.checkinDateId = checkinDateId;
+        this.checkoutDateId = checkoutDateId;
+        this.payment = payment;
+    }
 
     public int getBookingId() {
         return bookingId;
@@ -53,36 +63,12 @@ public class Booking {
         this.userId = userId;
     }
 
-    public int getHotelId() {
+    public Hotel getHotelId() {
         return hotelId;
     }
 
-    public void setHotelId(int hotelId) {
+    public void setHotelId(Hotel hotelId) {
         this.hotelId = hotelId;
-    }
-
-    public int getBookingDateId() {
-        return bookingDateId;
-    }
-
-    public void setBookingDateId(int bookingDateId) {
-        this.bookingDateId = bookingDateId;
-    }
-
-    public int getCheckinDateId() {
-        return checkinDateId;
-    }
-
-    public void setCheckinDateId(int checkinDateId) {
-        this.checkinDateId = checkinDateId;
-    }
-
-    public int getCheckoutDateId() {
-        return checkoutDateId;
-    }
-
-    public void setCheckoutDateId(int checkoutDateId) {
-        this.checkoutDateId = checkoutDateId;
     }
 
     public char getPayment() {
@@ -91,5 +77,29 @@ public class Booking {
 
     public void setPayment(char payment) {
         this.payment = payment;
+    }
+
+    public Date getBookingDateId() {
+        return bookingDateId;
+    }
+
+    public void setBookingDateId(Date bookingDateId) {
+        this.bookingDateId = bookingDateId;
+    }
+
+    public Date getCheckinDateId() {
+        return checkinDateId;
+    }
+
+    public void setCheckinDateId(Date checkinDateId) {
+        this.checkinDateId = checkinDateId;
+    }
+
+    public Date getCheckoutDateId() {
+        return checkoutDateId;
+    }
+
+    public void setCheckoutDateId(Date checkoutDateId) {
+        this.checkoutDateId = checkoutDateId;
     }
 }

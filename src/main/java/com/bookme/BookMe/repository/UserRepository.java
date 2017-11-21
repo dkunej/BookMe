@@ -11,7 +11,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     User getByFirstNameAndLastName(String fName, String lname);
 
-    List<User> getAllByCountry(String country);
+    List<User> getAllByCountryAbbr(String country);
 
     User getByPassportNum(int passNum);
 

@@ -33,14 +33,14 @@ public class Date {
     private int seconds;
 
     @OneToMany(mappedBy = "checkoutDateId")
-    private List<Booking> bookingsbyCheckOut;
+    private List<Booking> bookingsbyCheckOutStart;
 
     @OneToMany(mappedBy = "checkinDateId")
-    private List<Booking> bookingsbyCheckIn;
+    private List<Booking> bookingsbyCheckInStart;
+
 
     @OneToMany(mappedBy = "bookingDateId")
     private List<Booking> bookingsbyBookingDate;
-
 
 
     public int getDateId() {
