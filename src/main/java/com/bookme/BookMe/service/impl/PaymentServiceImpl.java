@@ -1,6 +1,6 @@
 package com.bookme.BookMe.service.impl;
 
-import com.bookme.BookMe.model.Payment;
+import com.bookme.BookMe.model.PaymentMethod;
 import com.bookme.BookMe.model.User;
 import com.bookme.BookMe.repository.PaymentRepository;
 import com.bookme.BookMe.service.PaymentService;
@@ -17,7 +17,7 @@ public class PaymentServiceImpl implements PaymentService {
     private PaymentRepository paymentRepository;
 
     @Override
-    public Payment getByUsers(User user) {
+    public PaymentMethod getByUsers(User user) {
         return paymentRepository.getByUsers(user);
     }
 }

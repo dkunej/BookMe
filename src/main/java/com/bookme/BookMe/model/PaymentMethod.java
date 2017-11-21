@@ -3,9 +3,9 @@ package com.bookme.BookMe.model;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import java.util.Set;
+import java.util.List;
 
-public class Payment {
+public class PaymentMethod {
     @Id
     @Column(name = "PAYMENT_ID", nullable = false)
     private String paymentID;
@@ -17,9 +17,9 @@ public class Payment {
     private int cardNum;
 
     @OneToMany(mappedBy = "paymentMethod")
-    private Set<User> users;
+    private List<User> users;
 
-    public Payment(String paymentID, String paymentName, int cardNum, Set<User> users) {
+    public PaymentMethod(String paymentID, String paymentName, int cardNum, List<User> users) {
         this.paymentID = paymentID;
         this.paymentName = paymentName;
         this.cardNum = cardNum;
@@ -51,11 +51,11 @@ public class Payment {
         this.cardNum = cardNum;
     }
 
-    public Set<User> getUsers() {
+    public List<User> getUsers() {
         return users;
     }
 
-    public void setUsers(Set<User> users) {
+    public void setUsers(List<User> users) {
         this.users = users;
     }
 }

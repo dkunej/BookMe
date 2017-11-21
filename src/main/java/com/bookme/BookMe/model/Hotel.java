@@ -17,19 +17,19 @@ public class Hotel {
 
     @ManyToOne
     @JoinColumn(name = "checkin_start_date_ID", referencedColumnName = "date_ID")
-    private int checkinStartDateId_fk;
+    private Date checkinStartDateId_fk;
 
     @ManyToOne
     @JoinColumn(name = "checkin_end_date_ID", referencedColumnName = "date_ID")
-    private int checkinEndDateId_fk;
+    private Date checkinEndDateId_fk;
 
     @ManyToOne
     @JoinColumn(name = "checkout_start_date_ID_fk", referencedColumnName = "date_ID")
-    private int checkoutStartDateId_fk;
+    private Date checkoutStartDateId_fk;
 
     @ManyToOne
     @JoinColumn(name = "checkout_end_date_ID_fk", referencedColumnName = "date_ID")
-    private int checkoutEndDateId_fk;
+    private Date checkoutEndDateId_fk;
 
     @OneToMany(mappedBy = "hotelId")
     private List<Booking> bookings;
@@ -73,38 +73,6 @@ public class Hotel {
         this.hotelId = hotelId;
     }
 
-    public int getCheckinStartDateId_fk() {
-        return checkinStartDateId_fk;
-    }
-
-    public void setCheckinStartDateId_fk(int checkinStartDateId_fk) {
-        this.checkinStartDateId_fk = checkinStartDateId_fk;
-    }
-
-    public int getCheckinEndDateId_fk() {
-        return checkinEndDateId_fk;
-    }
-
-    public void setCheckinEndDateId_fk(int checkinEndDateId_fk) {
-        this.checkinEndDateId_fk = checkinEndDateId_fk;
-    }
-
-    public int getCheckoutStartDateId_fk() {
-        return checkoutStartDateId_fk;
-    }
-
-    public void setCheckoutStartDateId_fk(int checkoutStartDateId_fk) {
-        this.checkoutStartDateId_fk = checkoutStartDateId_fk;
-    }
-
-    public int getCheckoutEndDateId_fk() {
-        return checkoutEndDateId_fk;
-    }
-
-    public void setCheckoutEndDateId_fk(int checkoutEndDateId_fk) {
-        this.checkoutEndDateId_fk = checkoutEndDateId_fk;
-    }
-
     public String getHotelName() {
         return hotelName;
     }
@@ -119,5 +87,53 @@ public class Hotel {
 
     public void setHotelDescription(String hotelDescription) {
         this.hotelDescription = hotelDescription;
+    }
+
+    public Date getCheckinStartDateId_fk() {
+        return checkinStartDateId_fk;
+    }
+
+    public void setCheckinStartDateId_fk(Date checkinStartDateId_fk) {
+        this.checkinStartDateId_fk = checkinStartDateId_fk;
+    }
+
+    public Date getCheckinEndDateId_fk() {
+        return checkinEndDateId_fk;
+    }
+
+    public void setCheckinEndDateId_fk(Date checkinEndDateId_fk) {
+        this.checkinEndDateId_fk = checkinEndDateId_fk;
+    }
+
+    public Date getCheckoutStartDateId_fk() {
+        return checkoutStartDateId_fk;
+    }
+
+    public void setCheckoutStartDateId_fk(Date checkoutStartDateId_fk) {
+        this.checkoutStartDateId_fk = checkoutStartDateId_fk;
+    }
+
+    public Date getCheckoutEndDateId_fk() {
+        return checkoutEndDateId_fk;
+    }
+
+    public void setCheckoutEndDateId_fk(Date checkoutEndDateId_fk) {
+        this.checkoutEndDateId_fk = checkoutEndDateId_fk;
+    }
+
+    public int getStars() {
+        return stars;
+    }
+
+    public void setStars(int stars) {
+        this.stars = stars;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 }

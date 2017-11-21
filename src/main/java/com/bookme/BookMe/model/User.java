@@ -1,6 +1,7 @@
 package com.bookme.BookMe.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "USER")
@@ -33,18 +34,11 @@ public class User {
 
     @ManyToOne
     @JoinColumn(name = "PAYMENT_ID", nullable = false)
-    private String paymentMethod;
+    private PaymentMethod paymentMethod;
 
     @OneToMany(mappedBy = "userId")
-    private Booking bookings;
+    private List<Booking> bookings;
 
-    public Booking getBookings() {
-        return bookings;
-    }
-
-    public void setBookings(Booking bookings) {
-        this.bookings = bookings;
-    }
 
     public User() {
     }
@@ -117,11 +111,19 @@ public class User {
         this.IDNum = IDNum;
     }
 
-    public String getPaymentMethod() {
+    public PaymentMethod getPaymentMethod() {
         return paymentMethod;
     }
 
-    public void setPaymentMethod(String paymentMethod) {
-        this.paymentMethod = paymentMethod;
+    public void setPaymentMethod(PaymentMethod paymentMethodMethod) {
+        this.paymentMethod = paymentMethodMethod;
+    }
+
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
     }
 }

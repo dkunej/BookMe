@@ -35,7 +35,7 @@ public class RoomAmenities {
     @Column(name = "cable")
     private int cable;
 
-    @OneToMany(mappedBy = "room_ID")
+    @OneToMany(mappedBy = "room_amenities_amenities_ID")
     private Set<Room> rooms;
 
     public RoomAmenities(int amenities_ID, int crib, int hairdryer, int kettle, int washingMachine, int microwave, int refrigerator, int tv, int cable, Set<Room> rooms) {

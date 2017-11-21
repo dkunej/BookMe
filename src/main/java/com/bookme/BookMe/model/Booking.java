@@ -17,7 +17,7 @@ public class Booking {
 
     @ManyToOne
     @JoinColumn(name = "user_user_ID", referencedColumnName = "userId")
-    private int userId;
+    private User userId;
 
     @ManyToOne
     @JoinColumn(name = "hotel_hotel_ID", referencedColumnName = "hotel_ID")
@@ -45,11 +45,11 @@ public class Booking {
         this.bookingId = bookingId;
     }
 
-    public int getUserId() {
+    public User getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(User userId) {
         this.userId = userId;
     }
 

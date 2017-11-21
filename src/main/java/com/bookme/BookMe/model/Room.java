@@ -48,7 +48,7 @@ public class Room {
 
     @ManyToOne
     @JoinColumn(name = "room_amenities_amenities_ID")
-    private int room_amenities_amenities_ID;
+    private RoomAmenities room_amenities_amenities_ID;
 
     @OneToMany(mappedBy = "unavailability_ID")
     private Set<RoomUnavailability> unavailabilities;
@@ -59,7 +59,7 @@ public class Room {
             inverseJoinColumns = {@JoinColumn(name = "photo_ID", nullable = false)})
     private Set<RoomPhotos> photos;
 
-    public Room(int roomId, String roomName, int persons, Room hotelId_fk, double price, boolean availability, String pansion, int king_beds, int queen_beds, int small_beds, int extra_beds, int room_amenities_amenities_ID, Set<RoomUnavailability> unavailabilities, Set<RoomPhotos> photos) {
+    public Room(int roomId, String roomName, int persons, Room hotelId_fk, double price, boolean availability, String pansion, int king_beds, int queen_beds, int small_beds, int extra_beds, RoomAmenities room_amenities_amenities_ID, Set<RoomUnavailability> unavailabilities, Set<RoomPhotos> photos) {
         this.roomId = roomId;
         this.roomName = roomName;
         this.persons = persons;
@@ -164,11 +164,11 @@ public class Room {
         this.extra_beds = extra_beds;
     }
 
-    public int getRoom_amenities_amenities_ID() {
+    public RoomAmenities getRoom_amenities_amenities_ID() {
         return room_amenities_amenities_ID;
     }
 
-    public void setRoom_amenities_amenities_ID(int room_amenities_amenities_ID) {
+    public void setRoom_amenities_amenities_ID(RoomAmenities room_amenities_amenities_ID) {
         this.room_amenities_amenities_ID = room_amenities_amenities_ID;
     }
 
