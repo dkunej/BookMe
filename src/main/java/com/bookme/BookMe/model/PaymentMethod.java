@@ -1,10 +1,10 @@
 package com.bookme.BookMe.model;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name = "PAYMENT_METHOD")
 public class PaymentMethod {
     @Id
     @Column(name = "PAYMENT_ID", nullable = false)

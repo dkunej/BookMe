@@ -25,7 +25,7 @@ public class Address {
 
     @ManyToOne
     @JoinColumn(name = "country_abbr", nullable = false)
-    private String countryAbbr;
+    private Country countryAbbr;
 
     @OneToOne
     @JoinColumn(name = "hotel_hotel_id", referencedColumnName = "hotel_ID")
@@ -64,11 +64,11 @@ public class Address {
         this.zip = zip;
     }
 
-    public String getCountryAbbr() {
+    public Country getCountryAbbr() {
         return countryAbbr;
     }
 
-    public void setCountryAbbr(String countryAbbr) {
+    public void setCountryAbbr(Country countryAbbr) {
         this.countryAbbr = countryAbbr;
     }
 
