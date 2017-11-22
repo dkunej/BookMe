@@ -20,6 +20,9 @@ public class Country {
     @OneToMany(mappedBy = "countryAbbr")
     private Set<Address> addresses;
 
+    public Country() {
+    }
+
     public Country(String countryAbbr, String countryName, Set<User> users) {
         this.countryAbbr = countryAbbr;
         this.countryName = countryName;

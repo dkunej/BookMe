@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org"
+       th:with="currentPage='proba'">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>UMRI</p>
+<div th:each="hotels : ${hotelList}" id="hotels">
+    <h2 id="LosAngeles">Beverly Hills</h2>
+    <div>
+        <span><h4 th:text="${hotels.hotelName}">Beverly Wilshire</h4></span>
+        <span><p th:text="${hotels.hotelDescription}">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p></span>
+    </div>
+</div>
+</body>
+</html>

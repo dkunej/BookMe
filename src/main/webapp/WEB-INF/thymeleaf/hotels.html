@@ -1,13 +1,13 @@
-<head xmlns:th="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.thymeleaf.org"
-      layout:decorator="/layout" th:with="currentPage='hotel_list'">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org"
+      th:with="currentPage='proba'">
+<head xmlns:th="http://www.w3.org/1999/xhtml">
 
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bookM3</title>
-    <link rel="stylesheet" href="../../../java/web/assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../java/web/assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
 
 <body>
@@ -34,7 +34,7 @@
     <h2 id="LosAngeles">Beverly Hills</h2>
     <div>
         <span><h4 th:text="${hotels.hotelName}">Beverly Wilshire</h4></span>
-        <span><p th:text="${hotels.description}">
+        <span><p th:text="${hotels.hotelDescription}">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                 magna aliqua. Ut enim ad minim veniam,
                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -89,9 +89,9 @@
         </div>-->
 
 
-    <script type="text/javascript" src="../../../java/web/assets/js/default.js"></script>
-    <script type="text/javascript" src="../../../java/web/assets/js/gallery.js"></script>
-    <script type="text/javascript" src="../../../java/web/assets/js/gallery.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/default.js"></script>
+    <script type="text/javascript" src="../../assets/js/gallery.js"></script>
+    <script type="text/javascript" src="../../../assets/js/gallery.min.js"></script>
 
 
     <div id="gallerSlider"
@@ -100,113 +100,113 @@
         <div data-u="loading" class="spinImg"
              style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
             <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;"
-                 src="../../../java/web/assets/img/spin.svg"/>
+                 src="../..//assets/img/spin.svg"/>
         </div>
         <div data-u="slides"
              style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
 
             <div>
-                <img data-u="image" src="../../../java/web/assets/img/bHotel/door.jpg"/>
+                <img data-u="image" src="../../assets/img/bHotel/door.jpg"/>
                 <div data-u="thumb">
-                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/door200x100.jpg"/>
+                    <img data-u="thumb" src="../../assets/img/bHotel/door200x100.jpg"/>
                     <div class="ti">Slide Description</div>
                 </div>
             </div>
             <div>
-                <img data-u="image" src="../../../java/web/assets/img/bHotel/enterenc.jpg"/>
+                <img data-u="image" src="../../assets/img/bHotel/enterenc.jpg"/>
                 <div data-u="thumb">
-                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/enterenc200x100.jpg"/>
+                    <img data-u="thumb" src="../../assets/img/bHotel/enterenc200x100.jpg"/>
                     <div class="ti">Entrance</div>
                 </div>
             </div>
             <div>
-                <img data-u="image" src="../../../java/web/assets/img/bHotel/lobby.jpg"/>
+                <img data-u="image" src="../../assets/img/bHotel/lobby.jpg"/>
                 <div data-u="thumb">
-                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/lobby200x100.jpg"/>
+                    <img data-u="thumb" src="../../assets/img/bHotel/lobby200x100.jpg"/>
                     <div class="ti">Lobby</div>
                 </div>
             </div>
             <div>
-                <img data-u="image" src="../../../java/web/assets/img/bHotel/view.jpg"/>
+                <img data-u="image" src="../../assets/img/bHotel/view.jpg"/>
                 <div data-u="thumb">
-                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/view200x100.jpg"/>
+                    <img data-u="thumb" src="../../assets/img/bHotel/view200x100.jpg"/>
                     <div class="ti">View</div>
                 </div>
             </div>
             <div>
-                <img data-u="image" src="../../../java/web/assets/img/bHotel/restoraunt.jpg"/>
+                <img data-u="image" src="../../assets/img/bHotel/restoraunt.jpg"/>
                 <div data-u="thumb">
-                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/restoraunt200x100.jpg"/>
+                    <img data-u="thumb" src="../../assets/img/bHotel/restoraunt200x100.jpg"/>
                     <div class="ti">Restaurant</div>
                 </div>
             </div>
             <div>
-                <img data-u="image" src="../../../java/web/assets/img/bHotel/roomID.jpg"/>
+                <img data-u="image" src="../../assets/img/bHotel/roomID.jpg"/>
                 <div data-u="thumb">
-                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/room200x100.jpg"/>
+                    <img data-u="thumb" src="../../assets/img/bHotel/room200x100.jpg"/>
                     <div class="ti">Room 1</div>
                 </div>
             </div>
             <div>
-                <img data-u="image" src="../../../java/web/assets/img/bHotel/room2.jpg"/>
+                <img data-u="image" src="../../assets/img/bHotel/room2.jpg"/>
                 <div data-u="thumb">
-                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/room2200x100.jpg"/>
+                    <img data-u="thumb" src="../../assets/img/bHotel/room2200x100.jpg"/>
                     <div class="ti">Room 2</div>
                 </div>
             </div>
             <div>
-                <img data-u="image" src="../../../java/web/assets/img/bHotel/room3.jpg"/>
+                <img data-u="image" src="../../assets/img/bHotel/room3.jpg"/>
                 <div data-u="thumb">
-                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/room3200x100.jpg"/>
+                    <img data-u="thumb" src="../../assets/img/bHotel/room3200x100.jpg"/>
                     <div class="ti">Room 3</div>
                 </div>
             </div>
             <div>
-                <img data-u="image" src="../../../java/web/assets/img/bHotel/room4.jpg"/>
+                <img data-u="image" src="../../assets/img/bHotel/room4.jpg"/>
                 <div data-u="thumb">
-                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/room4200x100.jpg"/>
+                    <img data-u="thumb" src="../../assets/img/bHotel/room4200x100.jpg"/>
                     <div class="ti">Room 4</div>
                 </div>
             </div>
             <div>
-                <img data-u="image" src="../../../java/web/assets/img/bHotel/room5.jpg"/>
+                <img data-u="image" src="../../assets/img/bHotel/room5.jpg"/>
                 <div data-u="thumb">
-                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/room5200x100.jpg"/>
+                    <img data-u="thumb" src="../../assets/img/bHotel/room5200x100.jpg"/>
                     <div class="ti">Room 5</div>
                 </div>
             </div>
             <div>
-                <img data-u="image" src="../../../java/web/assets/img/bHotel/bedroom.jpg"/>
+                <img data-u="image" src="../../assets/img/bHotel/bedroom.jpg"/>
                 <div data-u="thumb">
-                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/bedroom200x100.jpg"/>
+                    <img data-u="thumb" src="../../assets/img/bHotel/bedroom200x100.jpg"/>
                     <div class="ti">Bedroom</div>
                 </div>
             </div>
             <div>
-                <img data-u="image" src="../../../java/web/assets/img/bHotel/bedroom2.jpg"/>
+                <img data-u="image" src="../../assets/img/bHotel/bedroom2.jpg"/>
                 <div data-u="thumb">
-                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/bedroom2200x100.jpg"/>
+                    <img data-u="thumb" src="../../assets/img/bHotel/bedroom2200x100.jpg"/>
                     <div class="ti">Bedroom</div>
                 </div>
             </div>
             <div>
-                <img data-u="image" src="../../../java/web/assets/img/bHotel/bathroom.jpg"/>
+                <img data-u="image" src="../../assets/img/bHotel/bathroom.jpg"/>
                 <div data-u="thumb">
-                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/bedroom200x100.jpg"/>
+                    <img data-u="thumb" src="../../assets/img/bHotel/bedroom200x100.jpg"/>
                     <div class="ti">Bathroom</div>
                 </div>
             </div>
             <div>
-                <img data-u="image" src="../../../java/web/assets/img/bHotel/outside.jpg"/>
+                <img data-u="image" src="../../assets/img/bHotel/outside.jpg"/>
                 <div data-u="thumb">
-                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/outside200x100.jpg"/>
+                    <img data-u="thumb" src="../../assets/img/bHotel/outside200x100.jpg"/>
                     <div class="ti">Outside pool</div>
                 </div>
             </div>
             <div>
-                <img data-u="image" src="../../../java/web/assets/img/bHotel/inside.jpg"/>
+                <img data-u="image" src="../../assets/img/bHotel/inside.jpg"/>
                 <div data-u="thumb">
-                    <img data-u="thumb" src="../../../java/web/assets/img/bHotel/inside200x100.jpg"/>
+                    <img data-u="thumb" src="../../assets/img/bHotel/inside200x100.jpg"/>
                     <div class="ti">Inside pool</div>
                 </div>
             </div>

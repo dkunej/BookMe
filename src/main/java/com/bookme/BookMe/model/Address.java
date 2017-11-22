@@ -28,8 +28,11 @@ public class Address {
     private Country countryAbbr;
 
     @OneToOne
-    @JoinColumn(name = "hotel_hotel_id", referencedColumnName = "hotel_ID")
+    @JoinColumn(name = "hotel_hotel_ID", referencedColumnName = "hotel_ID")
     private Hotel hotelId;
+
+    public Address() {
+    }
 
     public Address(int addressId, String streetAddress, String city, int zip, Country countryAbbr, Hotel hotelId) {
         this.addressId = addressId;

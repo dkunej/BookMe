@@ -38,6 +38,9 @@ public class RoomAmenities {
     @OneToMany(mappedBy = "room_amenities_amenities_ID")
     private Set<Room> rooms;
 
+    public RoomAmenities() {
+    }
+
     public RoomAmenities(int amenities_ID, int crib, int hairdryer, int kettle, int washingMachine, int microwave, int refrigerator, int tv, int cable, Set<Room> rooms) {
         this.amenitiesID = amenities_ID;
         this.crib = crib;

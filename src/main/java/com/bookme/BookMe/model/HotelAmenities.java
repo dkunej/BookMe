@@ -31,6 +31,9 @@ public class HotelAmenities {
     @Column(name = "DRY_CLEANING")
     private boolean dryCleaning;
 
+    public HotelAmenities() {
+    }
+
     public HotelAmenities(int hotelID, boolean wifi, boolean parking, boolean pool, boolean spa, boolean shuttle_service, boolean dry_cleaning) {
         this.hotelID = hotelID;
         this.wifi = wifi;

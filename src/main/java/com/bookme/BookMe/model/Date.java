@@ -42,6 +42,8 @@ public class Date {
     @OneToMany(mappedBy = "bookingDateId")
     private List<Booking> bookingsbyBookingDate;
 
+    public Date() {
+    }
 
     public int getDateId() {
         return dateId;

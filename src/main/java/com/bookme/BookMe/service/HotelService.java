@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface HotelService {
 
-    List<Hotel> getAllByHotelName(String name);
+    List<Hotel> getByHotelName(String name);
 
     List<Hotel> getAllByCheckinStartDateIdAndCheckinEndDateId(int startDate, int endDate);
 

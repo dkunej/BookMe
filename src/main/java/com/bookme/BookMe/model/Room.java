@@ -59,6 +59,9 @@ public class Room {
             inverseJoinColumns = {@JoinColumn(name = "photo_ID", nullable = false)})
     private Set<RoomPhotos> photos;
 
+    public Room() {
+    }
+
     public Room(int roomId, String roomName, int persons, Room hotelId_fk, double price, boolean availability, String pansion, int king_beds, int queen_beds, int small_beds, int extra_beds, RoomAmenities room_amenities_amenities_ID, Set<RoomUnavailability> unavailabilities, Set<RoomPhotos> photos) {
         this.roomId = roomId;
         this.roomName = roomName;

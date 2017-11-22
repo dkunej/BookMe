@@ -24,11 +24,11 @@ public class Hotel {
     private Date checkinEndDateId;
 
     @ManyToOne
-    @JoinColumn(name = "checkout_start_date_ID_fk", referencedColumnName = "date_ID")
+    @JoinColumn(name = "checkout_start_date_ID", referencedColumnName = "date_ID")
     private Date checkoutStartDateId;
 
     @ManyToOne
-    @JoinColumn(name = "checkout_end_date_ID_fk", referencedColumnName = "date_ID")
+    @JoinColumn(name = "checkout_end_date_ID", referencedColumnName = "date_ID")
     private Date checkoutEndDateId;
 
     @OneToMany(mappedBy = "hotelId")
@@ -48,6 +48,13 @@ public class Hotel {
 
     @OneToOne(mappedBy = "hotelId")
     private Address address;
+
+    public Hotel() {
+    }
+
+    public Hotel(String some_name) {
+        hotelName = some_name;
+    }
 
     public List<Booking> getBookings() {
         return bookings;

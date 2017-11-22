@@ -16,6 +16,9 @@ public class RoomPhotos {
     @Column(name = "photo", nullable = false)
     private byte[] photo;
 
+    public RoomPhotos() {
+    }
+
     public RoomPhotos(int photo_ID, byte[] photo) {
         this.photoID = photo_ID;
         this.photo = photo;

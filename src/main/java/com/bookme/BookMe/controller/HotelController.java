@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -21,11 +22,13 @@ public class HotelController {
     private HotelService hotelService;
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String index(@RequestParam String city, Model model) {
-
-        List<Hotel> hotels = hotelService.getAllByAddress_City(city);
-
+    public String index( Model model) {
+        //@RequestParam String city
+        List<Hotel> hotels = hotelService.getByHotelName("Hotel Matija");
+     /*   List<Hotel> hotels = new ArrayList<>();
+        hotels.add(new Hotel("Some Name"));*/
         model.addAttribute("hotelList", hotels);
+
         return HOTEL_LIST;
     }
 }

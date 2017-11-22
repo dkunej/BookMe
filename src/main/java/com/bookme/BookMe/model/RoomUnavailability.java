@@ -22,6 +22,9 @@ public class RoomUnavailability {
     @JoinColumn(name = "end_date_ID", nullable = false)
     private Date endDateID;
 
+    public RoomUnavailability() {
+    }
+
     public RoomUnavailability(int unavailability_ID, Room room_room_ID, Date start_date_ID, Date end_date_ID) {
         this.unavailabilityID = unavailability_ID;
         this.roomID = room_room_ID;

@@ -19,6 +19,9 @@ public class PaymentMethod {
     @OneToMany(mappedBy = "paymentMethod")
     private List<User> users;
 
+    public PaymentMethod() {
+    }
+
     public PaymentMethod(String paymentID, String paymentName, int cardNum, List<User> users) {
         this.paymentID = paymentID;
         this.paymentName = paymentName;

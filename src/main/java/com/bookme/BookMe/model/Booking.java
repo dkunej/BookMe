@@ -37,6 +37,9 @@ public class Booking {
 
     private char payment;
 
+    public Booking() {
+    }
+
     public Booking(int bookingId, User userId, Hotel hotelId, Date bookingDateId, Date checkinDateId, Date checkoutDateId, char payment) {
         this.bookingId = bookingId;
         this.userId = userId;
