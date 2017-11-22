@@ -26,18 +26,11 @@ public class Date {
     @Column(name = "hour")
     private int hour;
 
-    @Column(name = "minute")
-    private int minute;
-
-    @Column(name = "seconds")
-    private int seconds;
-
     @OneToMany(mappedBy = "checkoutDateId")
     private List<Booking> bookingsbyCheckOutStart;
 
     @OneToMany(mappedBy = "checkinDateId")
     private List<Booking> bookingsbyCheckInStart;
-
 
     @OneToMany(mappedBy = "bookingDateId")
     private List<Booking> bookingsbyBookingDate;
@@ -85,19 +78,4 @@ public class Date {
         this.hour = hour;
     }
 
-    public int getMinute() {
-        return minute;
-    }
-
-    public void setMinute(int minute) {
-        this.minute = minute;
-    }
-
-    public int getSeconds() {
-        return seconds;
-    }
-
-    public void setSeconds(int seconds) {
-        this.seconds = seconds;
-    }
 }
