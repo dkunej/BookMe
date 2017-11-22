@@ -1,5 +1,6 @@
 package com.bookme.BookMe.service.impl;
 
+import com.bookme.BookMe.model.Address;
 import com.bookme.BookMe.model.Hotel;
 import com.bookme.BookMe.repository.HotelRepository;
 import com.bookme.BookMe.service.HotelService;
@@ -27,6 +28,11 @@ public class HotelServiceImpl implements HotelService {
     @Override
     public List<Hotel> getAllByAddress_City(String city) {
         return hotelRepository.getAllByAddress_City(city);
+    }
+
+    @Override
+    public List<Hotel> getAllByAddress(Address address) {
+        return hotelRepository.getAllByAddress(address);
     }
 
     @Override

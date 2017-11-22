@@ -27,9 +27,9 @@ public class Address {
     @JoinColumn(name = "country_abbr", nullable = false)
     private Country countryAbbr;
 
-    @OneToOne
-    @JoinColumn(name = "hotel_hotel_ID", referencedColumnName = "hotel_ID")
-    private Hotel hotelId;
+    @OneToOne(mappedBy = "address", cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY)
+    private Hotel hotel;
 
     public Address() {
     }
@@ -40,7 +40,11 @@ public class Address {
         this.city = city;
         this.zip = zip;
         this.countryAbbr = countryAbbr;
-        this.hotelId = hotelId;
+        this.hotel = hotelId;
+    }
+
+    public Address(int id) {
+        addressId = id;
     }
 
     public int getAddressId() {
@@ -84,10 +88,10 @@ public class Address {
     }
 
     public Hotel getHotelId() {
-        return hotelId;
+        return hotel;
     }
 
     public void setHotelId(Hotel hotelId) {
-        this.hotelId = hotelId;
+        this.hotel = hotelId;
     }
 }

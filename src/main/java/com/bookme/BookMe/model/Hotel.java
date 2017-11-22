@@ -46,7 +46,8 @@ public class Hotel {
     @Column(name = "image")
     private byte[] image;
 
-    @OneToOne(mappedBy = "hotelId")
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "address_ID")
     private Address address;
 
     public Hotel() {

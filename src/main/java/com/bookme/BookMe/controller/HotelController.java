@@ -1,5 +1,6 @@
 package com.bookme.BookMe.controller;
 
+import com.bookme.BookMe.model.Address;
 import com.bookme.BookMe.model.Hotel;
 import com.bookme.BookMe.service.HotelService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -22,11 +22,10 @@ public class HotelController {
     private HotelService hotelService;
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String index( Model model) {
+    public String index(@RequestParam("addressId") int id, Model model) {
         //@RequestParam String city
-        List<Hotel> hotels = hotelService.getByHotelName("Hotel Matija");
-     /*   List<Hotel> hotels = new ArrayList<>();
-        hotels.add(new Hotel("Some Name"));*/
+        Address address = new Address(id);
+        List<Hotel> hotels = hotelService.getAllByAddress(address);
         model.addAttribute("hotelList", hotels);
 
         return HOTEL_LIST;
