@@ -1,5 +1,6 @@
 package com.bookme.BookMe.service.impl;
 
+import com.bookme.BookMe.model.Hotel;
 import com.bookme.BookMe.model.Room;
 import com.bookme.BookMe.repository.RoomRepository;
 import com.bookme.BookMe.service.RoomService;
@@ -21,7 +22,7 @@ public class RoomServiceImpl implements RoomService {
     }
 
     @Override
-    public List<Room> getAllByHotelId(int hotelID) {
+    public List<Room> getAllByHotelId(Hotel hotelID) {
         return roomRepository.getAllByHotelId(hotelID);
     }
 
@@ -29,6 +30,12 @@ public class RoomServiceImpl implements RoomService {
     public List<Room> getAllByPrice(double price) {
         return roomRepository.getAllByPrice(price);
     }
+
+    @Override
+    public Room findByRoomId(int roomId) {
+        return roomRepository.findByRoomId(roomId);
+    }
+
 
     @Override
     public List<Room> getAllByAvailabilityAndPrice(boolean isAvailable, double price) {
