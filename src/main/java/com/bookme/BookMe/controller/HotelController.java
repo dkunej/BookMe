@@ -2,13 +2,18 @@ package com.bookme.BookMe.controller;
 
 import com.bookme.BookMe.model.Address;
 import com.bookme.BookMe.model.Hotel;
+import com.bookme.BookMe.repository.HotelRepository;
 import com.bookme.BookMe.service.HotelService;
+
+import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -19,13 +24,20 @@ public class HotelController {
 
     @Autowired
     private HotelService hotelService;
+    @Autowired
+    private HotelRepository hotelRepository;
+
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String index(@RequestParam("addressId") int id, Model model) {
-        //@RequestParam String city
         Address address = new Address(id);
         List<Hotel> hotels = hotelService.getAllByAddress(address);
-        model.addAttribute("hotelList", hotels);
+
+        List<Hotel> filteredHotels = hotels.stream()
+                .filter(x -> (x.getHotelAmenities().isPool()) && !x.getHotelAmenities().isSpa())
+                .collect(Collectors.toList());
+
+        model.addAttribute("hotelList", filteredHotels);
         return HOTEL_LIST;
     }
 

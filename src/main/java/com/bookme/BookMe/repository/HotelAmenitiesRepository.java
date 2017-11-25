@@ -9,7 +9,5 @@ import java.util.List;
 @Repository
 public interface HotelAmenitiesRepository extends JpaRepository<HotelAmenities, Long> {
 
-    HotelAmenities getByHotelID(int hotelID);
-
     List<HotelAmenities> getByPool(int pool);
 }

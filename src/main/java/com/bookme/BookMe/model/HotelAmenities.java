@@ -1,17 +1,15 @@
 package com.bookme.BookMe.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "HOTEL_AMENITIES")
 public class HotelAmenities {
 
     @Id
-    @Column(name = "HOTEL_HOTEL_ID", nullable = false)
-    private int hotelID;
+    @Column(name = "hotel_amenities_ID", nullable = false)
+    private int amenitiesID;
 
     @Column(name = "WIFI")
     private boolean wifi;
@@ -31,11 +29,11 @@ public class HotelAmenities {
     @Column(name = "DRY_CLEANING")
     private boolean dryCleaning;
 
+
     public HotelAmenities() {
     }
 
-    public HotelAmenities(int hotelID, boolean wifi, boolean parking, boolean pool, boolean spa, boolean shuttle_service, boolean dry_cleaning) {
-        this.hotelID = hotelID;
+    public HotelAmenities(boolean wifi, boolean parking, boolean pool, boolean spa, boolean shuttle_service, boolean dry_cleaning) {
         this.wifi = wifi;
         this.parking = parking;
         this.pool = pool;

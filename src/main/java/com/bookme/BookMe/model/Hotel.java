@@ -2,6 +2,7 @@ package com.bookme.BookMe.model;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Daniela on 09-Nov-17.
@@ -52,6 +53,12 @@ public class Hotel {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "address_ID")
     private Address address;
+
+    @ManyToOne
+    @JoinColumn(name = "hotel_amenities_amenities_ID")
+    private HotelAmenities hotelAmenities;
+
+
 
     public Hotel() {
     }
@@ -150,5 +157,21 @@ public class Hotel {
 
     public void setCheckoutEndDateId(Date checkoutEndDateId) {
         this.checkoutEndDateId = checkoutEndDateId;
+    }
+
+    public List<Room> getRooms() {
+        return rooms;
+    }
+
+    public void setRooms(List<Room> rooms) {
+        this.rooms = rooms;
+    }
+
+    public HotelAmenities getHotelAmenities() {
+        return hotelAmenities;
+    }
+
+    public void setHotelAmenities(HotelAmenities hotelAmenities) {
+        this.hotelAmenities = hotelAmenities;
     }
 }

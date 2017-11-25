@@ -15,11 +15,6 @@ public class HotelAmenitiesServiceImpl implements HotelAmenitiesService {
     private HotelAmenitiesRepository hotelAmenitiesRepository;
 
     @Override
-    public HotelAmenities getByHotelID(int hotelID) {
-        return hotelAmenitiesRepository.getByHotelID(hotelID);
-    }
-
-    @Override
     public List<HotelAmenities> getByPool(int pool) {
         return hotelAmenitiesRepository.getByPool(pool);
     }
