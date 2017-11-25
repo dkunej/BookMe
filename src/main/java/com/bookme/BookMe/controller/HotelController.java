@@ -1,25 +1,24 @@
 package com.bookme.BookMe.controller;
 
+import com.bookme.BookMe.model.Form;
 import com.bookme.BookMe.model.Hotel;
 import com.bookme.BookMe.repository.HotelRepository;
 import com.bookme.BookMe.service.HotelService;
-
-import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.ArrayList;
+import javax.validation.Valid;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
-@RequestMapping(value = "/dashboard")
 public class HotelController {
 
     private static final String HOTEL_LIST = "hotels";
@@ -28,20 +27,40 @@ public class HotelController {
     private HotelService hotelService;
     @Autowired
     private HotelRepository hotelRepository;
+    private Form form = new Form();
 
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String index(Form form) {
+        return "index";
+    }
+
+    @RequestMapping(value = "/list", method = RequestMethod.POST)
+    public String getHotelList(@Valid Form form1, BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            return "index";
+        }
+        form.setCity(form1.getCity());
+        form.setParking(form1.isParking());
+        form.setSpa(form1.isSpa());
+        System.out.println(form1.isParking());
+        return "redirect:/list?city=" + form1.getCity();
+
+    }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String index(@RequestParam("city") String city, Model model) {
+    public String getHotelList(@RequestParam("city") String city, Model model) {
 
         List<Hotel> hotels = hotelService.getAllByAddressCityAndStars(city, 7);
 
         List<Hotel> filteredHotels = hotels.stream()
-                .filter(x -> (x.getHotelAmenities().isPool()) && !x.getHotelAmenities().isSpa())
+                .filter(x -> (x.getHotelAmenities().isParking() == form.isParking() && x.getHotelAmenities().isSpa() == form.isSpa()))
                 .collect(Collectors.toList());
 
         model.addAttribute("hotelList", filteredHotels);
+        System.out.println(form.isParking());
         return HOTEL_LIST;
     }
+
 
     // http://localhost:8080/dashboard/get/image?id=1 works only image loading
     @RequestMapping(value = "/get/image", method = RequestMethod.GET, produces = MediaType.IMAGE_PNG_VALUE)
