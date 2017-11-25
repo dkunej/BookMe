@@ -15,8 +15,8 @@ public class HotelServiceImpl implements HotelService {
     private HotelRepository hotelRepository;
 
     @Override
-    public List<Hotel> getByHotelName(String name) {
-        return hotelRepository.getByHotelName(name);
+    public Hotel getByName(String name) {
+        return hotelRepository.getByName(name);
     }
 
 

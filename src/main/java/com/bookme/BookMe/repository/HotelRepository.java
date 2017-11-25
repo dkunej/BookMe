@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface HotelRepository extends JpaRepository<Hotel, Long> {
 
-    List<Hotel> getByHotelName(String name);
+    Hotel getByName(String name);
 
     List<Hotel> getAllByAddressCityAndStars(String city, int stars);
 }

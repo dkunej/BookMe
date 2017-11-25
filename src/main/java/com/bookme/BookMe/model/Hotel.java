@@ -38,7 +38,7 @@ public class Hotel {
     private List<Room> rooms;
 
     @Column(name = "name")
-    private String hotelName;
+    private String name;
 
     @Column(name = "description")
     private String hotelDescription;
@@ -57,7 +57,7 @@ public class Hotel {
     }
 
     public Hotel(String some_name) {
-        hotelName = some_name;
+        name = some_name;
     }
 
     public Hotel(int hotelId) {
@@ -89,11 +89,11 @@ public class Hotel {
     }
 
     public String getHotelName() {
-        return hotelName;
+        return name;
     }
 
     public void setHotelName(String hotelName) {
-        this.hotelName = hotelName;
+        this.name = hotelName;
     }
 
     public String getHotelDescription() {

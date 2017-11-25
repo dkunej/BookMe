@@ -38,7 +38,7 @@ public class RoomServiceImpl implements RoomService {
 
 
     @Override
-    public List<Room> getAllByAvailabilityAndPrice(boolean isAvailable, double price) {
-        return roomRepository.getAllByAvailabilityAndPrice(isAvailable, price);
+    public List<Room> getAllByHotelIdNameAndAvailability(String hotelName, boolean isAvailable) {
+        return roomRepository.getAllByHotelIdNameAndAvailability(hotelName, isAvailable);
     }
 }
