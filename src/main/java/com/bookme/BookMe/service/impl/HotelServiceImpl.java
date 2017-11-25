@@ -26,11 +26,6 @@ public class HotelServiceImpl implements HotelService {
     }
 
     @Override
-    public List<Hotel> getAllByAddress_City(String city) {
-        return hotelRepository.getAllByAddress_City(city);
-    }
-
-    @Override
     public List<Hotel> getAllByAddress(Address address) {
         return hotelRepository.getAllByAddress(address);
     }
@@ -39,6 +34,11 @@ public class HotelServiceImpl implements HotelService {
     public List<Hotel> getAllByCheckinStartDateIdAndCheckinEndDateIdAndAddress_City(int startDate, int endDate, String city)
     {
         return hotelRepository.getAllByCheckinStartDateIdAndCheckinEndDateIdAndAddress_City(startDate,endDate,city);
+    }
+
+    @Override
+    public List<Hotel> getAllByAddressCity(String city) {
+        return hotelRepository.getAllByAddressCity(city);
     }
 
 }

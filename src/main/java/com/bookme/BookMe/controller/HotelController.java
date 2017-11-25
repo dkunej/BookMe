@@ -1,6 +1,5 @@
 package com.bookme.BookMe.controller;
 
-import com.bookme.BookMe.model.Address;
 import com.bookme.BookMe.model.Hotel;
 import com.bookme.BookMe.service.HotelService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +21,10 @@ public class HotelController {
     private HotelService hotelService;
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String index(@RequestParam("addressId") int id, Model model) {
+    public String index(@RequestParam("city") String city, Model model) {
         //@RequestParam String city
-        Address address = new Address(id);
-        List<Hotel> hotels = hotelService.getAllByAddress(address);
+        //Address address = new Address(id);
+        List<Hotel> hotels = hotelService.getAllByAddressCity(city);
         model.addAttribute("hotelList", hotels);
 
         return HOTEL_LIST;
