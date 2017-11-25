@@ -31,9 +31,9 @@ public class HotelController {
 
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String index(@RequestParam("addressId") int id, Model model) {
-        Address address = new Address(id);
-        List<Hotel> hotels = hotelService.getAllByAddress(address);
+    public String index(@RequestParam("city") String city, Model model) {
+
+        List<Hotel> hotels = hotelService.getAllByAddressCityAndStars(city, 7);
 
         List<Hotel> filteredHotels = hotels.stream()
                 .filter(x -> (x.getHotelAmenities().isPool()) && !x.getHotelAmenities().isSpa())
