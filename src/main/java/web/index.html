@@ -1,4 +1,4 @@
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="currentPage='index'">
 
 <head>
     <meta charset="utf-8">
@@ -32,48 +32,44 @@
 <header style="background-image:url(&quot;assets/img/headerW.png&quot;);"></header>
 
 
-<form id="bookingForm" name="booking_form" onsubmit="return validate()" action="index.html">
+<form id="bookingForm" name="booking_form" onsubmit="return validate()" action="#" th:action="@{/dashboard/hotellist}"
+      th:object="${form}" method="post">
     <div class="form-horizontal" method="post">
         <h2 class="form_title">HOTEL SEARCH</h2>
         <label class="control-label">DESTINATION</label>
         <div class="form-group">
             <div class="col-sm-8">
                 <input class="form-control" type="text" name="destination" id="destination" required=""
-                       placeholder="e.g. Los Angeles" style="width:291px;">
+                       placeholder="e.g. Los Angeles" style="width:291px;" th:field="*{destination}">
                 <span class="hidden" id="error_destination">* Ups, Name of destination is needed! </span>
             </div>
         </div>
         <div class="col-sm-4">
             <label class="control-label">CHECK IN</label>
-            <input class="form-control" name="checkIn" id="checkIn" type="date" placeholder="dd/mm/yyyy">
+            <input class="form-control" name="checkIn" id="checkIn" type="date" placeholder="dd/mm/yyyy"
+                   th:field="*{checkinDate}">
             <span class="hidden" id="error_checkIn">* Ups, date is needed in numerical form! </span>
 
         </div>
         <div class="col-sm-8">
             <label class="control-label">CHECK OUT</label>
-            <input class="form-control" name="checkOut" id="checkOut" type="date" placeholder="dd/mm/yyyy">
+            <input class="form-control" name="checkOut" id="checkOut" type="date" placeholder="dd/mm/yyyy"
+                   th:field="*{checkoutDate}">
             <span class="hidden" id="error_checkOut">* Ups, date is needed in numerical form! </span>
 
         </div>
         <div class="form-group1">
             <div class="column1" style="float:left">
                 <label class="control-label">HOTEL STARS</label>
-                <input class="form-control" id="stars" type="number" name="stars" placeholder="Hotel Stars">
-                <label class="control-label">ROOM TYPE</label>
-                <select class="form-control" name="roomType" id="roomType">
-                    <option value="Single" id="Single" label="Single ">Single</option>
-                    <option value="Double" id="Double" label="Double">Double</option>
-                    <option value="King" id="King" label="King">King</option>
-                    <option value="Queen" id="Queen" label="Queen">Queen</option>
-                </select>
+                <input class="form-control" id="stars" type="number" name="stars" placeholder="Hotel Stars"
+                       th:field="*{hotelStars}">
+
             </div>
             <div class="column2" style="float:right;">
-                <label class="control-label">ADULTS </label>
-                <input class="form-control" type="number" name="Anumber" id="Anumber" placeholder="e.g.(1,2)">
-                <span class="hidden" id="error_Adults">* Ups, number of adults is needed! </span><br>
-                <label class="control-label">CHILDREN </label>
-                <input class="form-control" type="number" name="Cnumber" id="Cnumber" placeholder="e.g.(1,2)">
-                <span class="hidden" id="error_children">* Ups, number of children is needed! </span>
+                <label class="control-label">NUMBER OF PEOPLE </label>
+                <input class="form-control" type="number" name="peopleNumb" id="peopleNumb" placeholder="e.g.(1,2)"
+                       th:field="*{peopleNumb}">
+                <span class="hidden" id="peopleNum">* Ups, number of people is needed! </span><br>
 
             </div>
         </div>
@@ -84,40 +80,36 @@
                 </div>
                 <div class="checkbox">
                     <label class="control-label">
-                        <input type="checkbox" name="checkbox" id="wellnes" value="wellnes centar">wellnes
-                        centar</label>
+                        <input type="checkbox" name="checkbox" id="wifi" value="wifi" th:field="*{wifi}">Wifi
+                    </label>
                 </div>
                 <div class="checkbox">
                     <label class="control-label">
-                        <input type="checkbox" name="checkbox" id="pets" value="pets allowed">pets allowed</label>
+                        <input type="checkbox" name="checkbox" id="parking" value="parking" th:field="*{parking}">Parking
+                    </label>
                 </div>
                 <div class="checkbox">
                     <label class="control-label">
-                        <input type="checkbox" name="checkbox" id="pool" value="indoor/outdoor swimming pool">indoor/outdoor<br>
-                        swimming pool</label>
+                        <input type="checkbox" name="checkbox" id="pool" value="swimming pool" th:field="*{pool}">Swimming
+                        pool
+                    </label>
                 </div>
                 <div class="checkbox">
                     <label class="control-label">
-                        <input type="checkbox" name="checkbox" id="fitness" value="fitness">fitness </label>
+                        <input type="checkbox" name="checkbox" id="spa" value="spa" th:field="*{spa}">Spa
+                    </label>
                 </div>
             </div>
             <div class="column4" style="float:right; margin-top:35px;">
                 <div class="checkbox">
                     <label class="control-label">
-                        <input type="checkbox" name="checkbox" id="elevator" value="elevator">elevator</label>
+                        <input type="checkbox" name="checkbox" id="service" value="shuttle service"
+                               th:field="*{shuttleservice}">Shuttle Service</label>
                 </div>
                 <div class="checkbox">
                     <label class="control-label">
-                        <input type="checkbox" name="checkbox" id="parking" value="parking">parking</label>
-                </div>
-                <div class="checkbox">
-                    <label class="control-label">
-                        <input type="checkbox" name="checkbox" id="weellchair" value="weellchair accessbile">weellchair
-                        <br>accessbile</label>
-                </div>
-                <div class="checkbox">
-                    <label class="control-label">
-                        <input type="checkbox" name="checkbox" id="breakfest" value="breakfest">breakfest</label>
+                        <input type="checkbox" name="checkbox" id="drycleaning" value="dry cleaning"
+                               th:field="*{cleaning}">Dry cleaning</label>
                 </div>
             </div>
 
@@ -132,12 +124,28 @@
 
 <div id="content">
     <h1 class="title">Results</h1>
-    <div id="output">
+    <!--    <div id="output">
+            </div>
+            <div id="image">
+            </div>
+            <div id="info">
+            </div>
+    -->
+
+    <div id="result">
+        <p th:text="'destination: ' + ${form.destination}"/>
+        <p th:text="'checkinDate: ' + ${form.checkinDate}"/>
+        <p th:text="'checkoutDate: ' + ${form.checkoutDate}"/>
+        <p th:text="'hotelStars: ' + ${form.hotelStars}"/>
+        <p th:text="'peopleNumb: ' + ${form.peopleNumb}"/>
+        <p th:text="'wifi: ' + ${form.wifi}"/>
+        <p th:text="'parking: ' + ${form.parking}"/>
+        <p th:text="'pool: ' + ${form.pool}"/>
+        <p th:text="'spa: ' + ${form.spa}"/>
+        <p th:text="'shuttleservice: ' + ${form.shuttleservice}"/>
+        <p th:text="'cleaning: ' + ${form.cleaning}"/>
     </div>
-    <div id="image">
-    </div>
-    <div id="info">
-    </div>
+
 </div>
 
 <script src="assets/js/jquery.min.js"></script>
