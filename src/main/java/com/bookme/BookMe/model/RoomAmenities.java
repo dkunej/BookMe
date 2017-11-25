@@ -12,28 +12,28 @@ public class RoomAmenities {
     private int amenitiesID;
 
     @Column(name = "crib")
-    private int crib;
+    private boolean crib;
 
     @Column(name = "hairdryer")
-    private int hairdryer;
+    private boolean hairdryer;
 
     @Column(name = "kettle")
-    private int kettle;
+    private boolean kettle;
 
     @Column(name = "washing_machine")
-    private int washingMachine;
+    private boolean washingMachine;
 
     @Column(name = "microwave")
-    private int microwave;
+    private boolean microwave;
 
     @Column(name = "refrigerator")
-    private int refrigerator;
+    private boolean refrigerator;
 
     @Column(name = "tv")
-    private int tv;
+    private boolean tv;
 
     @Column(name = "cable")
-    private int cable;
+    private boolean cable;
 
     @OneToMany(mappedBy = "room_amenities_amenities_ID")
     private Set<Room> rooms;
@@ -41,18 +41,6 @@ public class RoomAmenities {
     public RoomAmenities() {
     }
 
-    public RoomAmenities(int amenities_ID, int crib, int hairdryer, int kettle, int washingMachine, int microwave, int refrigerator, int tv, int cable, Set<Room> rooms) {
-        this.amenitiesID = amenities_ID;
-        this.crib = crib;
-        this.hairdryer = hairdryer;
-        this.kettle = kettle;
-        this.washingMachine = washingMachine;
-        this.microwave = microwave;
-        this.refrigerator = refrigerator;
-        this.tv = tv;
-        this.cable = cable;
-        this.rooms = rooms;
-    }
 
     public int getAmenitiesID() {
         return amenitiesID;
@@ -62,75 +50,75 @@ public class RoomAmenities {
         this.amenitiesID = amenitiesID;
     }
 
-    public int getCrib() {
-        return crib;
-    }
-
-    public void setCrib(int crib) {
-        this.crib = crib;
-    }
-
-    public int getHairdryer() {
-        return hairdryer;
-    }
-
-    public void setHairdryer(int hairdryer) {
-        this.hairdryer = hairdryer;
-    }
-
-    public int getKettle() {
-        return kettle;
-    }
-
-    public void setKettle(int kettle) {
-        this.kettle = kettle;
-    }
-
-    public int getWashingMachine() {
-        return washingMachine;
-    }
-
-    public void setWashingMachine(int washingMachine) {
-        this.washingMachine = washingMachine;
-    }
-
-    public int getMicrowave() {
-        return microwave;
-    }
-
-    public void setMicrowave(int microwave) {
-        this.microwave = microwave;
-    }
-
-    public int getRefrigerator() {
-        return refrigerator;
-    }
-
-    public void setRefrigerator(int refrigerator) {
-        this.refrigerator = refrigerator;
-    }
-
-    public int getTv() {
-        return tv;
-    }
-
-    public void setTv(int tv) {
-        this.tv = tv;
-    }
-
-    public int getCable() {
-        return cable;
-    }
-
-    public void setCable(int cable) {
-        this.cable = cable;
-    }
-
     public Set<Room> getRooms() {
         return rooms;
     }
 
     public void setRooms(Set<Room> rooms) {
         this.rooms = rooms;
+    }
+
+    public boolean isCrib() {
+        return crib;
+    }
+
+    public void setCrib(boolean crib) {
+        this.crib = crib;
+    }
+
+    public boolean isHairdryer() {
+        return hairdryer;
+    }
+
+    public void setHairdryer(boolean hairdryer) {
+        this.hairdryer = hairdryer;
+    }
+
+    public boolean isKettle() {
+        return kettle;
+    }
+
+    public void setKettle(boolean kettle) {
+        this.kettle = kettle;
+    }
+
+    public boolean isWashingMachine() {
+        return washingMachine;
+    }
+
+    public void setWashingMachine(boolean washingMachine) {
+        this.washingMachine = washingMachine;
+    }
+
+    public boolean isMicrowave() {
+        return microwave;
+    }
+
+    public void setMicrowave(boolean microwave) {
+        this.microwave = microwave;
+    }
+
+    public boolean isRefrigerator() {
+        return refrigerator;
+    }
+
+    public void setRefrigerator(boolean refrigerator) {
+        this.refrigerator = refrigerator;
+    }
+
+    public boolean isTv() {
+        return tv;
+    }
+
+    public void setTv(boolean tv) {
+        this.tv = tv;
+    }
+
+    public boolean isCable() {
+        return cable;
+    }
+
+    public void setCable(boolean cable) {
+        this.cable = cable;
     }
 }

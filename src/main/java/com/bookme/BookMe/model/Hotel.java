@@ -34,6 +34,9 @@ public class Hotel {
     @OneToMany(mappedBy = "hotelId")
     private List<Booking> bookings;
 
+    @OneToMany(mappedBy = "hotelId")
+    private List<Room> rooms;
+
     @Column(name = "name")
     private String hotelName;
 
@@ -55,6 +58,10 @@ public class Hotel {
 
     public Hotel(String some_name) {
         hotelName = some_name;
+    }
+
+    public Hotel(int hotelId) {
+        this.hotelId = hotelId;
     }
 
     public List<Booking> getBookings() {
