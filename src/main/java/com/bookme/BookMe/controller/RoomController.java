@@ -1,7 +1,7 @@
 package com.bookme.BookMe.controller;
 
-import com.bookme.BookMe.model.Hotel;
 import com.bookme.BookMe.model.Room;
+import com.bookme.BookMe.service.HotelService;
 import com.bookme.BookMe.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,13 +21,15 @@ public class RoomController {
 
     @Autowired
     private RoomService roomService;
+    @Autowired
+    private HotelService hotelService;
 
     @RequestMapping(value = "/listRooms", method = RequestMethod.GET)
-    public String index(@RequestParam("hotelId") int hotelId, Model model) {
-        Hotel hotel = new Hotel(hotelId);
-        List<Room> rooms = roomService.getAllByHotelId(hotel);
+    public String listRooms(@RequestParam("hotelName") String name, Model model) {
+
+        List<Room> rooms = roomService.getAllByHotelIdNameAndAvailability(name, true);
         model.addAttribute("roomList", rooms);
-        model.addAttribute("hotel", hotel);
+        model.addAttribute("hotel", hotelService.getByName(name));
 
         return ROOM_LIST;
     }
@@ -38,5 +40,6 @@ public class RoomController {
         model.addAttribute("room", room);
         return ROOM;
     }
+
 
 }
