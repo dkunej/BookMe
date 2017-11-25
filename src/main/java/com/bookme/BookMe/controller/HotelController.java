@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -23,7 +26,7 @@ public class HotelController {
     public String index(@RequestParam("city") String city, Model model) {
         //@RequestParam String city
         //Address address = new Address(id);
-        List<Hotel> hotels = hotelService.getAllByAddressCity(city);
+        List<Hotel> hotels = hotelService.getAllByAddressCityAndStars(city, 7);
         model.addAttribute("hotelList", hotels);
         return HOTEL_LIST;
     }
@@ -31,10 +34,9 @@ public class HotelController {
     // http://localhost:8080/dashboard/get/image?id=1 works only image loading
     @RequestMapping(value = "/get/image", method = RequestMethod.GET, produces = MediaType.IMAGE_PNG_VALUE)
     public @ResponseBody
-    byte[] showImageOnId(@RequestParam("id") int id, Model model) {
-        Address address = new Address(id);
+    byte[] showImageOnId(@RequestParam("city") String city, Model model) {
         hotelService.equals(null);
-        List<Hotel> hotels = hotelService.getAllByAddress(address);
+        List<Hotel> hotels = hotelService.getAllByAddressCityAndStars(city, 7);
         byte[] image = hotels.get(0).getImage();
         //model.addAttribute("image", image);
         return image;
