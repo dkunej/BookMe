@@ -4,6 +4,7 @@ import com.bookme.BookMe.model.Form;
 import com.bookme.BookMe.model.Hotel;
 import com.bookme.BookMe.repository.HotelRepository;
 import com.bookme.BookMe.service.HotelService;
+import com.fasterxml.jackson.databind.util.ArrayBuilders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.Valid;
+import java.awt.image.AreaAveragingScaleFilter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -55,21 +58,37 @@ public class HotelController {
     public String getHotelList(@RequestParam("city") String city, Model model) {
 
         List<Hotel> hotels = hotelService.getAllByAddressCityAndStars(city, 7);
-
-        if (form.isParking() || form.isSpa() || form.isWifi() || form.isShuttleService() ||
-                form.isDryCleaning() || form.isPool()) {
-            List<Hotel> filteredHotels = hotels.stream()
-                    .filter(x -> (x.getHotelAmenities().isParking() == form.isParking()
-                            && x.getHotelAmenities().isSpa() == form.isSpa())
-                            && x.getHotelAmenities().isDryCleaning() == form.isDryCleaning()
-                            && x.getHotelAmenities().isPool() == form.isPool()
-                            && x.getHotelAmenities().isShuttleService() == form.isShuttleService()
-                            && x.getHotelAmenities().isWifi() == form.isWifi())
+        if (form.isParking()) {
+            hotels = hotels.stream()
+                    .filter(x -> (x.getHotelAmenities().isParking()))
                     .collect(Collectors.toList());
-            model.addAttribute("hotelList", filteredHotels);
-        } else {
-            model.addAttribute("hotelList", hotels);
         }
+        if (form.isSpa()) {
+            hotels = hotels.stream()
+                    .filter(x -> (x.getHotelAmenities().isSpa()))
+                    .collect(Collectors.toList());
+        }
+        if (form.isPool()) {
+            hotels = hotels.stream()
+                    .filter(x -> (x.getHotelAmenities().isPool()))
+                    .collect(Collectors.toList());
+        }
+        if (form.isDryCleaning()) {
+            hotels = hotels.stream()
+                    .filter(x -> (x.getHotelAmenities().isDryCleaning()))
+                    .collect(Collectors.toList());
+        }
+        if (form.isShuttleService()) {
+            hotels = hotels.stream()
+                    .filter(x -> (x.getHotelAmenities().isShuttleService()))
+                    .collect(Collectors.toList());
+        }
+        if (form.isWifi()) {
+            hotels = hotels.stream()
+                    .filter(x -> (x.getHotelAmenities().isWifi()))
+                    .collect(Collectors.toList());
+        }
+            model.addAttribute("hotelList", hotels);
         return HOTEL_LIST;
     }
 
