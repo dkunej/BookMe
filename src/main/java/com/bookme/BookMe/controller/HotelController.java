@@ -42,7 +42,6 @@ public class HotelController {
         form.setCity(form1.getCity());
         form.setParking(form1.isParking());
         form.setSpa(form1.isSpa());
-        System.out.println(form1.isParking());
         return "redirect:/list?city=" + form1.getCity();
 
     }
@@ -52,12 +51,17 @@ public class HotelController {
 
         List<Hotel> hotels = hotelService.getAllByAddressCityAndStars(city, 7);
 
-        List<Hotel> filteredHotels = hotels.stream()
-                .filter(x -> (x.getHotelAmenities().isParking() == form.isParking() && x.getHotelAmenities().isSpa() == form.isSpa()))
-                .collect(Collectors.toList());
+        if (!form.isSpa() && !form.isParking() && !form.isDryCleaning() && !form.isPool() && !form.isWifi()
+                && !form.isShuttleService()) {
+            model.addAttribute("hotelList", hotels);
+        } else {
+            List<Hotel> filteredHotels = hotels.stream()
+                    .filter(x -> (x.getHotelAmenities().isParking() == form.isParking()))
+                    .collect(Collectors.toList());
 
-        model.addAttribute("hotelList", filteredHotels);
-        System.out.println(form.isParking());
+            model.addAttribute("hotelList", filteredHotels);
+        }
+
         return HOTEL_LIST;
     }
 
