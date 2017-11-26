@@ -32,15 +32,14 @@
 <header style="background-image:url(&quot;../../assets/img/headerW.png&quot;);"></header>
 
 
-<form id="bookingForm" name="booking_form" onsubmit="return validate()" action="#" th:action="@{/dashboard/hotellist}"
-      th:object="${form}" method="post">
+<form id="bookingForm" name="booking_form" th:action="@{/list}" th:object="${form}" method="post">
     <div class="form-horizontal" method="post">
         <h2 class="form_title">HOTEL SEARCH</h2>
         <label class="control-label">DESTINATION</label>
         <div class="form-group">
             <div class="col-sm-8">
                 <input class="form-control" type="text" name="destination" id="destination" required=""
-                       placeholder="e.g. Los Angeles" style="width:291px;" th:field="*{destination}">
+                       placeholder="e.g. Los Angeles" style="width:291px;" th:field="*{city}">
                 <span class="hidden" id="error_destination">* Ups, Name of destination is needed! </span>
             </div>
         </div>
@@ -62,12 +61,12 @@
 
                 <label class="control-label">HOTEL STARS</label>
                 <input class="form-control" id="stars" type="number" name="stars" placeholder="Hotel Stars"
-                       th:field="*{hotelStars}">
+                       th:field="*{stars}">
 
 
                 <label class="control-label">NUMBER OF PEOPLE </label>
                 <input class="form-control" type="number" name="peopleNumb" id="peopleNumb" placeholder="e.g.(1,2)"
-                       th:field="*{peopleNumb}">
+                       th:field="*{numPeople}">
                 <span class="hidden" id="peopleNum">* Ups, number of people is needed! </span><br>
 
 
@@ -79,17 +78,20 @@
                 </div>
                 <div class="checkbox">
                     <label class="control-label">
-                        <input type="checkbox" name="checkbox" id="wifi" value="wifi" th:field="*{wifi}">Wifi
+                        <input type="checkbox" name="checkbox" id="wifi" value="wifi" th:field="*{wifi}"
+                               th:value="true">Wifi
                     </label>
                 </div>
                 <div class="checkbox">
                     <label class="control-label">
-                        <input type="checkbox" name="checkbox" id="parking" value="parking" th:field="*{parking}">Parking
+                        <input type="checkbox" name="checkbox" id="parking" value="parking" th:field="*{parking}"
+                               th:value="true">Parking
                     </label>
                 </div>
                 <div class="checkbox">
                     <label class="control-label">
-                        <input type="checkbox" name="checkbox" id="pool" value="swimming pool" th:field="*{pool}">Swimming
+                        <input type="checkbox" name="checkbox" id="pool" value="swimming pool" th:field="*{pool}"
+                               th:value="true">Swimming
                         pool
                     </label>
                 </div>
@@ -98,25 +100,25 @@
             <div class="column4" style="float:right; margin-top:35px;">
                 <div class="checkbox">
                     <label class="control-label">
-                        <input type="checkbox" name="checkbox" id="spa" value="spa" th:field="*{spa}">Spa
+                        <input type="checkbox" name="checkbox" id="spa" value="spa" th:field="*{spa}" th:value="true">Spa
                     </label>
                 </div>
                 <div class="checkbox">
                     <label class="control-label">
                         <input type="checkbox" name="checkbox" id="service" value="shuttle service"
-                               th:field="*{shuttleservice}">Shuttle Service</label>
+                               th:field="*{shuttleService}" th:value="true">Shuttle Service</label>
                 </div>
                 <div class="checkbox">
                     <label class="control-label">
                         <input type="checkbox" name="checkbox" id="drycleaning" value="dry cleaning"
-                               th:field="*{cleaning}">Dry cleaning</label>
+                               th:field="*{dryCleaning}" th:value="true">Dry cleaning</label>
                 </div>
             </div>
 
         </div>
         <div class="form-group">
             <div class="col-sm-8 col-sm-offset-4">
-                <input type="button" id="search" value="Search" onClick="writeValues(form)"/>
+                <input type="submit" id="search" value="Search"/>
             </div>
         </div>
     </div>
@@ -132,21 +134,21 @@
             </div>
     -->
 
-    <div id="result">
-        <p th:text="'destination: ' + ${form.destination}"/>
-        <p th:text="'checkinDate: ' + ${form.checkinDate}"/>
-        <p th:text="'checkoutDate: ' + ${form.checkoutDate}"/>
-        <p th:text="'hotelStars: ' + ${form.hotelStars}"/>
-        <p th:text="'peopleNumb: ' + ${form.peopleNumb}"/>
-        <p th:text="'wifi: ' + ${form.wifi}"/>
-        <p th:text="'parking: ' + ${form.parking}"/>
-        <p th:text="'pool: ' + ${form.pool}"/>
-        <p th:text="'spa: ' + ${form.spa}"/>
-        <p th:text="'shuttleservice: ' + ${form.shuttleservice}"/>
-        <p th:text="'cleaning: ' + ${form.cleaning}"/>
-    </div>
+    <!--<div id="result">-->
+    <!--<p th:text="'destination: ' + ${form.destination}"/>-->
+    <!--<p th:text="'checkinDate: ' + ${form.checkinDate}"/>-->
+    <!--<p th:text="'checkoutDate: ' + ${form.checkoutDate}"/>-->
+    <!--<p th:text="'hotelStars: ' + ${form.hotelStars}"/>-->
+    <!--<p th:text="'peopleNumb: ' + ${form.peopleNumb}"/>-->
+    <!--<p th:text="'wifi: ' + ${form.wifi}"/>-->
+    <!--<p th:text="'parking: ' + ${form.parking}"/>-->
+    <!--<p th:text="'pool: ' + ${form.pool}"/>-->
+    <!--<p th:text="'spa: ' + ${form.spa}"/>-->
+    <!--<p th:text="'shuttleservice: ' + ${form.shuttleservice}"/>-->
+    <!--<p th:text="'cleaning: ' + ${form.cleaning}"/>-->
+    <!--</div>-->
 
-</div>
+    <!--</div>-->
 
 <script src="../../assets/js/jquery.min.js"></script>
 <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>

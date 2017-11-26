@@ -42,7 +42,11 @@ public class HotelController {
         form.setCity(form1.getCity());
         form.setParking(form1.isParking());
         form.setSpa(form1.isSpa());
-        System.out.println(form1.isParking());
+        form.setDryCleaning(form1.isDryCleaning());
+        form.setPool(form1.isPool());
+        form.setShuttleService(form1.isShuttleService());
+        form.setWifi(form1.isWifi());
+
         return "redirect:/list?city=" + form1.getCity();
 
     }
@@ -52,12 +56,20 @@ public class HotelController {
 
         List<Hotel> hotels = hotelService.getAllByAddressCityAndStars(city, 7);
 
-        List<Hotel> filteredHotels = hotels.stream()
-                .filter(x -> (x.getHotelAmenities().isParking() == form.isParking() && x.getHotelAmenities().isSpa() == form.isSpa()))
-                .collect(Collectors.toList());
-
-        model.addAttribute("hotelList", filteredHotels);
-        System.out.println(form.isParking());
+        if (form.isParking() || form.isSpa() || form.isWifi() || form.isShuttleService() ||
+                form.isDryCleaning() || form.isPool()) {
+            List<Hotel> filteredHotels = hotels.stream()
+                    .filter(x -> (x.getHotelAmenities().isParking() == form.isParking()
+                            && x.getHotelAmenities().isSpa() == form.isSpa())
+                            && x.getHotelAmenities().isDryCleaning() == form.isDryCleaning()
+                            && x.getHotelAmenities().isPool() == form.isPool()
+                            && x.getHotelAmenities().isShuttleService() == form.isShuttleService()
+                            && x.getHotelAmenities().isWifi() == form.isWifi())
+                    .collect(Collectors.toList());
+            model.addAttribute("hotelList", filteredHotels);
+        } else {
+            model.addAttribute("hotelList", hotels);
+        }
         return HOTEL_LIST;
     }
 
