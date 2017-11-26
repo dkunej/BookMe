@@ -4,7 +4,6 @@ import com.bookme.BookMe.model.Form;
 import com.bookme.BookMe.model.Hotel;
 import com.bookme.BookMe.repository.HotelRepository;
 import com.bookme.BookMe.service.HotelService;
-import com.fasterxml.jackson.databind.util.ArrayBuilders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -16,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.Valid;
-import java.awt.image.AreaAveragingScaleFilter;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -53,7 +50,6 @@ public class HotelController {
         form.setCheckoutDate(form1.getCheckoutDate());
         form.setNumPeople(form1.getNumPeople());
         form.setStars(form1.getStars());
-        System.out.println(form1.getCheckoutDate());
 
         return "redirect:/list?city=" + form1.getCity() + "&stars=" + form1.getStars();
 
