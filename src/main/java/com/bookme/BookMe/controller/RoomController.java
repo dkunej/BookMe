@@ -48,11 +48,10 @@ public class RoomController {
 
     @RequestMapping(value = "/room", method = RequestMethod.GET)
     public String getRoom(@RequestParam("id") int roomId, Model model) {
-        /**
-         * TODO: Matija treba napraviti controller za prikazivanje jedne sobe
-         */
+        List<Room> room = roomService.getAllByRoomId(roomId);
+        model.addAttribute("roomDetails", room);
+
+
         return ROOM;
     }
-
-
 }

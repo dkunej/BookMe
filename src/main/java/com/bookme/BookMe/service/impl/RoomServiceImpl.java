@@ -48,4 +48,9 @@ public class RoomServiceImpl implements RoomService {
     public List<Room> findAvailableRoomsinHotelByDate(@Param("checkIn") Date checkIn, @Param("checkOut") Date checkOut) {
         return roomRepository.findAvailableRoomsinHotelByDate(checkIn, checkOut);
     }
+
+    @Override
+    public List<Room> getAllByRoomId(int roomId){
+        return roomRepository.getAllByRoomId(roomId);
+    }
 }

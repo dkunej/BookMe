@@ -23,6 +23,8 @@ public interface RoomRepository extends JpaRepository<Room, Long> {
 
     List<Room> getAllByHotelIdNameAndAvailability(String hotelName, boolean isAvailable);
 
+    List<Room> getAllByRoomId(int roomId);
+
     @Query("select r from Room r inner join Hotel h on r.hotelId = h.hotelId where r.roomId not in (SELECT ru.roomID from RoomUnavailability ru WHERE ru.startDateID = :checkIn and ru.endDateID = :checkOut)")
     List<Room> findAvailableRoomsinHotelByDate(@Param("checkIn") Date checkIn, @Param("checkOut") Date checkOut);
 

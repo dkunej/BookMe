@@ -50,7 +50,6 @@ public class HotelController {
         form.setCheckoutDate(form1.getCheckoutDate());
         form.setNumPeople(form1.getNumPeople());
         form.setStars(form1.getStars());
-        System.out.println(form1.getCheckoutDate());
 
         return "redirect:/list?city=" + form1.getCity() + "&stars=" + form1.getStars();
 
