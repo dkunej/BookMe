@@ -30,9 +30,11 @@
 </nav>
 
 
-<div th:each="hotels : ${hotelList}" id="hotels">
-    <h2 id="LosAngeles">City</h2>
-    <div>
+<div id="hotels">
+    <h2 th:text="${city}" id="LosAngeles"></h2>
+    <span>From: <p th:text="${checkIn}"></p></span>
+    <span>From: <p th:text="${checkOut}"></p></span>
+    <div th:each="hotels : ${hotelList}">
         <span><h4 th:text="${hotels.hotelName}">Hotel...</h4></span>
         <span><p th:text="${hotels.hotelDescription}">Description...</p></span>
         <a th:href="@{/list/hotel(hotelName=${hotels.hotelName})}" class="button"><span>Check the rooms </span></a>
