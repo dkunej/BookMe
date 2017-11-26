@@ -1,7 +1,6 @@
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-      th:with="currentPage='hotels'">
-<head xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="currentPage='hotels'">
 
+<head xmlns:th="http://www.w3.org/1999/xhtml">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +13,8 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand navbar-link" href="../../../java/web/index.html"
-               style="background-image:url(&quot;assets/img/logo.png&quot;)"> </a>
+            <a class="navbar-brand navbar-link" href="../thymeleaf/index.html"
+               style="background-image:url(&quot;../../assets/img/logo.png&quot;)"> </a>
             <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span
                     class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span
                     class="icon-bar"></span></button>
@@ -34,16 +33,11 @@
 <div th:each="hotels : ${hotelList}" id="hotels">
     <h2 id="LosAngeles">City</h2>
     <div>
-        <span><h4 th:text="${hotels.hotelName}"></h4></span>
-        <span><p th:text="${hotels.hotelDescription}">
-        </p></span>
+        <span><h4 th:text="${hotels.hotelName}">Hotel...</h4></span>
+        <span><p th:text="${hotels.hotelDescription}">Description...</p></span>
+        <button onclick="location.href='../thymeleaf/rooms.html'" class="button"><span>RESERVE </span></button>
     </div>
-</div>
 
-
-    <script type="text/javascript" src="../../assets/js/default.js"></script>
-    <script type="text/javascript" src="../../assets/js/gallery.js"></script>
-    <script type="text/javascript" src="../../../assets/js/gallery.min.js"></script>
 
 
     <div id="gallerSlider"
@@ -52,7 +46,7 @@
         <div data-u="loading" class="spinImg"
              style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
             <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;"
-                 src="../..//assets/img/spin.svg"/>
+                 src="../../assets/img/spin.svg"/>
         </div>
         <div data-u="slides"
              style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
@@ -188,35 +182,15 @@
     </div>
     <script type="text/javascript">gallery();</script>
 
-    <div class="row">
-        <div class="column" style="float: left;width: 33.33%;padding: 10px;">
-            <h4>Luxurious Guest Rooms</h4>
-            <li>classic views</li>
-            <li>furnished balconies</li>
-            <li>Italian marble bathrooms</li>
-            <li>standard Internet</li>
-
-        </div>
-        <div class="column" style="float: left;width: 33.33%;padding: 10px;">
-            <h4>Signature Suites</h4>
-            <li>one-bedroom layouts</li>
-            <li>furnished balconies</li>
-            <li>premium Internet</li>
-            <li>added privacy</li>
-
-        </div>
-        <div class="column" style="float: left;width: 33.33%;padding: 10px;">
-            <h4>Specialty Suites</h4>
-            <li>presidential accommodations</li>
-            <li>Residential-style</li>
-            <li>up to three bedrooms</li>
-            <li>furnished terraces</li>
-            <li>private-floor access</li>
-            <li>premium Internet</li>
-
-        </div>
-    </div>
 
 </div>
+</div>
+
+
+<script type="text/javascript" src="../../assets/js/default.js"></script>
+<script type="text/javascript" src="../../assets/js/gallery.js"></script>
+<script type="text/javascript" src="../../../assets/js/gallery.min.js"></script>
+<script type="text/javascript" src="../../assets/js/imgChanges.js"></script>
+
 </body>
 </html>

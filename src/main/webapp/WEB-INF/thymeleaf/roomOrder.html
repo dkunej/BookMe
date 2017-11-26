@@ -1,0 +1,64 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="currentPage='hotels'">
+
+<head xmlns:th="http://www.w3.org/1999/xhtml">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bookM3</title>
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand navbar-link" href="../thymeleaf/index.html"
+               style="background-image:url(&quot;../../assets/img/logo.png&quot;)"> </a>
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1">
+                <span class="sr-only"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span></button>
+        </div>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">About us</a></li>
+                <li><a href="hotels.html">Best Hotels</a></li>
+                <li><a href="#">Review's </a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div th:each="rooms : ${roomReservation}" id="hotels">
+    <h2 id="LosAngeles">City</h2>
+    <div>
+        <h4 th:text="${hotel.room}">Reservation</h4>
+        <p th:text="'destination: ' + ${form.destination}"/>
+        <p th:text="'checkinDate: ' + ${form.checkinDate}"/>
+        <p th:text="'checkoutDate: ' + ${form.checkoutDate}"/>
+        <p th:text="'hotelStars: ' + ${form.hotelStars}"/>
+        <p th:text="'peopleNumb: ' + ${form.peopleNumb}"/>
+        <p th:text="'wifi: ' + ${form.wifi}"/>
+        <p th:text="'parking: ' + ${form.parking}"/>
+        <p th:text="'pool: ' + ${form.pool}"/>
+        <p th:text="'spa: ' + ${form.spa}"/>
+        <p th:text="'shuttleservice: ' + ${form.shuttleservice}"/>
+        <p th:text="'cleaning: ' + ${form.cleaning}"/>
+
+        <br/><br/>
+        <h3> Price: </h3>
+    </div>
+
+</div>
+
+
+<script type="text/javascript" src="../../assets/js/default.js"></script>
+<script type="text/javascript" src="../../assets/js/gallery.js"></script>
+<script type="text/javascript" src="../../../assets/js/gallery.min.js"></script>
+<script type="text/javascript" src="../../assets/js/imgChanges.js"></script>
+
+</body>
+</html>
