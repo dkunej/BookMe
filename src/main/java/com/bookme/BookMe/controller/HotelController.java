@@ -49,6 +49,9 @@ public class HotelController {
         form.setPool(form1.isPool());
         form.setShuttleService(form1.isShuttleService());
         form.setWifi(form1.isWifi());
+        form.setCheckinDate(form1.getCheckinDate());
+        form.setCheckoutDate(form1.getCheckoutDate());
+        form.setNumPeople(form1.getStars());
 
         return "redirect:/list?city=" + form1.getCity() + "&stars=" + form1.getStars();
 
