@@ -48,7 +48,9 @@ public class HotelController {
         form.setWifi(form1.isWifi());
         form.setCheckinDate(form1.getCheckinDate());
         form.setCheckoutDate(form1.getCheckoutDate());
-        form.setNumPeople(form1.getStars());
+        form.setNumPeople(form1.getNumPeople());
+        form.setStars(form1.getStars());
+        System.out.println(form1.getCheckoutDate());
 
         return "redirect:/list?city=" + form1.getCity() + "&stars=" + form1.getStars();
 
