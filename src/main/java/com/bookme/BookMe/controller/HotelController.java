@@ -4,7 +4,6 @@ import com.bookme.BookMe.model.Form;
 import com.bookme.BookMe.model.Hotel;
 import com.bookme.BookMe.repository.HotelRepository;
 import com.bookme.BookMe.service.HotelService;
-import com.fasterxml.jackson.databind.util.ArrayBuilders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -16,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.Valid;
-import java.awt.image.AreaAveragingScaleFilter;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -49,15 +46,19 @@ public class HotelController {
         form.setPool(form1.isPool());
         form.setShuttleService(form1.isShuttleService());
         form.setWifi(form1.isWifi());
+        form.setCheckinDate(form1.getCheckinDate());
+        form.setCheckoutDate(form1.getCheckoutDate());
+        form.setNumPeople(form1.getNumPeople());
+        form.setStars(form1.getStars());
 
-        return "redirect:/list?city=" + form1.getCity();
+        return "redirect:/list?city=" + form1.getCity() + "&stars=" + form1.getStars();
 
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String getHotelList(@RequestParam("city") String city, Model model) {
+    public String getHotelList(@RequestParam("city") String city, @RequestParam("stars") int stars, Model model) {
 
-        List<Hotel> hotels = hotelService.getAllByAddressCityAndStars(city, 7);
+        List<Hotel> hotels = hotelService.getAllByAddressCityAndStars(city, stars);
         if (form.isParking()) {
             hotels = hotels.stream()
                     .filter(x -> (x.getHotelAmenities().isParking()))

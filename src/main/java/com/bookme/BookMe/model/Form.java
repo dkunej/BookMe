@@ -1,10 +1,12 @@
 package com.bookme.BookMe.model;
 
+import java.time.LocalDate;
+
 public class Form {
     private String city;
     private int numPeople;
-    private Date checkinDate;
-    private Date checkoutDate;
+    private String checkinDate;
+    private String checkoutDate;
     private int stars;
     private boolean wifi;
     private boolean parking;
@@ -85,19 +87,19 @@ public class Form {
         this.numPeople = numPeople;
     }
 
-    public Date getCheckinDate() {
+    public String getCheckinDate() {
         return checkinDate;
     }
 
-    public void setCheckinDate(Date checkinDate) {
+    public void setCheckinDate(String checkinDate) {
         this.checkinDate = checkinDate;
     }
 
-    public Date getCheckoutDate() {
+    public String getCheckoutDate() {
         return checkoutDate;
     }
 
-    public void setCheckoutDate(Date checkoutDate) {
+    public void setCheckoutDate(String checkoutDate) {
         this.checkoutDate = checkoutDate;
     }
 }
