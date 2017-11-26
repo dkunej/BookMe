@@ -35,7 +35,7 @@
     <div>
         <span><h4 th:text="${hotels.hotelName}">Hotel...</h4></span>
         <span><p th:text="${hotels.hotelDescription}">Description...</p></span>
-        <button onclick="location.href='../thymeleaf/rooms.html'" class="button"><span>RESERVE </span></button>
+        <a th:href="@{/list/hotel(hotelName=${hotels.hotelName})}" class="button"><span>Check the rooms </span></a>
     </div>
 
 
