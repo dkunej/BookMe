@@ -15,4 +15,6 @@ public interface RoomService {
     Room findByRoomId(int roomId);
 
     List<Room> getAllByHotelIdNameAndAvailability(String hotelName, boolean isAvailable);
+
+    List<Room> getAllByRoomId(int roomId);
 }
