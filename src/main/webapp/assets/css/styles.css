@@ -115,3 +115,51 @@ a{text-decoration:none;}
 }
 
 
+
+/* rooom */
+.button {
+  display: inline-block;
+  border-radius: 5px;
+  border:none;
+  background-color: #6699ff;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  float: left;
+  vertical-align:middle:
+  -webkit-appearance: button;
+      -moz-appearance: button;
+      appearance: button;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  color:white;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -15px;
+  transition: 0.5s;
+  color:white;
+}
+
+.button:hover span {
+  padding-right: 15px;
+  color:white;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  color:white;
+}
