@@ -50,14 +50,14 @@ public class HotelController {
         form.setShuttleService(form1.isShuttleService());
         form.setWifi(form1.isWifi());
 
-        return "redirect:/list?city=" + form1.getCity();
+        return "redirect:/list?city=" + form1.getCity() + "&stars=" + form1.getStars();
 
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String getHotelList(@RequestParam("city") String city, Model model) {
+    public String getHotelList(@RequestParam("city") String city, @RequestParam("stars") int stars, Model model) {
 
-        List<Hotel> hotels = hotelService.getAllByAddressCityAndStars(city, 7);
+        List<Hotel> hotels = hotelService.getAllByAddressCityAndStars(city, stars);
         if (form.isParking()) {
             hotels = hotels.stream()
                     .filter(x -> (x.getHotelAmenities().isParking()))
