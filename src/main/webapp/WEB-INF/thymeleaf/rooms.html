@@ -1,4 +1,4 @@
-<html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="currentPage='hotels'">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="currentPage='rooms'">
 
 <head xmlns:th="http://www.w3.org/1999/xhtml">
 
@@ -32,55 +32,21 @@
 </nav>
 
 
-<div th:each="rooms : ${roomList}" id="hotels">
-    <h2 id="LosAngeles">City</h2>
-    <div>
-        <span><h4 th:text="${hotels.room}">Rooms</h4></span>
-        <span><p th:text="${hotels.roomDescription}">Types</p></span>
-    </div>
-
-    <div class="row">
-        <div class="column">
-            <h4>Luxurious Guest Rooms</h4>
-            <li>classic views</li>
-            <li>furnished balconies</li>
-            <li>Italian marble bathrooms</li>
-            <li>standard Internet</li>
-            <br/><br/>
-            <button onclick="location.href='../thymeleaf/roomOrder.html'" class="button" name="luxuriousRoom"><span>RESERVE </span>
-            </button>
-
-        </div>
-
-        <div class="column">
-            <h4>Signature Suites</h4>
-            <li>one-bedroom layouts</li>
-            <li>furnished balconies</li>
-            <li>premium Internet</li>
-            <li>added privacy</li>
-            <br/><br/>
-            <button onclick="location.href='../thymeleaf/roomOrder.html'" class="button" name="signatureRoom"><span>RESERVE </span>
-            </button>
-
-        </div>
-        <div class="column">
-            <h4>Specialty Suites</h4>
-            <li>presidential accommodations</li>
-            <li>Residential-style</li>
-            <li>up to three bedrooms</li>
-            <li>furnished terraces</li>
-            <li>private-floor access</li>
-            <li>premium Internet</li>
-
-            <button onclick="location.href='../thymeleaf/roomOrder.html'" class="button" name="specialtyRoocm"><span>RESERVE </span>
-            </button>
-
-        </div>
+<div id="hotels">
+    <h2 id="LosAngeles" th:text="${hotel.HotelName}"></h2>
+    <div th:each="rooms : ${roomList}">
+        <br/>
+        <span><h4 th:text="${rooms.roomName}">Rooms</h4></span>
+        <span>Price: </span> <span th:text="${rooms.price}"></span>
+        <span><br/>For </span><span th:text="${rooms.persons}"></span><span> people</span>
+        <br/><br/><img src="../../assets/img/bHotel/room2.jpg" alt="roomPic" width="300" height="220">
+        <br/><br/><a th:href="@{/list/room(id=${rooms.roomId})}" class="submit"
+                     name="luxuriousRoom"><span>Details </span>
+    </a>
+        <br/>
     </div>
 
 </div>
-
-
 <script type="text/javascript" src="../../assets/js/default.js"></script>
 <script type="text/javascript" src="../../assets/js/gallery.js"></script>
 <script type="text/javascript" src="../../../assets/js/gallery.min.js"></script>

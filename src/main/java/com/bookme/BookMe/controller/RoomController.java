@@ -6,7 +6,6 @@ import com.bookme.BookMe.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,17 +13,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = "/hotel")
+@RequestMapping(value = "/list")
 public class RoomController {
-    private static final String ROOM_LIST = "proba";
-    private static final String ROOM = "proba2";
+    private static final String ROOM_LIST = "rooms";
+    private static final String ROOM = "roomOrder";
 
     @Autowired
     private RoomService roomService;
     @Autowired
     private HotelService hotelService;
 
-    @RequestMapping(value = "/listRooms", method = RequestMethod.GET)
+    @RequestMapping(value = "/hotel", method = RequestMethod.GET)
     public String listRooms(@RequestParam("hotelName") String name, Model model) {
 
         List<Room> rooms = roomService.getAllByHotelIdNameAndAvailability(name, true);
@@ -34,10 +33,11 @@ public class RoomController {
         return ROOM_LIST;
     }
 
-    @RequestMapping(value = "/{id}/room", method = RequestMethod.GET)
-    public String getRoom(@PathVariable("id") int roomId, Model model) {
-        Room room = roomService.findByRoomId(roomId);
-        model.addAttribute("room", room);
+    @RequestMapping(value = "/room", method = RequestMethod.GET)
+    public String getRoom(@RequestParam("id") int roomId, Model model) {
+        /**
+         * TODO: Matija treba napraviti controller za prikazivanje jedne sobe
+         */
         return ROOM;
     }
 
