@@ -51,9 +51,9 @@
 
     <span>Price: </span> <span th:text="${room.price}"></span>
 </div>
-</div>
 
-<div th:each="rooms : ${roomReservation}" id="hotels">
+
+    <div th:each="rooms : ${roomReservation}">
     <h2 id="LosAngeles">City</h2>
     <div>
         <h4 th:text="${hotel.room}">Reservation</h4>
@@ -72,7 +72,7 @@
         <br/><br/>
         <h3> Price: </h3>
     </div>
-
+    </div>
 </div>
 
 

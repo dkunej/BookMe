@@ -7,9 +7,12 @@
     <title>bookM3</title>
     <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../assets/css/styles.css">
-    <link rel="stylesheet" href="../../assets/css/gallery.css">
-    <link rel="stylesheet" href="../../assets/css/galleryslide.css">
-    <link rel="stylesheet" href="../../assets/css/galleystyle.css">
+
+    <link rel="stylesheet" type="text/css" href="../../assets/css/galleryslide.css"/>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/gallerystyle.css"/>
+
+
+    <script src="../../assets/js/modernizr.custom.17475.js"></script>
 
 </head>
 
@@ -35,19 +38,22 @@
 
 
 <div th:each="hotels : ${hotelList}" id="hotels">
-    <h2 id="LosAngeles">City</h2>
-
-        <span><h4 th:text="${hotels.hotelName}">Hotel...</h4></span>
+    <h2 th:text="${city}" id="LosAngeles"></h2>
+    <span>From:  </span><span th:text="${checkIn}"></span><br/>
+    <span>   To: </span><span th:text="${checkOut}"></span>
+    <div th:each="hotels : ${hotelList}">
+        <br/><span><h4 th:text="${hotels.hotelName}">Hotel...</h4></span>
         <span><p th:text="${hotels.hotelDescription}">Description...</p></span>
-        <button onclick="location.href='../thymeleaf/rooms.html'" class="button"><span>RESERVE </span></button>
+        <a th:href="@{/list/hotel(hotelName=${hotels.hotelName},checkIn=${checkIn},checkOut=${checkOut})}"
+           class="button"><span>Check the rooms </span></a><br/>
+    </div>
 
 
     <div class="container demo-4">
         <div class="gallery">
-            <!-- Elastislide Carousel -->
             <ul id="carousel" class="elastislide-list">
                 <li data-preview="../../assets/img/bHotel/lobby.jpg"><a href="#"><img
-                        src="../../assets/img/bHotel/lobby200x100.jpg" alt="bobby"/></a></li>
+                        src="../../assets/img/bHotel/lobby200x100.jpg" alt="lobby"/></a></li>
                 <li data-preview="../../assets/img/bHotel/outside.jpg"><a href="#"><img
                         src="../../assets/img/bHotel/outside200x100.jpg" alt="outside"/></a></li>
                 <li data-preview="../../assets/img/bHotel/view.jpg"><a href="#"><img
@@ -74,28 +80,20 @@
                         src="../../assets/img/bHotel/bedroom2200x100.jpg" alt="bedroom2"/></a></li>
                 <li data-preview="../../assets/img/bHotel/door.jpg"><a href="#"><img
                         src="../../assets/img/bHotel/door200x100.jpg" alt="door"/></a></li>
-
             </ul>
-            <!-- End Elastislide Carousel -->
 
             <div class="image-preview">
-                <img id="preview" src="imgGallery/large/4.jpg"/>
+                <img id="preview" src="../../assets/img/bHotel/lobby.jpg"/>
             </div>
-        </div>
+
     </div>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script type="text/javascript" src="../../assets/jsGallery/jquerypp.custom.js"></script>
-    <script type="text/javascript" src="../../assets/jsGallery/jquery.elastislide.js"></script>
-    <script src="../../assets/jsGallery/modernizr.custom.17475.js"></script>
 
-
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript" src="../../assets/js/gallery.js"></script>
+        <script type="text/javascript" src="../../assets/js/jquery.slide.js"></script>
+    </div>
 </div>
 
-
-<script type="text/javascript" src="../../assets/js/default.js"></script>
-<script type="text/javascript" src="../../assets/js/gallery.js"></script>
-<script type="text/javascript" src="../../../assets/js/gallery.min.js"></script>
-<script type="text/javascript" src="../../assets/js/imgChanges.js"></script>
 
 </body>
 </html>
