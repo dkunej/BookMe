@@ -18,7 +18,7 @@ public interface RoomService {
 
     List<Room> getAllByHotelIdNameAndAvailability(String hotelName, boolean isAvailable);
 
-    List<Room> findAvailableRoomsinHotelByDate(@Param("checkIn") Date checkIn, @Param("checkOut") Date checkOut);
+    List<Room> findAvailableRoomsinHotelByDate(@Param("checkOutYear") int checkOutYear, @Param("checkOutMonth") int checkOutMonth, @Param("checkOutDay") int checkOutDay, @Param("checkInYear") int checkInYear, @Param("checkInMonth") int checkInMonth, @Param("checkInDay") int checkInDay);
 
     List<Room> getAllByRoomId(int roomId);
 }

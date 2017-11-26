@@ -39,7 +39,7 @@ public class RoomController {
         int checkOutDay = Integer.parseInt(checkOut.substring(8, 10));
         Date checkOutDate = dateService.getByYearAndDayAndMonth(checkOutYear, checkOutDay, checkOutMonth);
 
-        List<Room> rooms = roomService.findAvailableRoomsinHotelByDate(checkInDate, checkOutDate);
+        List<Room> rooms = roomService.findAvailableRoomsinHotelByDate(checkOutYear, checkOutMonth, checkOutDay, checkInYear, checkInMonth, checkInDay);
         model.addAttribute("roomList", rooms);
         model.addAttribute("hotel", hotelService.getByName(name));
 
