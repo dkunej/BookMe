@@ -9,4 +9,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface DateRepository extends JpaRepository<Date, Long> {
+    Date getByYearAndDayAndMonth(int year, int day, int month);
 }

@@ -32,12 +32,13 @@
 
 <div id="hotels">
     <h2 th:text="${city}" id="LosAngeles"></h2>
-    <span>From: <p th:text="${checkIn}"></p></span>
-    <span>From: <p th:text="${checkOut}"></p></span>
+    <span>From:  </span><span th:text="${checkIn}"></span>
+    <span>   To: </span><span th:text="${checkOut}"></span>
     <div th:each="hotels : ${hotelList}">
-        <span><h4 th:text="${hotels.hotelName}">Hotel...</h4></span>
+        <br/><span><h4 th:text="${hotels.hotelName}">Hotel...</h4></span>
         <span><p th:text="${hotels.hotelDescription}">Description...</p></span>
-        <a th:href="@{/list/hotel(hotelName=${hotels.hotelName})}" class="button"><span>Check the rooms </span></a>
+        <a th:href="@{/list/hotel(hotelName=${hotels.hotelName},checkIn=${checkIn},checkOut=${checkOut})}"
+           class="button"><span>Check the rooms </span></a><br/>
     </div>
 
 

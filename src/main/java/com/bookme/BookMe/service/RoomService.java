@@ -1,7 +1,9 @@
 package com.bookme.BookMe.service;
 
+import com.bookme.BookMe.model.Date;
 import com.bookme.BookMe.model.Hotel;
 import com.bookme.BookMe.model.Room;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -15,4 +17,6 @@ public interface RoomService {
     Room findByRoomId(int roomId);
 
     List<Room> getAllByHotelIdNameAndAvailability(String hotelName, boolean isAvailable);
+
+    List<Room> findAvailableRoomsinHotelByDate(@Param("checkIn") Date checkIn, @Param("checkOut") Date checkOut);
 }

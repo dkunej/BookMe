@@ -1,6 +1,8 @@
 package com.bookme.BookMe.controller;
 
+import com.bookme.BookMe.model.Date;
 import com.bookme.BookMe.model.Room;
+import com.bookme.BookMe.service.DateService;
 import com.bookme.BookMe.service.HotelService;
 import com.bookme.BookMe.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +24,22 @@ public class RoomController {
     private RoomService roomService;
     @Autowired
     private HotelService hotelService;
-
+    @Autowired
+    private DateService dateService;
     @RequestMapping(value = "/hotel", method = RequestMethod.GET)
-    public String listRooms(@RequestParam("hotelName") String name, Model model) {
+    public String listRooms(@RequestParam("hotelName") String name, @RequestParam("checkIn") String checkIn, @RequestParam("checkOut") String checkOut, Model model) {
 
-        List<Room> rooms = roomService.getAllByHotelIdNameAndAvailability(name, true);
+        int checkInYear = Integer.parseInt(checkIn.substring(0, 4));
+        int checkInMonth = Integer.parseInt(checkIn.substring(5, 7));
+        int checkInDay = Integer.parseInt(checkIn.substring(8, 10));
+        Date checkInDate = dateService.getByYearAndDayAndMonth(checkInYear, checkInDay, checkInMonth);
+
+        int checkOutYear = Integer.parseInt(checkOut.substring(0, 4));
+        int checkOutMonth = Integer.parseInt(checkOut.substring(5, 7));
+        int checkOutDay = Integer.parseInt(checkOut.substring(8, 10));
+        Date checkOutDate = dateService.getByYearAndDayAndMonth(checkOutYear, checkOutDay, checkOutMonth);
+
+        List<Room> rooms = roomService.findAvailableRoomsinHotelByDate(checkInDate, checkOutDate);
         model.addAttribute("roomList", rooms);
         model.addAttribute("hotel", hotelService.getByName(name));
 
