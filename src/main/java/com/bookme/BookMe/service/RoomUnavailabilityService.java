@@ -10,6 +10,6 @@ public interface RoomUnavailabilityService {
 
     List<RoomUnavailability> getByStartDateIDAndEndDateID(int start_date_ID, int end_date_ID);
 
-    RoomUnavailability save(RoomUnavailability ru);
+    void save(RoomUnavailability ru);
 
 }

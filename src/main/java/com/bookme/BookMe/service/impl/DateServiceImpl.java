@@ -21,7 +21,7 @@ public class DateServiceImpl implements DateService {
     }
 
     @Override
-    public Date save(Date d) {
-        return dateRepository.save(d);
+    public void save(Date d) {
+        dateRepository.save(d);
     }
 }
