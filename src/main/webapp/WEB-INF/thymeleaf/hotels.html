@@ -39,8 +39,6 @@
 
 <div th:each="hotels : ${hotelList}" id="hotels">
     <h2 th:text="${city}" id="LosAngeles"></h2>
-    <span>From:  </span><span th:text="${checkIn}"></span><br/>
-    <span>   To: </span><span th:text="${checkOut}"></span>
     <div th:each="hotels : ${hotelList}">
         <br/><span><h4 th:text="${hotels.hotelName}">Hotel...</h4></span>
         <span><p th:text="${hotels.hotelDescription}">Description...</p></span>

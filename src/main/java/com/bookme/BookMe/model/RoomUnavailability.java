@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class RoomUnavailability {
 
     @Id
-    @Column(name = "unavailabilityID", nullable = false)
+    @Column(name = "unavailability_ID", nullable = false)
     private int unavailabilityID;
 
     @ManyToOne
@@ -30,6 +30,12 @@ public class RoomUnavailability {
         this.roomID = room_room_ID;
         this.startDateID = start_date_ID;
         this.endDateID = end_date_ID;
+    }
+
+    public RoomUnavailability(Room roomId, Date checkInDate, Date checkOutDate) {
+        this.roomID = roomId;
+        this.startDateID = checkInDate;
+        this.endDateID = checkOutDate;
     }
 
     public Room getRoomID() {

@@ -12,4 +12,6 @@ public interface RoomUnavailabilityRepository extends JpaRepository<RoomUnavaila
     RoomUnavailability getByRoomID(int room_room_ID);
 
     List<RoomUnavailability> getByStartDateIDAndEndDateID(int start_date_ID, int end_date_ID);
+
+
 }

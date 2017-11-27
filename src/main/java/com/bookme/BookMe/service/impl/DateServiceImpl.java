@@ -19,4 +19,9 @@ public class DateServiceImpl implements DateService {
     public Date getByYearAndDayAndMonth(int year, int day, int month) {
         return dateRepository.getByYearAndDayAndMonth(year, day, month);
     }
+
+    @Override
+    public Date save(Date d) {
+        return dateRepository.save(d);
+    }
 }

@@ -38,6 +38,33 @@ public class Date {
     public Date() {
     }
 
+    public Date(int checkOutYear, int checkOutDay, int checkOutMonth) {
+        year = checkOutYear;
+        day = checkOutDay;
+        month = checkOutMonth;
+    }
+
+    public Date(int id, int checkInYear, int checkInDay, int checkInMonth) {
+        dateId = id;
+        year = checkInYear;
+        day = checkInDay;
+        month = checkInMonth;
+    }
+
+    @Override
+    public String toString() {
+        return "Date{" +
+                "dateId=" + dateId +
+                ", year=" + year +
+                ", month=" + month +
+                ", day=" + day +
+                ", hour=" + hour +
+                ", bookingsbyCheckOutStart=" + bookingsbyCheckOutStart +
+                ", bookingsbyCheckInStart=" + bookingsbyCheckInStart +
+                ", bookingsbyBookingDate=" + bookingsbyBookingDate +
+                '}';
+    }
+
     public int getDateId() {
         return dateId;
     }

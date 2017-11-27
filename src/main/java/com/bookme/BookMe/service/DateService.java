@@ -7,4 +7,6 @@ import com.bookme.BookMe.model.Date;
  */
 public interface DateService {
     Date getByYearAndDayAndMonth(int year, int day, int month);
+
+    Date save(Date d);
 }
