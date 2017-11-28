@@ -9,4 +9,7 @@ public interface RoomUnavailabilityService {
     RoomUnavailability getByRoomID(int room_room_ID);
 
     List<RoomUnavailability> getByStartDateIDAndEndDateID(int start_date_ID, int end_date_ID);
+
+    void save(RoomUnavailability ru);
+
 }

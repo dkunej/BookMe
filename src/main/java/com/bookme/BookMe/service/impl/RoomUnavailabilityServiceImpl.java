@@ -5,6 +5,7 @@ import com.bookme.BookMe.repository.RoomUnavailabilityRepository;
 import com.bookme.BookMe.service.RoomUnavailabilityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -23,4 +24,11 @@ public class RoomUnavailabilityServiceImpl implements RoomUnavailabilityService 
     public List<RoomUnavailability> getByStartDateIDAndEndDateID(int start_date_ID, int end_date_ID) {
         return roomUnavailabilityRepository.getByStartDateIDAndEndDateID(start_date_ID, end_date_ID);
     }
+
+    @Override
+    @Transactional
+    public void save(RoomUnavailability ru) {
+        roomUnavailabilityRepository.save(ru);
+    }
+
 }

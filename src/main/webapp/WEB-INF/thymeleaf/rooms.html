@@ -34,13 +34,16 @@
 
 <div id="hotels">
     <h2 id="LosAngeles" th:text="${hotel.HotelName}"></h2>
+    <h4>Available rooms in period from</h4>
+    <span th:text="${checkIn}"></span>
+    <h4> to </h4><span th:text="${checkOut}"></span>
     <div th:each="rooms : ${roomList}">
         <br/>
         <span><h4 th:text="${rooms.roomName}">Rooms</h4></span>
         <span>Price: </span> <span th:text="${rooms.price}"></span>
         <span><br/>For </span><span th:text="${rooms.persons}"></span><span> people</span>
         <br/><br/><img src="../../assets/img/bHotel/room2.jpg" alt="roomPic" width="300" height="220">
-        <br/><br/><a th:href="@{/list/room(id=${rooms.roomId})}" class="button"
+        <br/><br/><a th:href="@{/list/room(id=${rooms.roomId},checkIn=${checkIn}, checkOut=${checkOut})}" class="button"
                      name="luxuriousRoom"><span>Details </span>
     </a>
         <br/>
