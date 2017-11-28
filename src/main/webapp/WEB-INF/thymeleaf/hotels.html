@@ -42,12 +42,14 @@
     <span>From:  </span><span th:text="${checkIn}"></span><br/>
     <span>   To: </span><span th:text="${checkOut}"></span>
     <div th:each="hotels,iter : ${hotelList}">
-        <br/><span><h4 th:text="${hotels.hotelName}">Hotel...</h4></span>
-        <img th:src="@{/images(id=${iter.index},city=${city},stars=${hotels.stars})}" alt="img"/>
-        <span><p th:text="${hotels.hotelDescription}">Description...</span>
+
+        <div>
+            <br/><span><h4 th:text="${hotels.hotelName}">Hotel...</h4></span>
+            <img th:src="@{/images(id=${iter.index},city=${city},stars=${hotels.stars})}" alt="img"/>
+            <span><p th:text="${hotels.hotelDescription}">Description...</span>
         <a th:href="@{/list/hotel(hotelName=${hotels.hotelName},checkIn=${checkIn},checkOut=${checkOut})}"
            class="button"><span>Check the rooms </span></a><br/>
-
+        </div>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
         <script type="text/javascript" src="../../assets/js/gallery.js"></script>
         <script type="text/javascript" src="../../assets/js/jquery.slide.js"></script>
