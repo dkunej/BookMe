@@ -27,8 +27,8 @@ public class RoomUnavailabilityServiceImpl implements RoomUnavailabilityService 
 
     @Override
     @Transactional
-    public void save(RoomUnavailability ru) {
-        roomUnavailabilityRepository.save(ru);
+    public RoomUnavailability save(RoomUnavailability ru) {
+        return roomUnavailabilityRepository.save(ru);
     }
 
 }
