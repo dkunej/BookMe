@@ -100,7 +100,7 @@ public class HotelController {
     public @ResponseBody
     byte[] showImageOnId(@RequestParam("id") int id, @RequestParam("city") String city, @RequestParam("stars") int stars) {
         List<Hotel> hotels = hotelService.getAllByAddressCityAndStars(city, stars);
-        byte[] img = hotels.get(id - 1).getImage();
+        byte[] img = hotels.get(id).getImage();
         return img;
     }
 }
