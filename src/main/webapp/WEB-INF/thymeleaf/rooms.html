@@ -39,117 +39,36 @@
         to <span th:text="${checkOut}"></span></h3>
     <div th:each="rooms : ${roomList}">
         <br/>
-        <span><h4 th:text="${rooms.roomName}">Rooms</h4></span>
-        <span>Price: </span> <span th:text="${rooms.price}"></span>
-        <span><br/>For </span><span th:text="${rooms.persons}"></span><span> people</span>
+        <img src='../../assets/img/bHotel/room200x100.jpg' class="image">
+        <div class="text">
+            <span><h4 th:text="${rooms.roomName}">Rooms</h4></span>
+            <span>Price: </span> <span th:text="${rooms.price}"></span>
+            <span><br/>For </span><span th:text="${rooms.persons}"></span><span> people</span>
 
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore
+                magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.
+
+                <a th:href="@{/list/room(id=${rooms.roomId},checkIn=${checkIn}, checkOut=${checkOut})}" class="button"
+                   name="room1"><span>Details </span></a>
+            </p>
+        </div>
         <br/><br/><br/>
 
-
-    <img src='../../assets/img/bHotel/room200x100.jpg' class="image">
-    <div class="text">
-        <h4>Room 1</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-            laborum.
-
-            <a th:href="@{/list/room(id=${rooms.roomId},checkIn=${checkIn}, checkOut=${checkOut})}" class="button"
-               name="room1"><span>Details </span></a>
-        </p>
+        <br/><br/>
     </div>
-    <br/><br/>
-
-    <img src='../../assets/img/bHotel/room2200x100.jpg' class="image">
-    <div class="text">
-        <h4>Room 2</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-            laborum.
-
-            <a th:href="@{/list/room(id=${rooms.roomId},checkIn=${checkIn}, checkOut=${checkOut})}" class="button"
-               name="room2"><span>Details </span></a>
-        </p>
-    </div>
-    <br/><br/>
-
-    <img src='../../assets/img/bHotel/room3200x100.jpg' class="image">
-    <div class="text">
-        <h4>Room 2</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-            laborum.
-
-            <a th:href="@{/list/room(id=${rooms.roomId},checkIn=${checkIn}, checkOut=${checkOut})}" class="button"
-               name="room3"><span>Details </span></a>
-        </p>
-    </div>
-    <br/><br/>
-
-    <img src='../../assets/img/bHotel/room4200x100.jpg' class="image">
-    <div class="text">
-        <h4>Room 3</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-            laborum.
-
-            <a th:href="@{/list/room(id=${rooms.roomId},checkIn=${checkIn}, checkOut=${checkOut})}" class="button"
-               name="room4"><span>Details </span></a>
-        </p>
-    </div>
-    <br/><br/>
 
 
 </div>
-    <div class="container demo-4">
-        <div class="gallery">
-            <ul id="carousel" class="elastislide-list">
-                <li data-preview="../../assets/img/bHotel/lobby.jpg"><a href="#"><img
-                        src="../../assets/img/bHotel/lobby200x100.jpg" alt="lobby"/></a></li>
-                <li data-preview="../../assets/img/bHotel/outside.jpg"><a href="#"><img
-                        src="../../assets/img/bHotel/outside200x100.jpg" alt="outside"/></a></li>
-                <li data-preview="../../assets/img/bHotel/view.jpg"><a href="#"><img
-                        src="../../assets/img/bHotel/view200x100.jpg" alt="image04"/></a></li>
-                <li data-preview="../../assets/img/bHotel/restoraunt.jpg"><a href="#"><img
-                        src="../../assets/img/bHotel/restoraunt200x100.jpg" alt="restoruant"/></a></li>
-                <li data-preview="../../assets/img/bHotel/enterenc.jpg"><a href="#"><img
-                        src="../../assets/img/bHotel/enterenc200x100.jpg" alt="enterenc"/></a></li>
-                <li data-preview="../../assets/img/bHotel/inside.jpg"><a href="#"><img
-                        src="../../assets/img/bHotel/inside200x100.jpg" alt="indside"/></a></li>
-                <li data-preview="../../assets/img/bHotel/room.jpg"><a href="#"><img
-                        src="../../assets/img/bHotel/room200x100.jpg" alt="room"/></a></li>
-                <li data-preview="../../assets/img/bHotel/room2.jpg"><a href="#"><img
-                        src="../../assets/img/bHotel/room2200x100.jpg" alt="room2"/></a></li>
-                <li data-preview="../../assets/img/bHotel/room3.jpg"><a href="#"><img
-                        src="../../assets/img/bHotel/room3200x100.jpg" alt="room3"/></a></li>
-                <li data-preview="../../assets/img/bHotel/room4.jpg"><a href="#"><img
-                        src="../../assets/img/bHotel/room4200x100.jpg" alt="room4"/></a></li>
-                <li data-preview="../../assets/img/bHotel/room5.jpg"><a href="#"><img
-                        src="../../assets/img/bHotel/room5200x100.jpg" alt="room5"/></a></li>
-                <li data-preview="../../assets/img/bHotel/bedroom.jpg"><a href="#"><img
-                        src="../../assets/img/bHotel/bedroom200x100.jpg" alt="bedroom"/></a></li>
-                <li data-preview="../../assets/img/bHotel/bedroom2.jpg"><a href="#"><img
-                        src="../../assets/img/bHotel/bedroom2200x100.jpg" alt="bedroom2"/></a></li>
-                <li data-preview="../../assets/img/bHotel/door.jpg"><a href="#"><img
-                        src="../../assets/img/bHotel/door200x100.jpg" alt="door"/></a></li>
-            </ul>
-        </div>
     </div>
+</div>
 <script type="text/javascript" src="../../assets/js/default.js"></script>
 <script type="text/javascript" src="../../assets/js/gallery.js"></script>
 <script type="text/javascript" src="../../../assets/js/gallery.min.js"></script>
 <script type="text/javascript" src="../../assets/js/imgChanges.js"></script>
-</div>
 </body>
 </html>

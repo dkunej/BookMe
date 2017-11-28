@@ -12,6 +12,5 @@ import java.util.List;
 public interface HotelRepository extends JpaRepository<Hotel, Long>, QueryByExampleExecutor<Hotel> {
 
     Hotel getByName(String name);
-
     List<Hotel> getAllByAddressCityAndStars(String city, int stars);
 }
