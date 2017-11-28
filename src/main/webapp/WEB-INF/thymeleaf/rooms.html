@@ -34,20 +34,83 @@
 
 <div id="hotels">
     <h2 id="LosAngeles" th:text="${hotel.HotelName}"></h2>
-    <h4>Available rooms in period from</h4>
-    <span th:text="${checkIn}"></span>
-    <h4> to </h4><span th:text="${checkOut}"></span>
+    <h2>Available rooms in period</h2>
+    <h3> From <span th:text="${checkIn}"></span>
+        to </h3><span th:text="${checkOut}"></span>
     <div th:each="rooms : ${roomList}">
         <br/>
         <span><h4 th:text="${rooms.roomName}">Rooms</h4></span>
         <span>Price: </span> <span th:text="${rooms.price}"></span>
         <span><br/>For </span><span th:text="${rooms.persons}"></span><span> people</span>
-        <br/><br/><img src="../../assets/img/bHotel/room2.jpg" alt="roomPic" width="300" height="220">
-        <br/><br/><a th:href="@{/list/room(id=${rooms.roomId},checkIn=${checkIn}, checkOut=${checkOut})}" class="button"
-                     name="luxuriousRoom"><span>Details </span>
-    </a>
-        <br/>
+
+        <br/><br/><br/>
     </div>
+
+
+    <img src='../../assets/img/bHotel/room200x100.jpg' class="image">
+    <div class="text">
+        <h4>Room 1</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+            laborum.
+
+            <a th:href="@{/list/room(id=${rooms.roomId},checkIn=${checkIn}, checkOut=${checkOut})}" class="button"
+               name="room1"><span>Details </span></a>
+        </p>
+    </div>
+    <br/><br/>
+
+    <img src='../../assets/img/bHotel/room2200x100.jpg' class="image">
+    <div class="text">
+        <h4>Room 2</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+            laborum.
+
+            <a th:href="@{/list/room(id=${rooms.roomId},checkIn=${checkIn}, checkOut=${checkOut})}" class="button"
+               name="room2"><span>Details </span></a>
+        </p>
+    </div>
+    <br/><br/>
+
+    <img src='../../assets/img/bHotel/room3200x100.jpg' class="image">
+    <div class="text">
+        <h4>Room 2</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+            laborum.
+
+            <a th:href="@{/list/room(id=${rooms.roomId},checkIn=${checkIn}, checkOut=${checkOut})}" class="button"
+               name="room3"><span>Details </span></a>
+        </p>
+    </div>
+    <br/><br/>
+
+    <img src='../../assets/img/bHotel/room4200x100.jpg' class="image">
+    <div class="text">
+        <h4>Room 3</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+            laborum.
+
+            <a th:href="@{/list/room(id=${rooms.roomId},checkIn=${checkIn}, checkOut=${checkOut})}" class="button"
+               name="room4"><span>Details </span></a>
+        </p>
+    </div>
+    <br/><br/>
+
 
 </div>
 <script type="text/javascript" src="../../assets/js/default.js"></script>
