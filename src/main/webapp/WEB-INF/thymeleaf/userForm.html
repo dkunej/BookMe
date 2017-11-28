@@ -1,0 +1,61 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="currentPage='index'">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bookM3</title>
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+
+
+</head>
+
+<body>
+
+
+<form id="userForm" name="user_form" th:action="@{/list}" th:object="${form}" method="post">
+    <h2 class="form_title">PERSONAL INFORMATION</h2>
+    <div class="col-sm-4">
+        <label class="control-label">First Name</label>
+        <input class="form-input" name="firstName" id="firstName" type="text" required="" placeholder="First Name"
+               th:field="*{fName}">
+
+    </div>
+    <div class="col-sm-8">
+        <label class="control-label">Last Name</label>
+        <input class="form-input" name="lastName" id="lastName" type="text" required="" placeholder="Last Name"
+               th:field="*{lName}">
+        <br/><br/>
+
+    </div>
+
+
+    <label class="control-label">E-mail</label>
+    <input class="form-input" name="email" id="email" type="text" required="" placeholder="e.g. someone@gmail.com"
+           th:field="*{email}">
+    <br/><br/>
+    <label class="control-label">Phone number</label>
+    <input class="form-input" name="phone" id="phone" type="text" required="" placeholder=""
+           th:field="*{phone}">
+    <span class="hidden" id="error_checkOut">* Ups, date is needed in numerical form! </span>
+
+    </div>
+    <br/><br/>
+
+    <div class="form-group">
+        <div class="col-sm-8 col-sm-offset-4">
+            <input type="submit" id="search" value="Search"/>
+        </div>
+    </div>
+</form>
+
+<script src="../../assets/js/jquery.min.js"></script>
+<script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../assets/js/validator.js"></script>
+
+<script type="text/javascript" src="../../assets/js/default.js"></script>
+<script type="text/javascript" src="../../assets/js/search.js"></script>
+</body>
+
+
+</html>
