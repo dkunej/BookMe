@@ -42,7 +42,6 @@
     <span>From:  </span><span th:text="${checkIn}"></span><br/>
     <span>   To: </span><span th:text="${checkOut}"></span>
     <div th:each="hotels,iter : ${hotelList}">
-
         <div>
             <br/><span><h4 th:text="${hotels.hotelName}">Hotel...</h4></span>
             <img th:src="@{/images(id=${iter.index},city=${city},stars=${hotels.stars})}" alt="img"/>
