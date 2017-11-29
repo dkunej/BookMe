@@ -41,7 +41,7 @@
         <br/>
         <img src='../../assets/img/bHotel/room200x100.jpg' class="image">
         <div class="text">
-            <span><h4 th:text="${rooms.roomName}">Rooms</h4></span>
+            <span><h4 th:text="'Room '+ ${rooms.roomName}">Rooms</h4></span>
             <span>Price: </span> <span th:text="${rooms.price}"></span>
             <span><br/>For </span><span th:text="${rooms.persons}"></span><span> people</span>
 

@@ -45,8 +45,8 @@ public class RoomServiceImpl implements RoomService {
     }
 
     @Override
-    public List<Room> findAvailableRoomsinHotelByDate(@Param("hotelId") int hotelId, @Param("checkOutYear") int checkOutYear, @Param("checkOutMonth") int checkOutMonth, @Param("checkOutDay") int checkOutDay, @Param("checkInYear") int checkInYear, @Param("checkInMonth") int checkInMonth, @Param("checkInDay") int checkInDay) {
-        return roomRepository.findAvailableRoomsinHotelByDate(hotelId, checkOutYear, checkOutMonth, checkOutDay, checkInYear, checkInMonth, checkInDay);
+    public List<Room> findAvailableRoomsinHotelByDate(@Param("hotelId") int hotelId, @Param("numPeople") int numPeople, @Param("checkOutYear") int checkOutYear, @Param("checkOutMonth") int checkOutMonth, @Param("checkOutDay") int checkOutDay, @Param("checkInYear") int checkInYear, @Param("checkInMonth") int checkInMonth, @Param("checkInDay") int checkInDay) {
+        return roomRepository.findAvailableRoomsinHotelByDate(hotelId, numPeople, checkOutYear, checkOutMonth, checkOutDay, checkInYear, checkInMonth, checkInDay);
     }
 
     @Override

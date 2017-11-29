@@ -33,7 +33,7 @@ public class RoomController {
 
 
     @RequestMapping(value = "/hotel", method = RequestMethod.GET)
-    public String listRooms(@RequestParam("hotelName") String name, @RequestParam("checkIn") String checkIn, @RequestParam("checkOut") String checkOut, Model model) {
+    public String listRooms(@RequestParam("hotelName") String name, @RequestParam("checkIn") String checkIn, @RequestParam("checkOut") String checkOut, @RequestParam("numPeople") int numPeople, Model model) {
 
         int checkInYear = Integer.parseInt(checkIn.substring(0, 4));
         int checkInMonth = Integer.parseInt(checkIn.substring(5, 7));
@@ -43,7 +43,7 @@ public class RoomController {
         int checkOutMonth = Integer.parseInt(checkOut.substring(5, 7));
         int checkOutDay = Integer.parseInt(checkOut.substring(8, 10));
         int hotelId = hotelService.getByName(name).getHotelId();
-        List<Room> rooms = roomService.findAvailableRoomsinHotelByDate(hotelId, checkOutYear, checkOutMonth, checkOutDay, checkInYear, checkInMonth, checkInDay);
+        List<Room> rooms = roomService.findAvailableRoomsinHotelByDate(hotelId, numPeople, checkOutYear, checkOutMonth, checkOutDay, checkInYear, checkInMonth, checkInDay);
         model.addAttribute("roomList", rooms);
         model.addAttribute("checkIn", checkIn);
         model.addAttribute("checkOut", checkOut);
