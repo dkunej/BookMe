@@ -25,7 +25,7 @@ padding:0px 30px 30px 30px;
 }
 
 #userForm{
-background-color:rgba(21, 69, 146, 0.62);
+    background-color: rgba(7, 84, 103, 0.28);
 width:40%;
 hight:auto;
 position:absolute;
@@ -187,3 +187,11 @@ a{text-decoration:none;}
 }
 
 .col-sm-8{padding-left:30px;}
+
+.room_title {
+    margin-top: -30px;
+}
+
+.checkTime {
+    color: #6699ff;
+}
