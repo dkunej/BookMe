@@ -2,23 +2,48 @@ package com.bookme.BookMe.model;
 
 public class UserForm {
 
-    private String FirstName, LastName, email;
+    private String firstName, lastName, email, title, countryAbbr, paymentMethod;
     private int passportNum, id_num;
 
-    public String getFirstName() {
-        return FirstName;
+
+    public String getTitle() {
+        return title;
     }
 
-    public void setFirstName(String firstName) {
-        FirstName = firstName;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getLastName() {
-        return LastName;
+    public String getCountryAbbr() {
+        return countryAbbr;
     }
 
-    public void setLastName(String lastName) {
-        LastName = lastName;
+    public void setCountryAbbr(String countryAbbr) {
+        this.countryAbbr = countryAbbr;
+    }
+
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public String getfirstName() {
+        return firstName;
+    }
+
+    public void setfirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getlastName() {
+        return lastName;
+    }
+
+    public void setlastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {

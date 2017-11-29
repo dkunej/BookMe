@@ -11,4 +11,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PaymentRepository extends JpaRepository<PaymentMethod, Long> {
     PaymentMethod getByUsers(User user);
+
+    PaymentMethod getByPaymentName(String pmethod);
 }

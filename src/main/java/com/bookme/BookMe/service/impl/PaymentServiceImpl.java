@@ -20,4 +20,9 @@ public class PaymentServiceImpl implements PaymentService {
     public PaymentMethod getByUsers(User user) {
         return paymentRepository.getByUsers(user);
     }
+
+    @Override
+    public PaymentMethod getByPaymentName(String pmethod) {
+        return paymentRepository.getByPaymentName(pmethod);
+    }
 }

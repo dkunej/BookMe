@@ -13,18 +13,18 @@
 <body>
 
 
-<form id="userForm" name="user_form" th:action="@{/list}" th:object="${form}" method="post">
+<form id="userForm" name="user_form" th:action="@{/reserve}" th:object="${userForm}" method="post">
     <h2 class="form_title">PERSONAL INFORMATION</h2>
     <div class="col-sm-4">
         <label class="control-label">First Name</label>
         <input class="form-input" name="firstName" id="firstName" type="text" required="" placeholder="First Name"
-               th:field="*{fName}">
+               th:field="*{firstName}">
 
     </div>
     <div class="col-sm-8">
         <label class="control-label">Last Name</label>
         <input class="form-input" name="lastName" id="lastName" type="text" required="" placeholder="Last Name"
-               th:field="*{lName}">
+               th:field="*{lastName}">
         <br/><br/>
 
     </div>
@@ -34,10 +34,6 @@
     <input class="form-input" name="email" id="email" type="text" required="" placeholder="e.g. someone@gmail.com"
            th:field="*{email}">
     <br/><br/>
-    <label class="control-label">Phone number</label>
-    <input class="form-input" name="phone" id="phone" type="text" required="" placeholder=""
-           th:field="*{phone}">
-    <span class="hidden" id="error_checkOut">* Ups, date is needed in numerical form! </span>
 
     </div>
     <br/><br/>

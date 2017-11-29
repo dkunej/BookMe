@@ -51,7 +51,7 @@
     </div>
     <h3>Price: </h3>
     <h3 th:text="${room.price}+ ' USD'"></h3>
-    <a th:href="@{/list/reserve(roomId=${room.roomId},checkIn=${checkIn}, checkOut=${checkOut})}" class="button"><span>Reserve the room </span></a>
+    <a th:href="@{/userForm(roomId=${room.roomId},checkIn=${checkIn}, checkOut=${checkOut})}" class="button"><span>Reserve the room </span></a>
 
 
 </div>
