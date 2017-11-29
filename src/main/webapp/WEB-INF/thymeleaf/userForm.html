@@ -1,20 +1,43 @@
-<html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="currentPage='index'">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="currentPage='userForm'">
 
-<head>
+<head xmlns:th="http://www.w3.org/1999/xhtml">
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bookM3</title>
     <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../assets/css/styles.css">
 
-
 </head>
 
 <body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand navbar-link" href="../thymeleaf/index.html"
+               style="background-image:url(&quot;../../assets/img/logo.png&quot;)"> </a>
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span
+                    class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span
+                    class="icon-bar"></span></button>
+        </div>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">About us</a></li>
+                <li><a href="hotels.html">Best Hotels</a></li>
+                <li><a href="#">Review's </a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 
 <form id="userForm" name="user_form" th:action="@{/list}" th:object="${form}" method="post">
     <h2 class="form_title">PERSONAL INFORMATION</h2>
+
+    <label class="control-label">Title</label>
+    <input class="form-input" name="phone" id="title" type="text" required="" placeholder="Mr./ Ms./ Mrs."
+           th:field="*{title}">
+    <br/><br/>
     <div class="col-sm-4">
         <label class="control-label">First Name</label>
         <input class="form-input" name="firstName" id="firstName" type="text" required="" placeholder="First Name"
@@ -34,13 +57,26 @@
     <input class="form-input" name="email" id="email" type="text" required="" placeholder="e.g. someone@gmail.com"
            th:field="*{email}">
     <br/><br/>
-    <label class="control-label">Phone number</label>
-    <input class="form-input" name="phone" id="phone" type="text" required="" placeholder=""
-           th:field="*{phone}">
-    <span class="hidden" id="error_checkOut">* Ups, date is needed in numerical form! </span>
 
-    </div>
+    <label class="control-label">Country Address</label>
+    <input class="form-input" name="country_addr" id="country_addr" type="text" required=""
+           placeholder="e.g. Las Angeles"
+           th:field="*{country_addr}">
     <br/><br/>
+
+    <label class="control-label">Passport Number</label>
+    <input class="form-input" name="pass_num" id="pass_num" type="text" placeholder="" th:field="*{pass_num}">
+    <br/><br/>
+
+    <label class="control-label">ID number</label>
+    <input class="form-input" name="id" id="id" type="text" placeholder="" th:field="*{id}">
+
+    <br/><br/>
+    <label class="control-label">Payment Method</label>
+    <input class="form-input" name="payment" id="payment" type="text" placeholder="e.g. Kredit card"
+           th:field="*{payment}">
+    <br/><br/>
+
 
     <div class="form-group">
         <div class="col-sm-8 col-sm-offset-4">
