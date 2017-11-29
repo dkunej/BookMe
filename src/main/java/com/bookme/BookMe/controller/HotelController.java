@@ -51,8 +51,7 @@ public class HotelController {
         form.setNumPeople(form1.getNumPeople());
         form.setStars(form1.getStars());
 
-
-        return "redirect:/list?city=" + form1.getCity() + "&stars=" + form1.getStars();
+        return "redirect:/list?city=" + form1.getCity() + "&stars=" + form1.getStars() + "&numPeople=" + form1.getNumPeople();
 
     }
 
@@ -90,10 +89,12 @@ public class HotelController {
                     .filter(x -> (x.getHotelAmenities().isWifi()))
                     .collect(Collectors.toList());
         }
+
         model.addAttribute("city", city);
         model.addAttribute("checkIn", form.getCheckinDate());
         model.addAttribute("checkOut", form.getCheckoutDate());
-            model.addAttribute("hotelList", hotels);
+        model.addAttribute("hotelList", hotels);
+        model.addAttribute("numPeople", form.getNumPeople());
         return HOTEL_LIST;
     }
 

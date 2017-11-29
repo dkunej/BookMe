@@ -98,7 +98,7 @@ function numberChildren()
 		document.forms["booking_form"]["Cnumber"].style.backgroundColor = "rgba(206, 22, 22, 0.36)";
 		
 		return false;
-	}	
+	}
 }
 
 

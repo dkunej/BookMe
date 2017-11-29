@@ -13,7 +13,7 @@ padding:15px;
 margin:-4px;
 }
 
-form{background-color:rgba(7,84,103,0.28);
+#bookingForm{background-color:rgba(7,84,103,0.28);
 width:60%;
 hight:auto;
 position:absolute;
@@ -23,6 +23,19 @@ top:100px;
 border-radius: 20px;
 padding:0px 30px 30px 30px;
 }
+
+#userForm{
+    background-color: rgba(7, 84, 103, 0.28);
+width:40%;
+hight:auto;
+position:absolute;
+border-radius: 20px;
+hight:auto;
+margin-left:auto;
+margin-right:auto;
+padding:0px 30px 30px 30px;
+left: 30%;
+right: auto;}
 
 header{background-size:cover;
 background-repeat:no-repeat;
@@ -41,7 +54,8 @@ text-align:center;
 .control-label{color:#fff;
 font-size:18px;}
 
-.form-control{width:120px;height:40px;}
+.form-control{width:150px;height:40px;}
+.form-input{width:250px;height:38px;padding-left:10px;}
 .form-group{height:25px;}
 
 
@@ -170,4 +184,14 @@ a{text-decoration:none;}
 .button:hover span:after {
   opacity: 1;
   color:white;
+}
+
+.col-sm-8{padding-left:30px;}
+
+.room_title {
+    margin-top: -30px;
+}
+
+.checkTime {
+    color: #6699ff;
 }
