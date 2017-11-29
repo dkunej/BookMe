@@ -45,14 +45,14 @@
         </div>
         <div class="col-sm-4">
             <label class="control-label">CHECK IN</label>
-            <input class="form-control" name="checkIn" id="checkIn" type="date" placeholder="dd/mm/yyyy"
+            <input class="form-control" name="checkIn" id="checkIn" type="date" required="" placeholder="dd/mm/yyyy"
                    th:field="*{checkinDate}">
             <span class="hidden" id="error_checkIn">* Ups, date is needed in numerical form! </span>
 
         </div>
         <div class="col-sm-8">
             <label class="control-label">CHECK OUT</label>
-            <input class="form-control" name="checkOut" id="checkOut" type="date" placeholder="dd/mm/yyyy"
+            <input class="form-control" name="checkOut" id="checkOut" type="date" required="" placeholder="dd/mm/yyyy"
                    th:field="*{checkoutDate}">
             <span class="hidden" id="error_checkOut">* Ups, date is needed in numerical form! </span>
 
@@ -60,13 +60,14 @@
         <div class="form-group1">
 
                 <label class="control-label">HOTEL STARS</label>
-                <input class="form-control" id="stars" type="number" name="stars" placeholder="Hotel Stars"
-                       th:field="*{stars}">
+            <input class="form-control" id="stars" type="number" name="stars" required="" placeholder="Hotel Stars"
+                   th:field="*{stars}">
 
 
                 <label class="control-label">NUMBER OF PEOPLE </label>
-                <input class="form-control" type="number" name="peopleNumb" id="peopleNumb" placeholder="e.g.(1,2)"
-                       th:field="*{numPeople}">
+            <input class="form-control" type="number" name="peopleNumb" id="peopleNumb" required=""
+                   placeholder="e.g.(1,2)"
+                   th:field="*{numPeople}">
                 <span class="hidden" id="peopleNum">* Ups, number of people is needed! </span><br>
 
 
