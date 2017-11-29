@@ -28,4 +28,9 @@ public class UserServiceImpl implements UserService {
     public User getByPassportNum(int passNum) {
         return userRepository.getByPassportNum(passNum);
     }
+
+    @Override
+    public void save(User user) {
+        userRepository.save(user);
+    }
 }
