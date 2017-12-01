@@ -62,7 +62,10 @@ header{background-size:cover;
 
 
 .check_in{float:left;}
-.check_out{float:clear;}
+
+.check_out {
+    float: none;
+}
 
 .form-group1{float:left; width:300px;margin-top:30px;}
 .float-group2{float:right;width:200px;}
@@ -83,24 +86,40 @@ body{background:rgba(197,244,255,0.45)}
 
 .title{padding-top:20px;}
 
-img{padding-left:20px;
-    padding-top: 20px
+img {
+    padding-top: 20px;
 }
 
 #image{float:left;}
-#info{float:clear;
+
+#info {
+    float: none;
     margin-right: 300px
 }
 
 
-
 #hotels{
     width:1000px;
-    height: 1350px;
+    height: auto;
     background:white;
     border-radius: 25px;
-    padding: 25px 45px;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-bottom: 100px;
     margin:auto;
+    text-align: justify;
+}
+
+.hotels {
+    width: 1000px;
+    height: auto;
+    background: white;
+    border-radius: 25px;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-bottom: 100px;
+    margin: auto;
+    text-align: justify;
 }
 
 .image{
@@ -118,9 +137,14 @@ img{padding-left:20px;
 }
 
 .text{
-    width: 800px;
-    height: 200px;
-    float: clear;
+    width: 500px;
+    height: auto;
+    clear: both;
+
+}
+
+.price {
+    float: none;
 }
 
 h2{padding-top:20px;}
@@ -157,7 +181,7 @@ a{text-decoration:none;}
     cursor: pointer;
     margin: 5px;
     float: left;
-    vertical-align: middle:
+    vertical-align: middle;
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
