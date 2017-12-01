@@ -34,41 +34,27 @@
 <div th:each="room : ${roomDetails}" id="hotels">
     <h1 th:text="${room.hotelId.hotelName}"></h1>
     <h2 th:text="${room.roomName}"></h2>
-    <!-- <img th:src="@{/images(id=${iter.index},city=${city},stars=${hotels.stars})}" alt="img" class="image"/>
-     -->
-    <div class="text">
-        <div class="row">
-            <h3>Amenities: </h3>
-            <div class="column">
-                <span>Crib: </span> <span th:text="${room.room_amenities_amenities_ID.crib} ? 'Yes' : 'No'"></span><br/>
-                <span>Hairdryer: </span> <span
-                    th:text="${room.room_amenities_amenities_ID.hairdryer} ? 'Yes' : 'No'"></span><br/>
-                <span>Kettle: </span> <span
-                    th:text="${room.room_amenities_amenities_ID.kettle} ? 'Yes' : 'No'"></span><br/>
-                <span>Washing Machine: </span> <span
-                    th:text="${room.room_amenities_amenities_ID.washingMachine} ? 'Yes' : 'No'"></span><br/>
-
-            </div>
-            <div class="column">
-                <span>Microwave: </span> <span
-                    th:text="${room.room_amenities_amenities_ID.microwave} ? 'Yes' : 'No'"></span><br/>
-                <span>Refrigerator: </span> <span
-                    th:text="${room.room_amenities_amenities_ID.refrigerator} ? 'Yes' : 'No'"></span><br/>
-                <span>Television: </span> <span
-                    th:text="${room.room_amenities_amenities_ID.tv} ? 'Yes' : 'No'"></span><br/>
-                <span>Cable TV: </span> <span th:text="${room.room_amenities_amenities_ID.cable} ? 'Yes' : 'No'"></span><br/>
-
-            </div>
-
-        </div>
-
-        <h3>Price: </h3>
-        <h3 th:text="${room.price}+ ' USD'"></h3>
-        <a th:href="@{/list/reserve(roomId=${room.roomId},checkIn=${checkIn}, checkOut=${checkOut})}"
-           class="button"><span>Reserve the room </span></a>
-
-
+    <div>
+        <h3>Amenities: </h3>
+        <span>Crib: </span> <span th:text="${room.room_amenities_amenities_ID.crib} ? 'Yes' : 'No'"></span><br/>
+        <span>Hairdryer: </span> <span
+            th:text="${room.room_amenities_amenities_ID.hairdryer} ? 'Yes' : 'No'"></span><br/>
+        <span>Kettle: </span> <span th:text="${room.room_amenities_amenities_ID.kettle} ? 'Yes' : 'No'"></span><br/>
+        <span>Washing Machine: </span> <span
+            th:text="${room.room_amenities_amenities_ID.washingMachine} ? 'Yes' : 'No'"></span><br/>
+        <span>Microwave: </span> <span
+            th:text="${room.room_amenities_amenities_ID.microwave} ? 'Yes' : 'No'"></span><br/>
+        <span>Refrigerator: </span> <span
+            th:text="${room.room_amenities_amenities_ID.refrigerator} ? 'Yes' : 'No'"></span><br/>
+        <span>Television: </span> <span th:text="${room.room_amenities_amenities_ID.tv} ? 'Yes' : 'No'"></span><br/>
+        <span>Cable TV: </span> <span th:text="${room.room_amenities_amenities_ID.cable} ? 'Yes' : 'No'"></span><br/>
     </div>
+    <h3>Price: </h3>
+    <h3 th:text="${room.price}+ ' USD'"></h3>
+    <a th:href="@{/list/reserve(roomId=${room.roomId},checkIn=${checkIn}, checkOut=${checkOut})}" class="button"><span>Reserve the room </span></a>
+
+
+</div>
 
 <script type="text/javascript" src="../../assets/js/default.js"></script>
 <script type="text/javascript" src="../../assets/js/gallery.js"></script>
