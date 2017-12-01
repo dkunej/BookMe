@@ -1,7 +1,6 @@
 package com.bookme.BookMe.model;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name = "HOTEL_AMENITIES")
@@ -9,6 +8,7 @@ public class HotelAmenities {
 
     @Id
     @Column(name = "hotel_amenities_ID", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int amenitiesID;
 
     @Column(name = "WIFI")

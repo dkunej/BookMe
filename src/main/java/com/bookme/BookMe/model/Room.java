@@ -13,6 +13,7 @@ public class Room {
 
     @Id
     @Column(name = "room_ID", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int roomId;
 
     @Column(name = "name", nullable = false)

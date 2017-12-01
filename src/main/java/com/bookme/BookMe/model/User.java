@@ -8,6 +8,7 @@ import java.util.List;
 public class User {
     @Id
     @Column(name = "USER_ID", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userID;
 
     @Column(name = "firstname")
@@ -45,6 +46,17 @@ public class User {
 
     public User(int userID, String firstName, String lastName, String email, Country countryAbbr, int passportNum, int IDNum, PaymentMethod paymentMethod, String title) {
         this.userID = userID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.countryAbbr = countryAbbr;
+        this.passportNum = passportNum;
+        this.IDNum = IDNum;
+        this.paymentMethod = paymentMethod;
+        this.title = title;
+    }
+
+    public User(String firstName, String lastName, String email, Country countryAbbr, int passportNum, int IDNum, PaymentMethod paymentMethod, String title) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

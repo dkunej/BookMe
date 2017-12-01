@@ -69,25 +69,25 @@ public class ReserveController {
         int checkInYear = Integer.parseInt(checkIn.substring(0, 4));
         int checkInMonth = Integer.parseInt(checkIn.substring(5, 7));
         int checkInDay = Integer.parseInt(checkIn.substring(8, 10));
-        Date checkInDate = new Date(45645, checkInYear, checkInDay, checkInMonth);
+        Date checkInDate = new Date(checkInYear, checkInDay, checkInMonth);
 
         int checkOutYear = Integer.parseInt(checkOut.substring(0, 4));
         int checkOutMonth = Integer.parseInt(checkOut.substring(5, 7));
         int checkOutDay = Integer.parseInt(checkOut.substring(8, 10));
-        Date checkOutDate = new Date(654654, checkOutYear, checkOutDay, checkOutMonth);
+        Date checkOutDate = new Date(checkOutYear, checkOutDay, checkOutMonth);
 
         //save checkIn and checkOut dates
         dateService.save(checkInDate);
         dateService.save(checkOutDate);
         //make room unavailable
         Room room = roomService.findByRoomId(roomId);
-        RoomUnavailability reservedRoom = new RoomUnavailability(4343, room, checkInDate, checkOutDate);
+        RoomUnavailability reservedRoom = new RoomUnavailability(room, checkInDate, checkOutDate);
         unavailabilityService.save(reservedRoom);
 
         //save user
         Country country = countryService.getByCountryAbbr("NE");
         PaymentMethod paymentMethod = paymentService.getByPaymentName("credit card");
-        User newUser = new User(2, userForm.getfirstName(), userForm.getlastName(), userForm.getEmail(), country, userForm.getPassportNum(), userForm.getId_num(), paymentMethod, userForm.getTitle());
+        User newUser = new User(userForm.getfirstName(), userForm.getlastName(), userForm.getEmail(), country, userForm.getPassportNum(), userForm.getId_num(), paymentMethod, userForm.getTitle());
         userService.save(newUser);
 
         //save booking
@@ -100,10 +100,10 @@ public class ReserveController {
         int month = date.getMonth();
         int day = date.getDay();
 
-        Date bookingDate = new Date(78787, year, month, day);
+        Date bookingDate = new Date(year, month, day);
         dateService.save(bookingDate);
 
-        Booking newBooking = new Booking(2, newUser, hotel, bookingDate, checkInDate, checkOutDate);
+        Booking newBooking = new Booking(newUser, hotel, bookingDate, checkInDate, checkOutDate);
         bookingService.save(newBooking);
         return "roomOrder";
 

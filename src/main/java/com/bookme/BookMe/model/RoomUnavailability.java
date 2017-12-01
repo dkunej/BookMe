@@ -8,6 +8,7 @@ public class RoomUnavailability {
 
     @Id
     @Column(name = "unavailability_ID", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int unavailabilityID;
 
     @ManyToOne

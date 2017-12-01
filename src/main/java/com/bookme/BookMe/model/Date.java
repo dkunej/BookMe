@@ -12,6 +12,7 @@ public class Date {
 
     @Id
     @Column(name = "date_ID", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int dateId;
 
     @Column(name = "year")

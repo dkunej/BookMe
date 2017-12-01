@@ -9,6 +9,7 @@ public class RoomAmenities {
 
     @Id
     @Column(name = "amenities_ID", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int amenitiesID;
 
     @Column(name = "crib")

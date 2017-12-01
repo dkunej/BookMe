@@ -8,6 +8,7 @@ import java.util.List;
 public class PaymentMethod {
     @Id
     @Column(name = "PAYMENT_ID", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String paymentID;
 
     @Column(name = "NAME")

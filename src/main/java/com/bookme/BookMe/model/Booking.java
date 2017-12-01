@@ -12,6 +12,7 @@ public class Booking {
 
     @Id
     @Column(name = "bookingId")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int bookingId;
 
 
@@ -41,6 +42,14 @@ public class Booking {
 
     public Booking(int bookingId, User userId, Hotel hotelId, Date bookingDateId, Date checkinDateId, Date checkoutDateId) {
         this.bookingId = bookingId;
+        this.userId = userId;
+        this.hotelId = hotelId;
+        this.bookingDateId = bookingDateId;
+        this.checkinDateId = checkinDateId;
+        this.checkoutDateId = checkoutDateId;
+    }
+
+    public Booking(User userId, Hotel hotelId, Date bookingDateId, Date checkinDateId, Date checkoutDateId) {
         this.userId = userId;
         this.hotelId = hotelId;
         this.bookingDateId = bookingDateId;

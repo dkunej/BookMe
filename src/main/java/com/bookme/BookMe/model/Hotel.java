@@ -2,7 +2,6 @@ package com.bookme.BookMe.model;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by Daniela on 09-Nov-17.
@@ -14,6 +13,7 @@ public class Hotel {
 
     @Id
     @Column(name = "hotel_ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int hotelId;
 
     @ManyToOne

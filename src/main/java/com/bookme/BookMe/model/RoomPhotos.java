@@ -1,9 +1,6 @@
 package com.bookme.BookMe.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "room_photos")
@@ -11,6 +8,7 @@ public class RoomPhotos {
 
     @Id
     @Column(name = "photo_ID", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int photoID;
 
     @Column(name = "photo", nullable = false)
