@@ -25,4 +25,9 @@ public class HotelServiceImpl implements HotelService {
         return hotelRepository.getAllByAddressCityAndStars(city, stars);
     }
 
+    @Override
+    public Hotel getByHotelId(int id) {
+        return hotelRepository.getByHotelId(id);
+    }
+
 }

@@ -10,4 +10,6 @@ public interface UserService {
     List<User> getAllByCountryAbbr(String country);
 
     User getByPassportNum(int num);
+
+    void save(User user);
 }

@@ -9,4 +9,6 @@ public interface BookingService {
     Booking getByUserId(int userID);
 
     List<Booking> getByCheckinDateIdAndAndCheckoutDateId(int checkIn, int checkOut);
+
+    void save(Booking booking);
 }

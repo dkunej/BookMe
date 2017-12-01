@@ -9,4 +9,6 @@ public interface HotelService {
     Hotel getByName(String name);
 
     List<Hotel> getAllByAddressCityAndStars(String city, int stars);
+
+    Hotel getByHotelId(int id);
 }
