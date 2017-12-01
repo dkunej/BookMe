@@ -35,17 +35,19 @@ public class Booking {
     @JoinColumn(name = "checkout_date_ID", referencedColumnName = "date_ID")
     private Date checkoutDateId;
 
+    private char payment;
 
     public Booking() {
     }
 
-    public Booking(int bookingId, User userId, Hotel hotelId, Date bookingDateId, Date checkinDateId, Date checkoutDateId) {
+    public Booking(int bookingId, User userId, Hotel hotelId, Date bookingDateId, Date checkinDateId, Date checkoutDateId, char payment) {
         this.bookingId = bookingId;
         this.userId = userId;
         this.hotelId = hotelId;
         this.bookingDateId = bookingDateId;
         this.checkinDateId = checkinDateId;
         this.checkoutDateId = checkoutDateId;
+        this.payment = payment;
     }
 
     public int getBookingId() {
@@ -70,6 +72,14 @@ public class Booking {
 
     public void setHotelId(Hotel hotelId) {
         this.hotelId = hotelId;
+    }
+
+    public char getPayment() {
+        return payment;
+    }
+
+    public void setPayment(char payment) {
+        this.payment = payment;
     }
 
     public Date getBookingDateId() {

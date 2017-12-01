@@ -8,6 +8,4 @@ import com.bookme.BookMe.model.User;
  */
 public interface PaymentService {
     PaymentMethod getByUsers(User user);
-
-    PaymentMethod getByPaymentName(String pmethod);
 }

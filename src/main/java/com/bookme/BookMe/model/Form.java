@@ -1,5 +1,7 @@
 package com.bookme.BookMe.model;
 
+import java.time.LocalDate;
+
 public class Form {
     private String city;
     private int numPeople;

@@ -23,9 +23,4 @@ public class BookingServiceImpl implements BookingService {
     public List<Booking> getByCheckinDateIdAndAndCheckoutDateId(int checkIn, int checkOut) {
         return bookingRepository.getByCheckinDateIdAndAndCheckoutDateId(checkIn, checkOut);
     }
-
-    @Override
-    public void save(Booking booking) {
-        bookingRepository.save(booking);
-    }
 }

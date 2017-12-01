@@ -19,9 +19,6 @@ public class User {
     @Column(name = "EMAIL")
     private String email;
 
-    @Column(name = "TITLE")
-    private String title;
-
     @ManyToOne
     @JoinColumn(name = "COUNTRY_ABBR", nullable = false)
     private Country countryAbbr;
@@ -33,7 +30,7 @@ public class User {
     private int IDNum;
 
     @ManyToOne
-    @JoinColumn(name = "PAYMENT_METHOD", nullable = false)
+    @JoinColumn(name = "PAYMENT_ID", nullable = false)
     private PaymentMethod paymentMethod;
 
     @OneToMany(mappedBy = "userId")
@@ -43,28 +40,9 @@ public class User {
     public User() {
     }
 
-    public User(int userID, String firstName, String lastName, String email, Country countryAbbr, int passportNum, int IDNum, PaymentMethod paymentMethod, String title) {
-        this.userID = userID;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.countryAbbr = countryAbbr;
-        this.passportNum = passportNum;
-        this.IDNum = IDNum;
-        this.paymentMethod = paymentMethod;
-        this.title = title;
-    }
 
 //------------Getters and setters ------------------
 
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
     public int getUserID() {
         return userID;
