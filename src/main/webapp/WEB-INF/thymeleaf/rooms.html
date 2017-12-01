@@ -34,20 +34,19 @@
 
 <div id="hotels">
     <h2 id="LosAngeles" th:text="${hotel.HotelName}"></h2>
-    <h2>Available rooms in period</h2>
-    <h3> From <span th:text="${checkIn}"></span>
-        to <span th:text="${checkOut}"></span></h3>
+    <h3 class="room_title">Available rooms in period</h3>
+    <h4 class="checkTime"> From <span th:text="${checkIn}"></span>
+        to <span th:text="${checkOut}"></span></h4>
     <div th:each="rooms : ${roomList}">
         <br/>
-        <!-- <img th:src="@{/images(id=${iter.index},city=${city},stars=${hotels.stars})}" alt="img" class="image"/>-->
-        <img src='../../assets/img/bHotel/room200x100.jpg' class="image">
+        <img th:src="@{/images(id=${iter.index},city=${city},stars=${hotels.stars})}" alt="img" class="image"/>
         <div class="text">
             <span><h4 th:text="${rooms.roomName}">Rooms</h4></span>
             <span><h5>Price: </span> <span th:text="${rooms.price}"></span>
             <span><h5>For </span><span th:text="${rooms.persons}"></span><span> people</span></h5>
 
 
-            <span><p th:text="${hotel.hotelDescription}" class="text">Description...</span><br/>
+            <span><p th:text="${hotels.hotelDescription}" class="text">Description...</span><br/>
 
             <a th:href="@{/list/room(id=${rooms.roomId},checkIn=${checkIn}, checkOut=${checkOut})}" class="button"
                    name="room1"><span>Details </span></a>
@@ -56,7 +55,6 @@
 </div>
 <br/><br/><br/>
 
-<br/><br/>
 </div>
 
 

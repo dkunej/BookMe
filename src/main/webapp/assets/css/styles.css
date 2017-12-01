@@ -96,37 +96,37 @@ img{padding-left:20px;
 
 #hotels{
     width:1000px;
-    height: auto;
+    height: 1350px;
     background:white;
     border-radius: 25px;
-    padding-bottom: 200px;
-    padding-left: 45px;
+    padding: 25px 45px;
     margin:auto;
 }
 
 .image{
     width:300px;
     height:200px;
+    padding-right: 20px;
     float: left;
-    margin-right: 20px;
 }
 
 .hotelImage {
     width: 400px;
     height: 300px;
-    margin-right: 20px;
+    padding-right: 20px;
     float: left;
 }
 
 .text{
-    width: 400px;
-    height: auto;
-    float: left;
+    width: 800px;
+    height: 200px;
+    float: clear;
 }
 
 h2{padding-top:20px;}
 
 a{text-decoration:none;}
+
 
 
 .column {
@@ -145,6 +145,7 @@ a{text-decoration:none;}
 
 /* rooom */
 .button {
+    display: inline-block;
     border-radius: 5px;
     border: none;
     background-color: #6699ff;
@@ -163,12 +164,16 @@ a{text-decoration:none;}
 }
 
 .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
     transition: 0.5s;
     color: white;
 }
 
 .button span:after {
     content: '\00bb';
+    position: absolute;
     opacity: 0;
     top: 0;
     right: -15px;
@@ -186,29 +191,12 @@ a{text-decoration:none;}
     color: white;
 }
 
-
 .col-sm-8{padding-left:30px;}
 
-.fontColor {
+.room_title {
+    margin-top: -30px;
+}
+
+.checkTime {
     color: #6699ff;
-}
-
-.row {
-    width: 350px;
-    float: left;
-    padding-left: 20px;
-}
-
-.column1 {
-    width: auto;
-    float: left;
-}
-
-.column2 {
-    width: auto;
-    float: right;
-}
-
-.price {
-    float: none;
 }
