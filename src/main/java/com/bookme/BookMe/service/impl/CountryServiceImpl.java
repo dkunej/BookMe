@@ -19,4 +19,9 @@ public class CountryServiceImpl implements CountryService {
     public Country getByCountryAbbr(String abbr) {
         return countryRepository.getByCountryAbbr(abbr);
     }
+
+    @Override
+    public Country getByCountryName(String name) {
+        return countryRepository.getByCountryName(name);
+    }
 }

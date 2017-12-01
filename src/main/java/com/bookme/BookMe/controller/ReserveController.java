@@ -56,8 +56,10 @@ public class ReserveController {
         userForm.setId_num(userForm1.getId_num());
         userForm.setPassportNum(userForm1.getPassportNum());
         userForm.setEmail(userForm1.getEmail());
-        userForm.setCountryAbbr(userForm1.getCountryAbbr());
+        userForm.setCountry(userForm1.getCountry());
         userForm.setTitle(userForm1.getTitle());
+        userForm.setPaymentMethod(userForm1.getPaymentMethod());
+
 
         return "redirect:/reserve?roomId=" + roomID + "&checkIn=" + checkIN + "&checkOut=" + checkOUT;
     }
@@ -85,8 +87,8 @@ public class ReserveController {
         unavailabilityService.save(reservedRoom);
 
         //save user
-        Country country = countryService.getByCountryAbbr("NE");
-        PaymentMethod paymentMethod = paymentService.getByPaymentName("credit card");
+        Country country = countryService.getByCountryName(userForm.getCountry());
+        PaymentMethod paymentMethod = paymentService.getByPaymentName(userForm.getPaymentMethod());
         User newUser = new User(userForm.getfirstName(), userForm.getlastName(), userForm.getEmail(), country, userForm.getPassportNum(), userForm.getId_num(), paymentMethod, userForm.getTitle());
         userService.save(newUser);
 
@@ -105,7 +107,7 @@ public class ReserveController {
 
         Booking newBooking = new Booking(newUser, hotel, bookingDate, checkInDate, checkOutDate);
         bookingService.save(newBooking);
-        return "roomOrder";
+        return "success";
 
 
     }

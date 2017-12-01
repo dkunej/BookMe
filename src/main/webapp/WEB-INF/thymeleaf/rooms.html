@@ -21,20 +21,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span></button>
         </div>
-        <div class="collapse navbar-collapse" id="navcol-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">About us</a></li>
-                <li><a href="hotels.html">Best Hotels</a></li>
-                <li><a href="#">Review's </a></li>
-            </ul>
-        </div>
     </div>
 </nav>
 
 
 <div id="hotels"
      style="width:1000px; height: auto; background:white;border-radius: 25px;padding-left: 45px;padding-right: 45px;padding-bottom: 100px; margin:auto;text-align: justify;">
-    <h2 id="LosAngeles" th:text="${hotel.HotelName}"></h2>
+    <h2 id="LosAngeles" th:text="${hotel.HotelName}"></h2><br/><br/>
     <h3 class="room_title">Available rooms in period</h3>
     <h4 class="fontColor"> From <span th:text="${checkIn}"></span>
         to <span th:text="${checkOut}"></span></h4>

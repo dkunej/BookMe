@@ -2,7 +2,7 @@ package com.bookme.BookMe.model;
 
 public class UserForm {
 
-    private String firstName, lastName, email, title, countryAbbr, paymentMethod;
+    private String firstName, lastName, email, title, country, paymentMethod;
     private int passportNum, id_num;
 
 
@@ -14,12 +14,12 @@ public class UserForm {
         this.title = title;
     }
 
-    public String getCountryAbbr() {
-        return countryAbbr;
+    public String getCountry() {
+        return country;
     }
 
-    public void setCountryAbbr(String countryAbbr) {
-        this.countryAbbr = countryAbbr;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public String getPaymentMethod() {

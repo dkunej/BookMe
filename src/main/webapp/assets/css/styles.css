@@ -224,3 +224,7 @@ a{text-decoration:none;}
 .checkTime {
     color: #6699ff;
 }
+
+.success {
+    text-align: center;
+}

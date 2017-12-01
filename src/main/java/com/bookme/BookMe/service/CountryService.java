@@ -7,4 +7,6 @@ import com.bookme.BookMe.model.Country;
  */
 public interface CountryService {
     Country getByCountryAbbr(String abbr);
+
+    Country getByCountryName(String name);
 }

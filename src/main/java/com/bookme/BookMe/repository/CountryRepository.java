@@ -13,4 +13,6 @@ public interface CountryRepository extends JpaRepository<Country, Long> {
 
     Country getByCountryAbbr(String abbr);
 
+    Country getByCountryName(String name);
+
 }
