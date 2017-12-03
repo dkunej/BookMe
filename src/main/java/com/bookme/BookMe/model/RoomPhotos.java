@@ -17,11 +17,6 @@ public class RoomPhotos {
     public RoomPhotos() {
     }
 
-    public RoomPhotos(int photo_ID, byte[] photo) {
-        this.photoID = photo_ID;
-        this.photo = photo;
-    }
-
     public int getPhotoID() {
         return photoID;
     }

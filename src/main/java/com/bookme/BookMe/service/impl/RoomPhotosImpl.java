@@ -15,12 +15,7 @@ public class RoomPhotosImpl implements RoomPhotosService {
     private RoomPhotosRepository roomPhotosRepository;
 
     @Override
-    public RoomPhotos getByPhotoID(int photo_ID) {
-        return roomPhotosRepository.getByPhotoID(photo_ID);
-    }
-
-    @Override
-    public List<RoomPhotos> getByPhoto(byte[] photo) {
-        return roomPhotosRepository.getByPhoto(photo);
+    public List<RoomPhotos> getRoomPhotosByRoomID(int roomId) {
+        return roomPhotosRepository.getRoomPhotosByRoomID(roomId);
     }
 }

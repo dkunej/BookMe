@@ -2,17 +2,17 @@ package com.bookme.BookMe.controller;
 
 import com.bookme.BookMe.model.Date;
 import com.bookme.BookMe.model.Room;
+import com.bookme.BookMe.model.RoomPhotos;
 import com.bookme.BookMe.model.RoomUnavailability;
-import com.bookme.BookMe.service.DateService;
-import com.bookme.BookMe.service.HotelService;
-import com.bookme.BookMe.service.RoomService;
-import com.bookme.BookMe.service.RoomUnavailabilityService;
+import com.bookme.BookMe.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -24,6 +24,8 @@ public class RoomController {
 
     @Autowired
     private RoomService roomService;
+    @Autowired
+    private RoomPhotosService roomPhotosService;
     @Autowired
     private HotelService hotelService;
     @Autowired
@@ -82,5 +84,13 @@ public class RoomController {
         return ROOM;
     }
 
+    @RequestMapping(value = "/roomImages", method = RequestMethod.GET, produces = MediaType.IMAGE_PNG_VALUE)
+    public @ResponseBody
+    byte[] showImageOnRoomID(@RequestParam("roomId") int roomId) {
 
+        List<RoomPhotos> photos = roomPhotosService.getRoomPhotosByRoomID(roomId);
+        RoomPhotos roomPhotos = photos.get(0);
+        byte[] img = roomPhotos.getPhoto();
+        return img;
+    }
 }
