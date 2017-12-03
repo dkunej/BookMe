@@ -2,6 +2,7 @@ package com.bookme.BookMe.controller;
 
 import com.bookme.BookMe.model.*;
 import com.bookme.BookMe.service.*;
+import com.bookme.BookMe.service.impl.SendMail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +18,8 @@ import java.text.SimpleDateFormat;
 @Controller
 public class ReserveController {
 
+    @Autowired
+    private SendMail sendMail;
     @Autowired
     private DateService dateService;
     @Autowired
@@ -107,6 +110,15 @@ public class ReserveController {
 
         Booking newBooking = new Booking(newUser, hotel, bookingDate, checkInDate, checkOutDate);
         bookingService.save(newBooking);
+
+        String recipient = userForm.getEmail();
+        String message = "You have successfully booked room " + room.getRoomName() + "!\nYour reservation is made for the time period of: " + checkIn + " to " + checkOut + "." +
+                "\nThe reservation has been made by: " + userForm.getTitle() + " " + userForm.getfirstName() + " " + userForm.getlastName()
+                + "\nThe price of the room is " + room.getPrice() + " USD which can be payed by your preferred payment method.\n" +
+                "For any further information please don't hesitate to call. ";
+        sendMail.sendSimpleMessage(recipient, "Reservation Confirmation", message);
+
+
         return "success";
 
 

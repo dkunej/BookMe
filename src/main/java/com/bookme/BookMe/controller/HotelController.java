@@ -27,6 +27,7 @@ public class HotelController {
     private HotelService hotelService;
     @Autowired
     private HotelRepository hotelRepository;
+
     private Form form = new Form();
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
