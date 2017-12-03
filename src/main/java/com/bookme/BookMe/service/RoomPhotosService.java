@@ -6,7 +6,5 @@ import java.util.List;
 
 public interface RoomPhotosService {
 
-    RoomPhotos getByPhotoID(int photo_ID);
-
-    List<RoomPhotos> getByPhoto(byte[] photo);
+    List<RoomPhotos> getRoomPhotosByRoomID(int roomId);
 }

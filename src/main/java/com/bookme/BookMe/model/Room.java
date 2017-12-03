@@ -54,7 +54,7 @@ public class Room {
     private Set<RoomUnavailability> unavailabilities;
 
     @ManyToMany
-    @JoinTable(name = "room_photos_has_room", joinColumns = {
+    @JoinTable(name = "RoomPhotosHasRoom", joinColumns = {
             @JoinColumn(name = "room_ID", nullable = false)},
             inverseJoinColumns = {@JoinColumn(name = "photo_ID", nullable = false)})
     private Set<RoomPhotos> photos;

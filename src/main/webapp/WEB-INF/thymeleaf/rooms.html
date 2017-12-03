@@ -41,9 +41,8 @@
 
     <div th:each="rooms : ${roomList}">
         <hr>
-        <!-- <img th:src="@{/images(id=${iter.index},city=${city},stars=${hotels.stars})}" alt="img" class="image"/>-->
         <h3>Room: <span th:text="${rooms.roomName}"/>Rooms</h3>
-        <img src='../../assets/img/bHotel/room200x100.jpg' class="image">
+        <img th:src="@{/list/roomImages(roomId=${rooms.roomId})}" alt="img" class="image"/>
 
         <h5>Price:<span th:text="${rooms.price}"></span></h5>
         <h5>For <span th:text="${rooms.persons}"></span><span> people</span></h5>
